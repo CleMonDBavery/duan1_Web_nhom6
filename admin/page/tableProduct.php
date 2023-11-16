@@ -40,47 +40,109 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="table1">
+                                <h6 class="card-title">
+                                    Sản phẩm Active
+                                </h6>
                                 <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Tên</th>
-                                        <th>Hình</th>
-                                        <th>Giá</th>
-                                        <th>Trạng thái</th>
-                                        <th>Thao tác</th>
-                                    </tr>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên</th>
+                                    <th>Hình</th>
+                                    <th>Giá</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
                                 </thead>
-                                <!--List product start-->
+                                <!--List product Active start-->
                                 <?php
                                 $products = new products();
-                                $list = $products->getList();
+                                $list = $products->getStatusActive();
                                 foreach ($list as $item) { ?>
                                     <tbody>
-                                        <tr>
-                                            <td><?= $item['productId'] ?></td>
-                                            <td><?= $item['name'] ?></td>
-                                            <td class="w-25">
-                                                <img src="./assets/content/img/<?= $item['image'] ?>" class="img-thumbnail w-75" alt="...">
-                                            </td>
-                                            <td><?= $item['price'] ?></td>
-                                            <td style="
+                                    <tr>
+                                        <td><?= $item['productId'] ?></td>
+                                        <td><?= $item['name'] ?></td>
+                                        <td class="w-25">
+                                            <img src="./assets/content/img/<?= $item['image'] ?>"
+                                                 class="img-thumbnail w-75" alt="...">
+                                        </td>
+                                        <td><?= $item['price'] ?></td>
+                                        <td style="
                                             <?php
-                                            if ($item['status'] === 'Active') {
-                                                echo 'font-weight: bold; color: green;';
-                                            } ?>">
-                                                <?= $item['status']; ?>
-                                            </td>
-                                            <td>
-                                                <a href="?page=updateProduct&id=<?= $item['productId'] ?>" class="btn btn-info">Sửa</a>
-                                                <button class="btn btn-warning" onclick="myFuntion()" name="hiddenPd"><a href="?page=hiddenProduct&id=<?= $item['productId'] ?>" style="color: black;">Ẩn</a></button>
-                                            </td>
-                                        </tr>
+                                        if ($item['status'] === 'Active') {
+                                            echo 'font-weight: bold; color: green;';
+                                        } ?>">
+                                            <?= $item['status']; ?>
+                                        </td>
+                                        <td>
+                                            <a href="?page=updateProduct&id=<?= $item['productId'] ?>"
+                                               class="btn btn-info">Sửa</a>
+                                            <button class="btn btn-warning" onclick="myFuntion()" name="hiddenPd"><a
+                                                        href="?page=hiddenProduct&id=<?= $item['productId'] ?>"
+                                                        style="color: black;">Ẩn</a></button>
+                                        </td>
+                                    </tr>
                                     </tbody>
-                                <?php
+                                    <?php
                                 }
                                 ?>
                             </table>
-                            <!--List product end-->
+                            <!--List product Active end-->
+                        </div>
+                    </div>
+
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" id="table1">
+                                <h6 class="card-title">
+                                    Sản phẩm Inactive
+                                </h6>
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên</th>
+                                    <th>Hình</th>
+                                    <th>Giá</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                                </thead>
+                                <!--List product Inactive start-->
+                                <?php
+                                $products = new products();
+                                $list = $products->getStatusInactive();
+                                foreach ($list as $item) { ?>
+                                    <tbody>
+                                    <tr>
+                                        <td><?= $item['productId'] ?></td>
+                                        <td><?= $item['name'] ?></td>
+                                        <td class="w-25">
+                                            <img src="./assets/content/img/<?= $item['image'] ?>"
+                                                 class="img-thumbnail w-75" alt="...">
+                                        </td>
+                                        <td><?= $item['price'] ?></td>
+                                        <td style="
+                                            <?php
+                                        if ($item['status'] === 'Active') {
+                                            echo 'font-weight: bold; color: green;';
+                                        } ?>">
+                                            <?= $item['status']; ?>
+                                        </td>
+                                        <td>
+                                            <a href="?page=updateProduct&id=<?= $item['productId'] ?>"
+                                               class="btn btn-info">Sửa</a>
+                                            <button class="btn btn-warning" onclick="myFuntion()" name="hiddenPd"><a
+                                                        href="?page=hiddenPdInactive&idPdI=<?= $item['productId'] ?>"
+                                                        style="color: black;">Hiện</a></button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <?php
+                                }
+                                ?>
+                            </table>
+                            <!--List product Inactive end-->
                             <a href="?page=addProduct" class="btn btn-danger">Thêm</a>
                         </div>
                     </div>

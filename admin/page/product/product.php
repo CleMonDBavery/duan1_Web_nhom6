@@ -76,11 +76,27 @@ class products
         return $result;
     }
 
+    public function getStatusActive()
+    {
+        $db = new connect();
+        $sql = "SELECT * FROM products WHERE status = 'Active'";
+        $result = $db->pdo_query($sql);
+        return $result;
+    }
+
     public function hiddenActive($productId)
     {
         $db = new connect();
         $sql = "update products set status = 'Inactive' where productId = '$productId'";
         $result = $db->pdo_query_one($sql);
+        return $result;
+    }
+
+    public function getStatusInactive()
+    {
+        $db = new connect();
+        $sql = "SELECT * FROM products WHERE status = 'Inactive'";
+        $result = $db->pdo_query($sql);
         return $result;
     }
 
@@ -119,8 +135,8 @@ class products
     public function thongKe()
     {
         $db = new connect();
-        $sql = 'SELECT categories . *, COUNT(products.category_id) AS total FROM products 
-        INNER JOIN categories ON products.category_id = categories.category_id GROUP BY products.category_id;';
+        $sql = 'SELECT categories . *, COUNT(`products`.categoryId) AS total FROM products 
+        INNER JOIN categories ON `products`.categoryId = `categories`.categoryId GROUP BY `products`.categoryId;';
         $result = $db->pdo_query($sql);
         return $result;
     }

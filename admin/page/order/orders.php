@@ -22,4 +22,14 @@ class orders
         $result = $db->pdo_query($sql);
         return $result;
     }
+
+    public function thongKe()
+    {
+        $db = new connect();
+        $sql = "SELECT DAY(date) as Tháng, COUNT(orderId) as 'Số đơn hàng'
+                FROM orders
+                GROUP BY DAY(date)";
+        $result = $db->pdo_query($sql);
+        return $result;
+    }
 }
