@@ -1,7 +1,6 @@
 <?php
 class products
 {
-
     public function getList()
     {
         $db = new connect();

@@ -44,13 +44,13 @@
                         <div class="table-responsive">
                             <table class="table" id="table1">
                                 <thead>
-                                    <tr>
-                                        <th>Tên người dùng</th>
-                                        <th>Nội dung</th>
-                                        <th>Thời gian</th>
-                                        <th>Trạng thái</th>
-                                        <th>Thao tác</th>
-                                    </tr>
+                                <tr>
+                                    <th>Tên người dùng</th>
+                                    <th>Nội dung</th>
+                                    <th>Thời gian</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
                                 </thead>
                                 <?php
                                 $productId = $_GET['id'];
@@ -58,17 +58,18 @@
                                 $list = $comment->getList($productId);
                                 foreach ($list as $item) { ?>
                                     <tbody>
-                                        <tr>
-                                            <td><?= $item['name'] ?></td>
-                                            <td><?= $item['content'] ?></td>
-                                            <td><?= $item['date'] ?></td>
-                                            <td><?= $item['status'] ?></td>
-                                            <td>
-                                                <a href="?page=deleteComment&idCmt=<?= $item['commentId'] ?>&id=<?= $item['productId'] ?>" class="btn btn-info">Ẩn</a>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td><?= $item['username'] ?></td>
+                                        <td><?= $item['content'] ?></td>
+                                        <td><?= $item['date'] ?></td>
+                                        <td><?= $item['status'] ?></td>
+                                        <td>
+                                            <a href="?page=deleteComment&idCmt=<?= $item['commentId'] ?>&id=<?= $item['productId'] ?>"
+                                               class="btn btn-info">Ẩn</a>
+                                        </td>
+                                    </tr>
                                     </tbody>
-                                <?
+                                    <?
                                 }
                                 ?>
 
