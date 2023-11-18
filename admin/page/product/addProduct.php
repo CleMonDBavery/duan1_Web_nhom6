@@ -7,7 +7,8 @@ if (isset($_POST['addPD'])) {
     $image = $_FILES['image']['name'];
     print_r($image);
 
-    $path = "../../assets/content/img/" . $image;
+    $path = "../admin/assets/content/img/" . $image;
+
 
     $name = $_POST['namepd'];
     $price = $_POST['price'];
@@ -30,8 +31,8 @@ if (isset($_POST['addPD'])) {
 
         if (move_uploaded_file($file, $path)) {
             $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status);
-            // var_dump($result);
-            // exit();
+//             var_dump($result);
+//             exit();
             if ($result) {
                 $_SESSION['success'] = 'Thêm danh mục thành công!';
                 header("location: ?page=tableProduct");
@@ -43,7 +44,9 @@ if (isset($_POST['addPD'])) {
             }
         } else {
             $_SESSION['error'] = 'Lỗi di chuyển file!';
-            header("location: ?page=addProduct");
+            print_r($path);
+            print_r($file);
+//            header("location: ?page=addProduct");
             exit;
         }
     }

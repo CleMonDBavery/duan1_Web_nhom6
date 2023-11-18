@@ -7,7 +7,8 @@ if (isset($_POST['editPD'])) {
 
     $file = $_FILES['image']['tmp_name'];
     $image = $_FILES['image']['name'];
-    $path = realpath("../../assets/content/img") . "/" . $image;
+    $path = realpath("../admin/assets/content/img") . "/" . $image;
+//    $path = "../admin/assets/content/img/" . $image;
 
     $name = $_POST['namepd'];
     $price = $_POST['price'];
@@ -15,24 +16,26 @@ if (isset($_POST['editPD'])) {
     $description = $_POST['mota'];
     $status = $_POST['status'];
     $categoryId = $_POST['category'];
-    $result = $Product->update($productId, $name, $priceSale, $price, $description, $categoryId, $image, $status);
-    header("location: ?page=tableProduct");
+//    header("location: ?page=tableProduct");
 
-    //bắt lỗi form
-    // if (move_uploaded_file($file, $path)) {
-    //     if ($result) {
-    //         $_SESSION['success'] = 'Thêm danh mục thành công!';
-    //         exit();
-    //     } else {
-    //         $_SESSION['error'] = 'Thêm danh mục thất bại!';
-    //         header("location: ?page=updateProduct");
-    //         exit();
-    //     }
-    // } else {
-    //     $_SESSION['error'] = 'Lỗi di chuyển file!';
-    //     // header("location: products.php?act=add");
-    //     exit;
-    // }
+//    bắt lỗi form
+    if (move_uploaded_file($file, $path)) {
+        $result = $Product->update($productId, $name, $priceSale, $price, $description, $categoryId, $image, $status);
+
+        if ($result) {
+            $_SESSION['success'] = 'Thêm danh mục thành công!';
+            header("location: ?page=tableProduct");
+            exit();
+        } else {
+            $_SESSION['error'] = 'Thêm danh mục thất bại!';
+            header("location: ?page=updateProduct&id='.$productId.'");
+            exit();
+        }
+    } else {
+        $_SESSION['error'] = 'Lỗi di chuyển file!';
+        // header("location: products.php?act=add");
+        exit;
+    }
 }
 
 ?>
