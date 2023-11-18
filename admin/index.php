@@ -106,6 +106,9 @@ session_start();
                     case 'tableDetailOrder':
                         include '../admin/page/tableDetailOrder.php';
                         break;
+                    case 'confirmOrder':
+                        include '../admin/page/order/condition.php';
+                        break;
                     default:
                         echo 'Không tìm thấy File';
                         break;

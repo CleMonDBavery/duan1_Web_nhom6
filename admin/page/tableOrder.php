@@ -72,6 +72,8 @@
                                             <th>Ngày mua</th>
                                             <th>Địa chỉ</th>
                                             <th>Thao tác</th>
+                                            <th>Trạng thái</th>
+
                                         </tr>
                                     </thead>
                                     <?
@@ -86,7 +88,13 @@
                                                 <td><?= $item['destination'] ?></td>
                                                 <td>
                                                     <a href="?page=tableDetailOrder&idOrder=<?= $item['orderId'] ?>" class="btn btn-info">Chi tiết</a>
+                                                    <?php if ($item['status'] != 'Đang vận chuyển') { ?>
+                                                        <a href="?page=confirmOrder&idComOrder=<?= $item['orderId'] ?>"
+                                                           class="btn btn-info">Xác nhận</a>
+                                                    <?php } ?>
                                                 </td>
+                                                <td><?= $item['status'] ?></td>
+
                                             </tr>
                                         </tbody>
                                     <? }

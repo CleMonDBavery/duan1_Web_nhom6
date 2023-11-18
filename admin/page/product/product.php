@@ -37,15 +37,15 @@ class products
     {
         $db = new connect();
         $query = "UPDATE products SET 
-        `name` = '$name',
-        `image` = '$image', 
-        `price` = '$price', 
-        `priceSale` = '$priceSale',
-        `description` = '$description', 
+        name = '$name',
+        image = '$image', 
+        price = '$price', 
+        priceSale = '$priceSale',
+        description = '$description', 
         categoryId = '$categoryId',
-        `status` = '$status'
+        status = '$status'
         where productId = '" . $productId . "'";
-        $result = $db->pdo_query($query);
+        $result = $db->pdo_execute($query);
         return $result;
     }
 
