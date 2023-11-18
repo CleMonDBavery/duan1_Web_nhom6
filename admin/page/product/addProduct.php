@@ -7,7 +7,7 @@ if (isset($_POST['addPD'])) {
     $image = $_FILES['image']['name'];
     print_r($image);
 
-    $path = realpath("../../assets/content/img/") . "/" . $image;
+    $path = "../../assets/content/img/" . $image;
 
     $name = $_POST['namepd'];
     $price = $_POST['price'];
@@ -16,40 +16,40 @@ if (isset($_POST['addPD'])) {
     $status = $_POST['status'];
     $categoryId = $_POST['category'];
 
-    // if (
-    //     $ProductName == "" ||
-    //     $ProductImage == "" ||
-    //     $ProductPrice == "" ||
-    //     $ProductDesc == "" ||
-    //     $ProductCategory == ""
-    // ) {
-    //     $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin';
-    //     header("location: products.php?act=add");
-    //     exit;
-    // } else {
-    // require_once "Product.php";
+    if (
+        $name == "" ||
+        $price == "" ||
+        $description == "" ||
+        $categoryId == ""
+    ) {
+        $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin';
+        header("location: index.php?page=addProduct");
+        exit;
+    } else {
+        require_once "Product.php";
 
-    if (move_uploaded_file($file, $path)) {
-        $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status);
-        // var_dump($result);
-        // exit();
-        if ($result) {
-            $_SESSION['success'] = 'Thêm danh mục thành công!';
-            header("location: ?page=tableProduct");
-            exit;
+        if (move_uploaded_file($file, $path)) {
+            $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status);
+            // var_dump($result);
+            // exit();
+            if ($result) {
+                $_SESSION['success'] = 'Thêm danh mục thành công!';
+                header("location: ?page=tableProduct");
+                exit;
+            } else {
+                $_SESSION['error'] = 'Thêm danh mục thất bại!';
+                header("location: ?page=addProduct");
+                exit;
+            }
         } else {
-            $_SESSION['error'] = 'Thêm danh mục thất bại!';
+            $_SESSION['error'] = 'Lỗi di chuyển file!';
             header("location: ?page=addProduct");
             exit;
         }
-    } else {
-        $_SESSION['error'] = 'Lỗi di chuyển file!';
-        // header("location: products.php?act=add");
-        exit;
     }
 }
-
 ?>
+
 
 <div class="container">
     <section id="multiple-column-form">
@@ -61,6 +61,12 @@ if (isset($_POST['addPD'])) {
                     </div>
                     <div class="card-content">
                         <div class="card-body">
+                        <?php
+                         if (isset($_SESSION['error'])) {
+                                    echo '<p style="color:red">' . $_SESSION['error'] . '</p>';
+                                    unset($_SESSION['error']);
+                                }
+                                ?>
                             <form class="form" method="post" enctype="multipart/form-data">
                                 <div class="row">
 

@@ -147,7 +147,7 @@ class products
         $query = "SELECT * FROM categories";
         $result = $db->pdo_query($query);
 
-        $output = '<select style="width: 80%; margin: 0 auto" name="category" class="form-control" id="">';
+        $output = '<select style="margin: 0 auto" name="category" class="form-control" id="">';
         $output .= '<option selected value="">Chọn danh mục</option>';
 
         foreach ($result as $row) {
