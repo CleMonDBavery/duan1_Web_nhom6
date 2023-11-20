@@ -23,16 +23,10 @@ if (isset($_POST['addPD'])) {
         $description == "" ||
         $categoryId == ""
     ) {
-        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+        $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin';
         header("location: index.php?page=addProduct");
         exit;
-    } else if ($price >= $priceSale)
-    {
-                           $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
-                           header("location: index.php?page=addProduct");
-                           exit;
-                           }
-    else {
+    } else {
         require_once "Product.php";
 
         if (move_uploaded_file($file, $path)) {
@@ -43,15 +37,16 @@ if (isset($_POST['addPD'])) {
                 $_SESSION['success'] = 'Thêm danh mục thành công!';
                 header("location: ?page=tableProduct");
                 exit;
-            }
-            else {
+            } else {
                 $_SESSION['error'] = 'Thêm danh mục thất bại!';
                 header("location: ?page=addProduct");
                 exit;
             }
         } else {
             $_SESSION['error'] = 'Lỗi di chuyển file!';
-           header("location: ?page=addProduct");
+            print_r($path);
+            print_r($file);
+//            header("location: ?page=addProduct");
             exit;
         }
     }
