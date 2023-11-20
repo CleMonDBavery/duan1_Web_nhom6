@@ -31,6 +31,7 @@ session_start();
         <link rel="stylesheet" href="./assets/compiled/css/iconly.css"/>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
     <body>
@@ -44,6 +45,7 @@ session_start();
             include '../admin/page/order/orders.php';
             include '../admin/page/comment/comment.php';
             include '../admin/page/users/user.php';
+            include '../admin/page/promotion/promotions.php';
 
             if (!isset($_SESSION['admin'])) {
                 include '../admin/page/login.php';
@@ -89,12 +91,15 @@ session_start();
                     case 'hiddenCategories':
                         include '../admin/page/categories/hiddenCategories.php';
                         break;
+                    case 'hiddenInactive':
+                        include '../admin/page/categories/hiddenInactive.php';
+                        break;
                     // chức năng comments
                     case 'tableComment':
                         include '../admin/page/tableComment.php';
                         break;
-                    case 'deleteComment':
-                        include '../admin/page/comment/deleteComment.php';
+                    case 'hiddenComment':
+                        include '../admin/page/comment/hiddenComment.php';
                         break;
                     case 'tableDetailComment':
                         include '../admin/page/tableDetailComment.php';
@@ -109,6 +114,38 @@ session_start();
                     case 'confirmOrder':
                         include '../admin/page/order/condition.php';
                         break;
+                    case 'hiddenOrderDetail':
+                        include '../admin/page/order/hiddenOrderDetail.php';
+                        break;
+                    //chức năng khuyến mãi
+                    case 'tablePromotion':
+                        include '../admin/page/tablePromotion.php';
+                        break;
+                    case 'addPromotion':
+                        include '../admin/page/promotion/addPromotion.php';
+                        break;
+                    case 'updatePromotion':
+                        include '../admin/page/promotion/updatePromotion.php';
+                        break;
+                    case 'hiddenPromotion':
+                        include '../admin/page/promotion/hiddenPromotion.php';
+                        break;
+                    // chức năng user
+                    case 'tableUser':
+                        include '../admin/page/tableUser.php';
+                        break;
+                    case 'addUser':
+                        include '../admin/page/user/addUser.php';
+                        break;
+                    case 'updateUser':
+                        include '../admin/page/users/updateUser.php';
+                        break;
+                    case 'hiddenActiveUser':
+                        include '../admin/page/users/hiddenActive.php';
+                        break;
+                    case 'hiddenInactiveUser':
+                        include '../admin/page/users/hiddenInactive.php';
+                        break;
                     default:
                         echo 'Không tìm thấy File';
                         break;
@@ -122,6 +159,11 @@ session_start();
             ?>
         </div>
     </div>
+    <script>
+        function showWaring() {
+            alert("Bạn không có quyền thực hiện thao tác này!");
+        }
+    </script>
 
     <script src="./assets/static/js/components/dark.js"></script>
     <script src="./assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>

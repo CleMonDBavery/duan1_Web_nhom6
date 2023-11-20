@@ -18,8 +18,16 @@ class orders
         $sql = "SELECT `products`.name, `orderDetail`.price
         FROM orderDetail
         INNER JOIN products ON `orderDetail`.productId = `products`.productId
-        WHERE `orderDetail`.orderId = '$orderId'";
+        WHERE `orderDetail`.orderId = '$orderId' AND orderdetail.status = 'Active' ";
         $result = $db->pdo_query($sql);
+        return $result;
+    }
+
+    public function delete($orderDetailId)
+    {
+        $db = new connect();
+        $sql = "UPDATE orderdetail SET status = 'Inactive' WHERE orderDetailId	= '$orderDetailId'";
+        $result = $db->pdo_execute($sql);
         return $result;
     }
 

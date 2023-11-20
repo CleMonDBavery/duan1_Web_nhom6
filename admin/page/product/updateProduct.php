@@ -14,7 +14,7 @@ if (isset($_POST['editPD'])) {
     $price = $_POST['price'];
     $priceSale = $_POST['priceSale'];
     $description = $_POST['mota'];
-    $status = $_POST['status'];
+    $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Active' : 'Inactive';
     $categoryId = $_POST['category'];
 //    header("location: ?page=tableProduct");
 
@@ -75,12 +75,7 @@ if (isset($_POST['editPD'])) {
                                             <input type="file" class="form-control" placeholder="" name="image" value="<?php echo $Product->getInfoProduct($productId, 'image'); ?>">
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="country-floating">Trạng thái</label>
-                                            <input type="text" class="form-control" placeholder="" name="status" value="<?php echo $Product->getInfoProduct($productId, 'status'); ?>">
-                                        </div>
-                                    </div>
+
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <!-- <label for="email-productId-column">Loại</label>
@@ -90,7 +85,11 @@ if (isset($_POST['editPD'])) {
                                             echo $selectDropdown;
                                             ?>
                                         </div>
-
+                                        <div class="form-check form-switch">
+                                            <input name="status" class="form-check-input" type="checkbox"
+                                                   id="flexSwitchCheckChecked" checked>
+                                            <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
+                                        </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">

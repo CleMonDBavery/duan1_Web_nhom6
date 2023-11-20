@@ -37,7 +37,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">
-                            Quản lí loại sản phẩm
+                            Quản lí loại sản phẩm đang hiện
                         </h5>
                         <a href="?page=addCategory" class="btn btn-danger">Thêm</a>
 
@@ -73,6 +73,59 @@
                                                 <a href="?page=hiddenCategories&idCate=<?= $item['categoryId'] ?>" class="btn btn-warning">Ẩn</a>
                                             </td>
                                         </tr>
+                                    </tbody>
+                                <? }
+                                ?>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">
+                            Quản lí loại sản phẩm đã ẩn
+                        </h5>
+
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" id="table1">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                                </thead>
+                                <?
+                                $category = new categories();
+                                $list = $category->getListInactive();
+                                foreach ($list as $item) { ?>
+                                    <tbody>
+                                    <tr>
+                                        <td><?= $item['categoryId'] ?></td>
+                                        <td><?= $item['name'] ?></td>
+                                        <td style="
+                                            <?php
+                                        if ($item['status'] === 'Active') {
+                                            echo 'font-weight: bold; color: green;';
+                                        } ?>">
+                                            <?= $item['status']; ?>
+                                        </td>
+                                        <td>
+                                            <a href="?page=updateCategory&idCate=<?= $item['categoryId'] ?>"
+                                               class="btn btn-info">Sửa</a>
+                                            <a href="?page=hiddenInactive&idCate=<?= $item['categoryId'] ?>"
+                                               class="btn btn-warning">Hiện</a>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 <? }
                                 ?>

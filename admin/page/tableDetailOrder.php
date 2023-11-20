@@ -61,7 +61,8 @@
                                             <td><?= $item['name'] ?></td>
                                             <td><?= $item['price'] ?></td>
                                             <td>
-                                                <a href="" class="btn btn-info">Ẩn</a>
+                                                <a href="?page=hiddenOrderDetail&idHidden=<?= $item['orderDetailId'] ?>"
+                                                   class="btn btn-info">Ẩn</a>
                                             </td>
                                         </tr>
                                     </tbody>
