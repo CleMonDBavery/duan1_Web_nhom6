@@ -14,15 +14,13 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>DataTable jQuery</h3>
-                        <p class="text-subtitle text-muted">Powerful interactive tables with datatables (jQuery
-                            required).</p>
+                        <h3>Quản lí</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">DataTable jQuery</li>
+                                <li class="breadcrumb-item active"><a href="index.html">Quản lí</a></li>
+                                <li class="breadcrumb-item " aria-current="page">Khuyến mãi</li>
                             </ol>
                         </nav>
                     </div>
@@ -37,7 +35,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">
-                            Quản lí bình luận
+                            Quản lí mã khuyến mãi
                         </h5>
                         <a href="?page=addPromotion" class="btn btn-danger">Thêm</a>
                     </div>
