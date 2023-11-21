@@ -1,48 +1,24 @@
-<script src="./assets/static/js/initTheme.js"></script>
+<title>Quản lí sản phẩm</title>
 <div id="app">
     <?php
     include './assets/include/nav.php';
     ?>
     <div id="main">
-        <header class="mb-3">
-            <a href="#" class="burger-btn d-block d-xl-none">
-                <i class="bi bi-justify fs-3"></i>
-            </a>
-        </header>
-
         <div class="page-heading">
-            <div class="page-title">
-                <div class="row">
-                    <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Quản lí</h3>
-
-                    </div>
-                    <div class="col-12 col-md-6 order-md-2 order-first">
-                        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Quản lí</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Quản lí sản phẩm</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tables product start -->
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">
-                            Quản lí sản phẩm
-                        </h5>
-                        <a href="?page=addProduct" class="btn btn-danger">Thêm</a>
+                        <!--                        <h2 class="card-title">-->
+                        <!--                            Quản lí sản phẩm-->
+                        <!--                        </h2>-->
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="table1">
-                                <h6 class="card-title">
-                                    Sản phẩm Active
-                                </h6>
+                                <h2 class="card-title">
+                                    Sản phẩm cho phép
+                                </h2>
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -67,16 +43,16 @@
                                                  class="img-thumbnail w-75" alt="...">
                                         </td>
                                         <td><?= $item['price'] ?></td>
-                                        <td style="
+                                        <td
                                             <?php
                                         if ($item['status'] === 'Active') {
-                                            echo 'font-weight: bold; color: green;';
-                                        } ?>">
+                                            echo 'class="text-success"';
+                                        } ?>>
                                             <?= $item['status']; ?>
                                         </td>
                                         <td>
                                             <a href="?page=updateProduct&id=<?= $item['productId'] ?>"
-                                               class="btn btn-info">Sửa</a>
+                                               class="btn btn-primary">Sửa</a>
                                             <button class="btn btn-warning" onclick="myFuntion()" name="hiddenPd"><a
                                                         href="?page=hiddenProduct&id=<?= $item['productId'] ?>"
                                                         style="color: black;">Ẩn</a></button>
@@ -86,7 +62,9 @@
                                     <?php
                                 }
                                 ?>
+
                             </table>
+                            <a href="?page=addProduct" class="btn btn-danger">Thêm</a>
                             <!--List product Active end-->
                         </div>
                     </div>
@@ -95,9 +73,9 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="table1">
-                                <h6 class="card-title">
-                                    Sản phẩm Inactive
-                                </h6>
+                                <h3 class="card-title">
+                                    Sản phẩm không được phép
+                                </h3>
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -122,16 +100,12 @@
                                                  class="img-thumbnail w-75" alt="...">
                                         </td>
                                         <td><?= $item['price'] ?></td>
-                                        <td style="
-                                            <?php
-                                        if ($item['status'] === 'Active') {
-                                            echo 'font-weight: bold; color: green;';
-                                        } ?>">
+                                        <td class="text-secondary">
                                             <?= $item['status']; ?>
                                         </td>
                                         <td>
                                             <a href="?page=updateProduct&id=<?= $item['productId'] ?>"
-                                               class="btn btn-info">Sửa</a>
+                                               class="btn btn-primary">Sửa</a>
                                             <button class="btn btn-warning" onclick="myFuntion()" name="hiddenPd"><a
                                                         href="?page=hiddenPdInactive&idPdI=<?= $item['productId'] ?>"
                                                         style="color: black;">Hiện</a></button>

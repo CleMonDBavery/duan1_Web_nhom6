@@ -157,4 +157,13 @@ class products
 
         return $output;
     }
+
+    public function getProductByName($name)
+    {
+        $db = new connect();
+        $query = "SELECT * FROM products WHERE `name` = '$name'";
+        $result = $db->pdo_query_one($query);
+        return $result;
+    }
+
 }

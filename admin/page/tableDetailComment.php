@@ -1,4 +1,4 @@
-<script src="./assets/static/js/initTheme.js"></script>
+<title>Quản lí chi tiết bình luận</title>
 <div id="app">
     <?php
     include './assets/include/nav.php';
@@ -11,34 +11,14 @@
         </header>
 
         <div class="page-heading">
-            <div class="page-title">
-                <div class="row">
-                    <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Quan li binh luan</h3>
 
-                    </div>
-                    <div class="col-12 col-md-6 order-md-2 order-first">
-                        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Quan li</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Binh luan</li>
-                                <li class="breadcrumb-item active" aria-current="page">Chi tiet binh luan</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Minimal jQuery Datatable start -->
-
-            <!-- Minimal jQuery Datatable end -->
             <!-- Basic Tables start -->
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">
-                            Quản lí chi tiet bình luận
-                        </h5>
+                        <h2 class="card-title">
+                            Quản lí chi tiết bình luận
+                        </h2>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -62,16 +42,19 @@
                                         <td><?= $item['username'] ?></td>
                                         <td><?= $item['content'] ?></td>
                                         <td><?= $item['date'] ?></td>
-                                        <td style="
+                                        <td
                                             <?php
-                                        if ($item['status'] === 'Active') {
-                                            echo 'font-weight: bold; color: green;';
-                                        } ?>">
+                                            if ($item['status'] === 'Active') {
+                                                echo 'class="text-success"';
+                                            } else {
+                                                echo 'class="text-secondary"';
+
+                                            } ?>>
                                             <?= $item['status']; ?>
                                         </td>
                                         <td>
                                             <a href="?page=hiddenComment&idCmt=<?= $item['commentId'] ?>&id=<?= $item['productId'] ?>"
-                                               class="btn btn-info">Ẩn</a>
+                                               class="btn btn-warning">Ẩn</a>
                                         </td>
                                     </tr>
                                     </tbody>
