@@ -19,6 +19,28 @@ if (isset($_POST['editPD'])) {
 //    header("location: ?page=tableProduct");
 
 //    bắt lỗi form
+    if (
+        $name == "" ||
+        $price == "" ||
+        $description == "" ||
+        $categoryId == ""
+    ) {
+        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+        header("location: ?page=updateProduct&id=$productId");
+        exit;
+    }
+    if ($price >= $priceSale) {
+        $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
+        header("location: ?page=updateProduct&id=$productId");
+        exit;
+    }
+    // Kiểm tra xem tên sản phẩm đã tồn tại hay chưa
+//    $existingProduct = $Product->getProductByName($name);
+//    if ($existingProduct) {
+//        $_SESSION['error'] = '*Sản phẩm đã tồn tại!';
+//        header("location: ?page=updateProduct&id=$productId");
+//        exit;
+//    }
     if (move_uploaded_file($file, $path)) {
         $result = $Product->update($productId, $name, $priceSale, $price, $description, $categoryId, $image, $status);
 
@@ -39,16 +61,27 @@ if (isset($_POST['editPD'])) {
 }
 
 ?>
-<div class="container">
+<div id="app">
+    <div id="main">
+        <?php
+        include './assets/include/nav.php';
+        ?>
+
     <section id="multiple-column-form">
         <div class="row match-height">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Chỉnh sửa sản phẩm</h4>
+                        <h2 class="card-title">Cập nhật sản phẩm</h2>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
+                            <?php
+                            if (isset($_SESSION['error'])) {
+                                echo '<p style="color:red">' . $_SESSION['error'] . '</p>';
+                                unset($_SESSION['error']);
+                            }
+                            ?>
                             <form class="form" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-6 col-12">
@@ -78,6 +111,7 @@ if (isset($_POST['editPD'])) {
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
+                                            <label for="city-column">Danh mục</label>
                                             <!-- <label for="email-productId-column">Loại</label>
                                             <input class="form-control" name="category" placeholder=""> -->
                                             <?php
@@ -110,4 +144,6 @@ if (isset($_POST['editPD'])) {
             </div>
         </div>
     </section>
+</div>
+</div>
 </div>

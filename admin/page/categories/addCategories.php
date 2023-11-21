@@ -1,9 +1,25 @@
-<?
+<?php
 $categories = new categories();
+
 if (isset($_POST['addCategory'])) {
     $name = $_POST['name'];
+
+    // Kiểm tra xem $name có trống không
+    if ($name == "") {
+        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+        header("location: index.php?page=addCategory");
+        exit;
+    }
+    $existingCategory = $categories->getCategoryByName($name);
+    if ($existingCategory) {
+        $_SESSION['error'] = '*Sản phẩm đã tồn tại!';
+        header("location: index.php?page=addCategory");
+        exit;
+    }
+
     $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Active' : 'Inactive';
     $result = $categories->add($name, $status);
+
     if ($result) {
         $_SESSION['success'] = 'Thêm danh mục thành công!';
         header("location: ?page=tableCategory");
@@ -16,6 +32,11 @@ if (isset($_POST['addCategory'])) {
 }
 ?>
 
+<div id="app">
+    <div id="main">
+        <?php
+        include './assets/include/nav.php';
+        ?>
 <div class="container">
     <section id="multiple-column-form">
         <div class="row match-height">
@@ -26,8 +47,13 @@ if (isset($_POST['addCategory'])) {
                     </div>
                     <div class="card-content">
                         <div class="card-body">
+                            <?php
+                            if (isset($_SESSION['error'])) {
+                                echo '<p style="color:red">' . $_SESSION['error'] . '</p>';
+                                unset($_SESSION['error']);
+                            }
+                            ?>
                             <form class="form" method="post">
-
                                 <div class="col-md-12 col-12">
                                     <div class="form-group">
                                         <label for="first-name-column">Tên loại</label>
@@ -55,4 +81,6 @@ if (isset($_POST['addCategory'])) {
             </div>
         </div>
     </section>
+</div>
+    </div>
 </div>

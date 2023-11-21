@@ -68,4 +68,12 @@ class categories
         $result = $db->pdo_query_one($sql);
         return $result;
     }
+
+    public function getCategoryByName($name)
+    {
+        $db = new connect();
+        $query = "SELECT * FROM categories WHERE `name` = '$name'";
+        $result = $db->pdo_query_one($query);
+        return $result;
+    }
 }

@@ -4,6 +4,12 @@ $categoryId = $_GET['idCate'];
 $item = $categories->getById($categoryId);
 if (isset($_POST['editCategory'])) {
     $name = $_POST['name'];
+
+    if ($name == "") {
+        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+        header("location: index.php?page=addCategory");
+        exit;
+    }
     $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Active' : 'Inactive';
     $categories = new categories();
     $result = $categories->update($categoryId, $name, $status);
@@ -18,7 +24,11 @@ if (isset($_POST['editCategory'])) {
     }
 }
 ?>
-
+<div id="app">
+    <div id="main">
+        <?php
+        include './assets/include/nav.php';
+        ?>
 <div class="container">
     <section id="multiple-column-form">
         <div class="row match-height">
@@ -57,4 +67,6 @@ if (isset($_POST['editCategory'])) {
             </div>
         </div>
     </section>
+</div>
+    </div>
 </div>

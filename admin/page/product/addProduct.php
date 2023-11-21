@@ -26,8 +26,16 @@ if (isset($_POST['addPD'])) {
         $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
         header("location: index.php?page=addProduct");
         exit;
-    } else if ($price >= $priceSale) {
+    }
+    if ($price >= $priceSale) {
         $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
+        header("location: index.php?page=addProduct");
+        exit;
+    }
+    // Kiểm tra xem tên sản phẩm đã tồn tại hay chưa
+    $existingProduct = $products->getProductByName($name);
+    if ($existingProduct) {
+        $_SESSION['error'] = '*Sản phẩm đã tồn tại!';
         header("location: index.php?page=addProduct");
         exit;
     } else {
@@ -55,7 +63,11 @@ if (isset($_POST['addPD'])) {
 }
 ?>
 
-
+<div id="app">
+    <div id="main">
+        <?php
+        include './assets/include/nav.php';
+        ?>
 <div class="container">
     <section id="multiple-column-form">
         <div class="row match-height">
@@ -102,8 +114,7 @@ if (isset($_POST['addPD'])) {
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <!-- <label for="email-id-column">Loại</label>
-                                            <input class="form-control" name="category" placeholder=""> -->
+                                            <label for="city-column">Danh mục</label>
                                             <?php
                                             $selectDropdown = $products->renderCategorySelect();
                                             echo $selectDropdown;
@@ -135,4 +146,6 @@ if (isset($_POST['addPD'])) {
             </div>
         </div>
     </section>
+</div>
+    </div>
 </div>
