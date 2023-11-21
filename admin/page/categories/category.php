@@ -5,7 +5,15 @@ class categories
     public function getList()
     {
         $db = new connect();
-        $query = 'select * from categories'; //viết câu lệnh sql select *
+        $query = 'select * from categories where status = "Active"'; //viết câu lệnh sql select *
+        $result = $db->pdo_query($query);
+        return $result;
+    }
+
+    public function getListInactive()
+    {
+        $db = new connect();
+        $query = 'select * from categories where status = "Inactive"'; //viết câu lệnh sql select *
         $result = $db->pdo_query($query);
         return $result;
     }
@@ -49,6 +57,14 @@ class categories
     {
         $db = new connect();
         $sql = "update categories set status ='Inactive' where categoryId = '$categoryId'";
+        $result = $db->pdo_query_one($sql);
+        return $result;
+    }
+
+    public function hiddenInactive($categoryId)
+    {
+        $db = new connect();
+        $sql = "update categories set status ='Active' where categoryId = '$categoryId'";
         $result = $db->pdo_query_one($sql);
         return $result;
     }

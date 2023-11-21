@@ -20,10 +20,10 @@ class comment
         return $result;
     }
 
-    public function updateCmt($comment_content, $user_id, $comment_id)
+    public function updateCmt($content, $userId, $commentId)
     {
         $db = new connect();
-        $update = "UPDATE comment SET `comment_content` = '$comment_content' WHERE `user_id` = '$user_id' AND `comment_id` = '$comment_id'";
+        $update = "UPDATE comments SET `content` = '$content' WHERE `userId` = '$userId' AND `commentId` = '$commentId'";
         $result = $db->pdo_query($update);
         return $result;
     }
@@ -42,15 +42,25 @@ class comment
     public function getCount()
     {
         $db = new connect();
-        $sql = "SELECT *, (SELECT COUNT(*) FROM comments WHERE `comments`.productId = `products`.productId) AS count FROM products";
+        $sql = "SELECT products.productId, products.name, (SELECT COUNT(*) FROM comments 
+                WHERE comments.productId = products.productId AND comments.status = 'Active') 
+                AS count FROM products";
         $result = $db->pdo_query($sql);
+        return $result;
+    }
+
+    public function hiddenActive($commentId)
+    {
+        $db = new connect();
+        $update = "UPDATE comments SET status = 'Inactive' WHERE commentId = $commentId";
+        $result = $db->pdo_query($update);
         return $result;
     }
 
     public function getList($productId)
     {
         $db = new connect();
-        $sql = "SELECT * FROM comments INNER JOIN users ON `comments`.userId = `users`.userId WHERE productId = '$productId'";
+        $sql = "SELECT * FROM comments INNER JOIN users ON `comments`.userId = `users`.userId WHERE productId = '$productId' AND comments.status = 'Active'";
         $result = $db->pdo_query($sql);
         return $result;
     }

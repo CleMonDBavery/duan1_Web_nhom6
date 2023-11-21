@@ -4,13 +4,21 @@ class User
     function getUser()
     {
         $db = new connect();
-        $select = "SELECT * from users";
+        $select = "SELECT * from users WHERE status = 'Active'";
         return $db->pdo_query($select);
     }
-    function getuserId($id)
+
+    function getUserInactive()
     {
         $db = new connect();
-        $select = "SELECT * from users  where userId = '" . $id . "'";
+        $select = "SELECT * from users WHERE status = 'Inactive'";
+        return $db->pdo_query($select);
+    }
+
+    function getuserId($userId)
+    {
+        $db = new connect();
+        $select = "SELECT * from users  where userId = '" . $userId . "'";
         return $db->pdo_query($select);
     }
     
@@ -24,6 +32,7 @@ class User
         else
             return false;
     }
+
     function userId($username, $password)
     {
         $db = new connect();
@@ -46,25 +55,45 @@ class User
         $result = $db->pdo_query_one($select);
         return $result;
     }
-    public function update($id, $FullName, $Email, $Avatar, $Password , $Address, $Phone)
+
+    public function updatehiddenActive($userId)
+    {
+        $db = new connect();
+        $update = "UPDATE users SET status = 'Inactive' WHERE userId = '$userId'";
+        $result = $db->pdo_query($update);
+        return $result;
+    }
+
+    public function updatehiddenInactive($userId)
+    {
+        $db = new connect();
+        $update = "UPDATE users SET status = 'Active' WHERE userId = '$userId'";
+        $result = $db->pdo_query($update);
+        return $result;
+    }
+
+    public function update($userId, $username, $password, $fullName, $phone, $email, $address, $avatar, $role, $status)
     {
         $db = new connect();
         $query = "UPDATE users SET 
-         FullName = '$FullName',
-         Email = '$Email', 
-         Avatar = '$Avatar', 
-         Password = '$Password', 
-         Address = '$Address', 
-         Phone = '$Phone'
-        
-         where userId = '" . $id . "'";
+         username = '$username',
+         password = '$password',
+         fullName = '$fullName',
+         phone = '$phone',
+         email = '$email',
+         address = '$address',
+         avatar = '$avatar',
+         role = '$role',
+         status = '$status'
+         where userId = '" . $userId . "'";
         $result = $db->pdo_execute($query);
         return $result;
     }
-    function getInfoProfile($id, $column)
+
+    function getInfoProfile($userId, $column)
     {
         $db = new connect();
-        $sql = "SELECT * FROM users WHERE userId  = $id";
+        $sql = "SELECT * FROM users WHERE userId  = $userId";
         $result = $db->pdo_query($sql);
         foreach ($result as $row) {
             return $row[$column];

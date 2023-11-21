@@ -14,15 +14,15 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Quan li binh luan</h3>
-
+                        <h3>DataTable jQuery</h3>
+                        <p class="text-subtitle text-muted">Powerful interactive tables with datatables (jQuery
+                            required).</p>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Quan li</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Binh luan</li>
-                                <li class="breadcrumb-item active" aria-current="page">Chi tiet binh luan</li>
+                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">DataTable jQuery</li>
                             </ol>
                         </nav>
                     </div>
@@ -37,31 +37,35 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">
-                            Quản lí chi tiet bình luận
+                            Quản lí bình luận
                         </h5>
+                        <a href="?page=addPromotion" class="btn btn-danger">Thêm</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="table1">
                                 <thead>
                                 <tr>
-                                    <th>Tên người dùng</th>
-                                    <th>Nội dung</th>
-                                    <th>Thời gian</th>
+                                    <th>Mã khuyến mãi</th>
+                                    <th>Ngày bắt đầu</th>
+                                    <th>Ngày kết thúc</th>
+                                    <th>Điều kiện giảm</th>
+                                    <th>Giá giảm</th>
                                     <th>Trạng thái</th>
                                     <th>Thao tác</th>
                                 </tr>
                                 </thead>
                                 <?php
-                                $productId = $_GET['id'];
-                                $comment = new comment();
-                                $list = $comment->getList($productId);
+                                $promotion = new promotions();
+                                $list = $promotion->getStatus();
                                 foreach ($list as $item) { ?>
                                     <tbody>
                                     <tr>
-                                        <td><?= $item['username'] ?></td>
-                                        <td><?= $item['content'] ?></td>
-                                        <td><?= $item['date'] ?></td>
+                                        <td><?= $item['name'] ?></td>
+                                        <td><?= $item['startTime'] ?></td>
+                                        <td><?= $item['endTime'] ?></td>
+                                        <td><?= $item['conditionPro'] ?></td>
+                                        <td><?= $item['discount'] ?></td>
                                         <td style="
                                             <?php
                                         if ($item['status'] === 'Active') {
@@ -70,7 +74,7 @@
                                             <?= $item['status']; ?>
                                         </td>
                                         <td>
-                                            <a href="?page=hiddenComment&idCmt=<?= $item['commentId'] ?>&id=<?= $item['productId'] ?>"
+                                            <a href=" ?page=hiddenPromotion&id=<?= $item['promotionId']; ?>"
                                                class="btn btn-info">Ẩn</a>
                                         </td>
                                     </tr>
@@ -78,7 +82,6 @@
                                     <?
                                 }
                                 ?>
-
                             </table>
                         </div>
                     </div>
@@ -89,8 +92,22 @@
 
         </div>
 
-       <?php
-                   include './assets/include/footer.php';
-                   ?>
+        <?php
+        include './assets/include/footer.php';
+        ?>
     </div>
 </div>
+<!-- <script src="./assets/static/js/components/dark.js"></script>
+    <script src="./assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+
+    <script src="./assets/compiled/js/app.js"></script>
+
+    <script src="./assets/extensions/jquery/jquery.min.js"></script>
+    <script src="./assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="./assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="./assets/static/js/pages/datatables.js"></script> -->
+
+</body>
+
+</html>

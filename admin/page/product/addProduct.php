@@ -5,7 +5,7 @@ if (isset($_POST['addPD'])) {
 
     $file = $_FILES['image']['tmp_name'];
     $image = $_FILES['image']['name'];
-    print_r($image);
+//    print_r($image);
 
     $path = "../admin/assets/content/img/" . $image;
 
@@ -14,7 +14,7 @@ if (isset($_POST['addPD'])) {
     $price = $_POST['price'];
     $priceSale = $_POST['priceSale'];
     $description = $_POST['mota'];
-    $status = $_POST['status'];
+    $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Active' : 'Inactive';
     $categoryId = $_POST['category'];
 
     if (
@@ -23,7 +23,11 @@ if (isset($_POST['addPD'])) {
         $description == "" ||
         $categoryId == ""
     ) {
-        $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin';
+        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+        header("location: index.php?page=addProduct");
+        exit;
+    } else if ($price >= $priceSale) {
+        $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
         header("location: index.php?page=addProduct");
         exit;
     } else {
@@ -44,9 +48,7 @@ if (isset($_POST['addPD'])) {
             }
         } else {
             $_SESSION['error'] = 'Lỗi di chuyển file!';
-            print_r($path);
-            print_r($file);
-//            header("location: ?page=addProduct");
+            header("location: ?page=addProduct");
             exit;
         }
     }
@@ -97,12 +99,7 @@ if (isset($_POST['addPD'])) {
                                             <input type="file" class="form-control" placeholder="" name="image">
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="country-floating">Trạng thái</label>
-                                            <input type="text" class="form-control" placeholder="" name="status">
-                                        </div>
-                                    </div>
+
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <!-- <label for="email-id-column">Loại</label>
@@ -112,7 +109,11 @@ if (isset($_POST['addPD'])) {
                                             echo $selectDropdown;
                                             ?>
                                         </div>
-
+                                        <div class="form-check form-switch">
+                                            <input name="status" class="form-check-input" type="checkbox"
+                                                   id="flexSwitchCheckChecked" checked>
+                                            <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
+                                        </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">

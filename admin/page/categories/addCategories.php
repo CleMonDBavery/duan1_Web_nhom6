@@ -2,7 +2,7 @@
 $categories = new categories();
 if (isset($_POST['addCategory'])) {
     $name = $_POST['name'];
-    $status = $_POST['status'];
+    $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Active' : 'Inactive';
     $result = $categories->add($name, $status);
     if ($result) {
         $_SESSION['success'] = 'Thêm danh mục thành công!';
@@ -35,9 +35,11 @@ if (isset($_POST['addCategory'])) {
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-12">
-                                    <div class="form-group">
-                                        <label for="last-name-column">Trạn thái</label>
-                                        <textarea class="form-control" name="status" placeholder=""></textarea>
+                                    <div class="form-check form-switch">
+
+                                        <input name="status" class="form-check-input" type="checkbox"
+                                               id="flexSwitchCheckChecked" checked>
+                                        <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
                                     </div>
                                 </div>
 
