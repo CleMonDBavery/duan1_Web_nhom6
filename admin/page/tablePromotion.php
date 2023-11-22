@@ -64,12 +64,13 @@
                                         <td><?= $item['endTime'] ?></td>
                                         <td><?= $item['conditionPro'] ?></td>
                                         <td><?= $item['discount'] ?></td>
-                                        <td style="
+                                        <td>
                                             <?php
                                         if ($item['status'] === 'Active') {
-                                            echo 'font-weight: bold; color: green;';
-                                        } ?>">
-                                            <?= $item['status']; ?>
+                                            ?>
+                                            <i class="text-success">  <?= $item['status']; ?>
+                                                <?
+                                                } ?>
                                         </td>
                                         <td>
                                             <a href=" ?page=hiddenPromotion&id=<?= $item['promotionId']; ?>"

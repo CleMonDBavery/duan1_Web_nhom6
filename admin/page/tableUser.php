@@ -4,16 +4,13 @@
     include './assets/include/nav.php';
     ?>
     <div id="main">
-
         <div class="page-heading">
-
             <section class="section">
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title">
                             Quản lí tài khoản được phép
                         </h2>
-                        <!--                        <a href="?page=a" class="btn btn-danger">Thêm</a>-->
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
