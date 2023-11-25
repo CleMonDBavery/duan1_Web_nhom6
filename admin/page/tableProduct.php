@@ -8,9 +8,6 @@
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        <!--                        <h2 class="card-title">-->
-                        <!--                            Quản lí sản phẩm-->
-                        <!--                        </h2>-->
 
                     </div>
                     <div class="card-body">
@@ -29,6 +26,7 @@
                                     <th>Thao tác</th>
                                 </tr>
                                 </thead>
+
                                 <!--List product Active start-->
                                 <?php
                                 $products = new products();
@@ -45,9 +43,9 @@
                                         <td><?= $item['price'] ?></td>
                                         <td
                                             <?php
-                                        if ($item['status'] === 'Active') {
-                                            echo 'class="text-success"';
-                                        } ?>>
+                                            if ($item['status'] === 'Active') {
+                                                echo 'class="text-success"';
+                                            } ?>>
                                             <?= $item['status']; ?>
                                         </td>
                                         <td>
@@ -70,6 +68,14 @@
                     </div>
 
 
+                </div>
+
+            </section>
+
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="table1">
@@ -120,6 +126,7 @@
                             <a href="?page=addProduct" class="btn btn-danger">Thêm</a>
                         </div>
                     </div>
+
                 </div>
 
             </section>
@@ -128,7 +135,7 @@
         </div>
 
         <?php
-                    include './assets/include/footer.php';
-                    ?>
+        include './assets/include/footer.php';
+        ?>
     </div>
 </div>

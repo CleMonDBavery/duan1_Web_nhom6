@@ -19,8 +19,8 @@ if (isset($_POST['edit'])) {
         $fullName == "" ||
         $phone == "" ||
         $email == "" ||
-        $address == "" ||
-        $role == ""
+        $address == ""
+//        $role == ""
     ) {
         $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
         header("location: ?page=updateUser&idU=$userId");
@@ -116,16 +116,14 @@ if (isset($_POST['edit'])) {
                                             <label for="validationCustom04" class="form-label">Quyền</label>
                                             <select name="role" class="form-select" id="validationCustom04" required>
                                                 <?= $select = $users->getInfoProfile($userId, 'role'); ?>
-                                                <option selected disabled
-                                                        value=""><?= $users->getInfoProfile($userId, 'role'); ?></option>
+                                                <option value="<?= $users->getInfoProfile($userId, 'role'); ?>"><?= $users->getInfoProfile($userId, 'role'); ?></option>
                                                 <option <?= ($select === 'admin'); ?>>admin</option>
                                                 <option <?= ($select === 'member'); ?>>member</option>
                                             </select>
                                         </div>
                                         <div class="form-check form-switch">
                                             <input name="status" class="form-check-input" type="checkbox"
-                                                   id="flexSwitchCheckChecked" checked
-                                                   value="<?= $users->getInfoProfile($userId, 'status'); ?>">
+                                                   id="flexSwitchCheckChecked" checked>
                                             <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
                                         </div>
 

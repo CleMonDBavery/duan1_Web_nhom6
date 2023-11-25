@@ -40,7 +40,7 @@
                                         <td><?= $item['discount'] ?></td>
                                         <td>
                                             <?php
-                                        if ($item['status'] === 'Active') {
+                                            if ($item['status'] === 'Active') {
                                             ?>
                                             <i class="text-success">  <?= $item['status']; ?>
                                                 <?

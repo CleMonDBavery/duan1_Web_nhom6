@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N05 - Chức năng order, tài khoản" />
+    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N05 - Chức năng order, tài khoản">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/order/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/order/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/product/addProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/product/addProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/promotion/addPromotion.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/promotion/addPromotion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/tableDetailOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableDetailOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/tableOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/tableProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/tablePromotion.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tablePromotion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/tableUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/users/updateUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/users/updateUser.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,21 +83,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="duan1_Web_nhom6" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="duan1_Web_nhom6" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -122,6 +118,10 @@
       <workItem from="1700526954802" duration="593000" />
       <workItem from="1700528402308" duration="96000" />
       <workItem from="1700528527399" duration="312000" />
+      <workItem from="1700699391726" duration="5209000" />
+      <workItem from="1700817672874" duration="241000" />
+      <workItem from="1700826920128" duration="134000" />
+      <workItem from="1700872499388" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />
@@ -187,7 +187,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev/kientt" />
+                        <option value="dev/develop" />
                       </list>
                     </value>
                   </entry>

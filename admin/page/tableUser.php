@@ -31,8 +31,10 @@
                                 foreach ($list as $item) { ?>
                                     <tbody>
                                     <tr>
-                                        <td><img src="<?= $item['avtar'] ?>" class="rounded-circle" style="width: 50px;"
+                                        <td><img src="../../image/<?= $item['avatar'] ?>" class="rounded-circle"
+                                                 style="width: 50px;"
                                                  alt="Avatar"></td>
+
                                         <td><?= $item['fullName'] ?></td>
                                         <td><?= $item['email'] ?></td>
                                         <td
@@ -96,8 +98,10 @@
                                 foreach ($list as $item) { ?>
                                     <tbody>
                                     <tr>
-                                        <td><img src="<?= $item['avtar'] ?>" class="rounded-circle" style="width: 50px;"
-                                                 alt="Avatar"></td>
+                                        <td><img src="../../image/<?= $item['avatar'] ?>" class="rounded-circle"
+                                                 style="width: 50px;"
+                                                 alt="Avatar">
+                                        </td>
                                         <td><?= $item['fullName'] ?></td>
                                         <td><?= $item['email'] ?></td>
                                         <td
@@ -147,7 +151,3 @@
         ?>
     </div>
 </div>
-
-</body>
-
-</html>

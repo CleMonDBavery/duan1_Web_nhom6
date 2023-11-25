@@ -35,80 +35,92 @@ if (isset($_POST['add'])) {
 ?>
 
 
-<div class="container">
-    <section id="multiple-column-form">
-        <div class="row match-height">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Thêm</h4>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body">
+<div id="app">
+    <div id="main">
+        <?php
+        include './assets/include/nav.php';
+        ?>
+        <div class="container">
+            <section id="multiple-column-form">
+                <div class="row match-height">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Thêm</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
 
-                            <form class="row g-3 needs-validation" novalidate method="post">
-                                <div class="col-md-6">
-                                    <label for="validationCustom01" class="form-label">Mã khuyến mãi</label>
-                                    <input name="name" type="text" class="form-control" id="validationCustom01">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="validationCustom02" class="form-label">Loại khuyến mãi</label>
-                                    <input name="promotionType" type="text" class="form-control"
-                                           id="validationCustom02">
-                                </div>
+                                    <form class="row g-3 needs-validation" novalidate method="post">
+                                        <div class="col-md-6">
+                                            <label for="validationCustom01" class="form-label">Mã khuyến mãi</label>
+                                            <input name="name" type="text" class="form-control" id="validationCustom01">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="validationCustom02" class="form-label">Loại khuyến mãi</label>
+                                            <input name="promotionType" type="text" class="form-control"
+                                                   id="validationCustom02">
+                                        </div>
 
-                                <div class="col-md-6">
-                                    <label for="validationCustom03" class="form-label">Giá giảm</label>
-                                    <input name="discount" type="number" class="form-control" id="validationCustom03"
-                                           required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="validationCustom03" class="form-label">điều kiện</label>
-                                    <input name="$conditionPro" type="text" class="form-control" id="validationCustom03"
-                                           required>
-                                </div>
+                                        <div class="col-md-6">
+                                            <label for="validationCustom03" class="form-label">Giá giảm</label>
+                                            <input name="discount" type="number" class="form-control"
+                                                   id="validationCustom03"
+                                                   required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="validationCustom03" class="form-label">điều kiện</label>
+                                            <input name="$conditionPro" type="text" class="form-control"
+                                                   id="validationCustom03"
+                                                   required>
+                                        </div>
 
-                                <div class="col-md-6">
-                                    <?
-                                    if (!empty($error)) {
-                                        echo '<div style="color: red;">' . $error . '</div>';
-                                    }
-                                    ?>
-                                    <label for="validationCustom03" class="form-label">Ngày bắt đầu</label>
-                                    <input name="startTime" type="date" class="form-control" id="validationCustom03"
-                                           required>
+                                        <div class="col-md-6">
+                                            <?
+                                            if (!empty($error)) {
+                                                echo '<div style="color: red;">' . $error . '</div>';
+                                            }
+                                            ?>
+                                            <label for="validationCustom03" class="form-label">Ngày bắt đầu</label>
+                                            <input name="startTime" type="date" class="form-control"
+                                                   id="validationCustom03"
+                                                   required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <?
+                                            if (!empty($error)) {
+                                                echo '<div style="color: red;">' . $error . '</div>';
+                                            }
+                                            ?>
+                                            <label for="validationCustom03" class="form-label">Ngày kết thúc</label>
+                                            <input name="endTime" type="date" class="form-control"
+                                                   id="validationCustom03"
+                                                   required>
+                                        </div>
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label for="email-id-column">Mô tả</label>
+                                                <textarea class="form-control" name="mota" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check form-switch">
+                                                <input name="status" class="form-check-input" type="checkbox"
+                                                       id="flexSwitchCheckChecked" checked>
+                                                <label class="form-check-label"
+                                                       for="flexSwitchCheckChecked">Active</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button name="add" class="btn btn-primary" type="submit">Thêm</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="col-md-6">
-                                    <?
-                                    if (!empty($error)) {
-                                        echo '<div style="color: red;">' . $error . '</div>';
-                                    }
-                                    ?>
-                                    <label for="validationCustom03" class="form-label">Ngày kết thúc</label>
-                                    <input name="endTime" type="date" class="form-control" id="validationCustom03"
-                                           required>
-                                </div>
-                                <div class="col-md-12 col-12">
-                                    <div class="form-group">
-                                        <label for="email-id-column">Mô tả</label>
-                                        <textarea class="form-control" name="mota" placeholder=""></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check form-switch">
-                                        <input name="status" class="form-check-input" type="checkbox"
-                                               id="flexSwitchCheckChecked" checked>
-                                        <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button name="add" class="btn btn-primary" type="submit">Thêm</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </div>
 </div>
