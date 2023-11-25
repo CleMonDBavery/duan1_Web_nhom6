@@ -7,7 +7,17 @@ class orders
         $db = new connect();
         $sql = "SELECT  `orders`.orderId, `users`.username, `orders`.totalPrice, `orders`.destination, `orders`.status
         FROM orders 
-        JOIN users on `orders`.userId = `users`.userId";
+        JOIN users on `orders`.userId = `users`.userId AND `orders`.status ='Đang vận chuyển'";
+        $result = $db->pdo_execute($sql);
+        return $result;
+    }
+
+    public function getOrderConfirm()
+    {
+        $db = new connect();
+        $sql = "SELECT  `orders`.orderId, `users`.username, `orders`.totalPrice, `orders`.destination, `orders`.status
+        FROM orders 
+        JOIN users on `orders`.userId = `users`.userId AND `orders`.status ='Chờ xác nhận'";
         $result = $db->pdo_execute($sql);
         return $result;
     }

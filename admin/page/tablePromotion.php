@@ -1,42 +1,16 @@
-<script src="./assets/static/js/initTheme.js"></script>
+<title>Quản lí voucher khuyến mãi</title>
 <div id="app">
     <?php
     include './assets/include/nav.php';
     ?>
     <div id="main">
-        <header class="mb-3">
-            <a href="#" class="burger-btn d-block d-xl-none">
-                <i class="bi bi-justify fs-3"></i>
-            </a>
-        </header>
-
         <div class="page-heading">
-            <div class="page-title">
-                <div class="row">
-                    <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Quản lí</h3>
-                    </div>
-                    <div class="col-12 col-md-6 order-md-2 order-first">
-                        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item active"><a href="index.html">Quản lí</a></li>
-                                <li class="breadcrumb-item " aria-current="page">Khuyến mãi</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Minimal jQuery Datatable start -->
-
-            <!-- Minimal jQuery Datatable end -->
-            <!-- Basic Tables start -->
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">
-                            Quản lí mã khuyến mãi
-                        </h5>
+                        <h2 class="card-title">
+                            Quản lí voucher khuyến mãi
+                        </h2>
                         <a href="?page=addPromotion" class="btn btn-danger">Thêm</a>
                     </div>
                     <div class="card-body">
@@ -66,7 +40,7 @@
                                         <td><?= $item['discount'] ?></td>
                                         <td>
                                             <?php
-                                        if ($item['status'] === 'Active') {
+                                            if ($item['status'] === 'Active') {
                                             ?>
                                             <i class="text-success">  <?= $item['status']; ?>
                                                 <?
@@ -74,7 +48,7 @@
                                         </td>
                                         <td>
                                             <a href=" ?page=hiddenPromotion&id=<?= $item['promotionId']; ?>"
-                                               class="btn btn-info">Ẩn</a>
+                                               class="btn btn-warning">Ẩn</a>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -87,25 +61,13 @@
                 </div>
 
             </section>
-            <!-- Basic Tables end -->
 
         </div>
-
         <?php
         include './assets/include/footer.php';
         ?>
     </div>
 </div>
-<!-- <script src="./assets/static/js/components/dark.js"></script>
-    <script src="./assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
-
-    <script src="./assets/compiled/js/app.js"></script>
-
-    <script src="./assets/extensions/jquery/jquery.min.js"></script>
-    <script src="./assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="./assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-    <script src="./assets/static/js/pages/datatables.js"></script> -->
 
 </body>
 
