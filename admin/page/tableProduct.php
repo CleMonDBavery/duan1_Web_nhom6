@@ -12,7 +12,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table" id="table1">
+                            <table class="table" id="">
                                 <h2 class="card-title">
                                     Sản phẩm cho phép
                                 </h2>
@@ -23,7 +23,7 @@
                                     <th>Hình</th>
                                     <th>Giá</th>
                                     <th>Trạng thái</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 250px">Thao tác</th>
                                 </tr>
                                 </thead>
 
@@ -78,7 +78,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table" id="table1">
+                            <table class="table" id="">
                                 <h3 class="card-title">
                                     Sản phẩm không được phép
                                 </h3>
@@ -89,7 +89,7 @@
                                     <th>Hình</th>
                                     <th>Giá</th>
                                     <th>Trạng thái</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 250px">Thao tác</th>
                                 </tr>
                                 </thead>
                                 <!--List product Inactive start-->

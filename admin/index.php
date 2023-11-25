@@ -164,6 +164,9 @@ session_start();
             alert("Bạn không có quyền thực hiện thao tác này!");
         }
     </script>
+    <!--Biểu tượng-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="./assets/static/js/components/dark.js"></script>
     <script src="./assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
@@ -182,6 +185,7 @@ session_start();
     <!--Biểu đồ cột-->
     <script src="./assets/extensions/chart.js/chart.umd.js"></script>
     <script src="./assets/static/js/pages/ui-chartjs.js"></script>
+
 
     </body>
 

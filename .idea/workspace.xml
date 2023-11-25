@@ -6,15 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N05 - Chức năng order, tài khoản">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/content/img/Screenshot (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/content/img/Screenshot (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/include/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/include/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/page/order/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/order/orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/product/addProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/product/addProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/promotion/addPromotion.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/promotion/addPromotion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/tableCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableCategory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/page/tableDetailOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableDetailOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/tableOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableOrder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/page/tableProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/tablePromotion.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tablePromotion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/tableUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/users/updateUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/users/updateUser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/kientt&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/vinhlp&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Ampps/www/duan1_Web_nhom6&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -122,6 +120,7 @@
       <workItem from="1700817672874" duration="241000" />
       <workItem from="1700826920128" duration="134000" />
       <workItem from="1700872499388" duration="17000" />
+      <workItem from="1700884129307" duration="1856000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />
