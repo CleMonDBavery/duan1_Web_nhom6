@@ -43,13 +43,13 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table" id="table1">
+                            <table class="table" id="">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Trạng thái</th>
-                                        <th>Thao tác</th>
+                                        <th style="width: 250px">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <?
@@ -94,13 +94,13 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table" id="table1">
+                            <table class="table" id="">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Name</th>
+                                    <th>Tên loại</th>
                                     <th>Trạng thái</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 250px">Thao tác</th>
                                 </tr>
                                 </thead>
                                 <?

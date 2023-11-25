@@ -31,7 +31,7 @@
                                     <tbody>
                                     <tr>
                                         <td><?= $item['name'] ?></td>
-                                        <td><?= $item['price'] ?></td>
+
                                         <td>
                                             <a class="btn btn-warning"
                                                href="?page=hiddenOrderDetail&idHidden=<?= $item['orderDetailId'] ?>"

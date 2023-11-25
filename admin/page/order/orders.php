@@ -25,7 +25,7 @@ class orders
     public function getOrderDetail($orderId)
     {
         $db = new connect();
-        $sql = "SELECT `products`.name, `orderDetail`.price
+        $sql = "SELECT `products`.name
         FROM orderDetail
         INNER JOIN products ON `orderDetail`.productId = `products`.productId
         WHERE `orderDetail`.orderId = '$orderId' AND orderdetail.status = 'Active' ";
