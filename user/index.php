@@ -105,13 +105,6 @@ include("components/footer.php");
 <script src="contact-form-06/js/popper.js"></script>
 <script src="contact-form-06/js/bootstrap.min.js"></script>
 <script src="contact-form-06/js/jquery.validate.min.js"></script>
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpu7ZtrCfVLrRFwtMqDF0MT48ovWCBmoo=false"></script>-->
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpu7ZtrCfVLrRFwtMqDF0MT48ovWCBmoo&libraries=places"></script>-->
-<script type='text/javascript'
-        src='http://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario&key=[YOUR_BING_MAPS_KEY]' async
-        defer></script>
-
-<script src="contact-form-06/js/google-map.js"></script>
 <script src="contact-form-06/js/main.js"></script>
 
 </body>
