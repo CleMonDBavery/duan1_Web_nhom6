@@ -38,12 +38,18 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif] -->
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="contact-form-06/css/style.css"/>
 </head>
 
 <body>
 <?php
 include("components/header.php");
 include("components/nav.php");
+include("contact-form-06/php/sendEmail.php");
 
 
 if (isset($_GET['page'])) {
@@ -63,6 +69,9 @@ if (isset($_GET['page'])) {
             break;
         case 'sanpham':
             require_once 'dm/sp-dm.php';
+            break;
+        case 'contact':
+            require_once 'contact.php';
             break;
         default:
             require_once 'index.php';
@@ -89,6 +98,21 @@ include("components/footer.php");
 <script src="contents/js/nouislider.min.js"></script>
 <script src="contents/js/jquery.zoom.min.js"></script>
 <script src="contents/js/main.js"></script>
+
+<!--Map-->
+
+<script src="contact-form-06/js/jquery.min.js"></script>
+<script src="contact-form-06/js/popper.js"></script>
+<script src="contact-form-06/js/bootstrap.min.js"></script>
+<script src="contact-form-06/js/jquery.validate.min.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpu7ZtrCfVLrRFwtMqDF0MT48ovWCBmoo=false"></script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpu7ZtrCfVLrRFwtMqDF0MT48ovWCBmoo&libraries=places"></script>-->
+<script type='text/javascript'
+        src='http://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario&key=[YOUR_BING_MAPS_KEY]' async
+        defer></script>
+
+<script src="contact-form-06/js/google-map.js"></script>
+<script src="contact-form-06/js/main.js"></script>
 
 </body>
 
