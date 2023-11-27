@@ -42,6 +42,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
+
     <link rel="stylesheet" href="contact-form-06/css/style.css"/>
 </head>
 
@@ -72,6 +73,15 @@ if (isset($_GET['page'])) {
             break;
         case 'contact':
             require_once 'contact.php';
+            break;
+        case 'login':
+            require_once 'login.php';
+            break;
+        case'register':
+            require_once 'register.php';
+            break;
+        case 'policy':
+            require_once 'policy.php';
             break;
         default:
             require_once 'index.php';

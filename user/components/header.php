@@ -43,8 +43,8 @@
                             <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
                             <!-- <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li> -->
                             <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-                            <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+                            <li><a href="?page=login"><i class="fa fa-unlock-alt"></i> Login</a></li>
+                            <li><a href="?page=register"><i class="fa fa-user-plus"></i> Create An Account</a></li>
                         </ul>
                     </li>
                     <!-- /Account -->

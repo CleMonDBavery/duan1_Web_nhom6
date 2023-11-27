@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N09 - Page contact">
+    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N011 - page login, register and policy">
+      <change afterPath="$PROJECT_DIR$/user/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/components/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/components/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/components/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/contents/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/contents/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +77,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/vinhlp&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Ampps/www/duan1_Web_nhom6&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -137,6 +142,9 @@
       <workItem from="1700999999972" duration="20000" />
       <workItem from="1701000216377" duration="8000" />
       <workItem from="1701012514495" duration="320000" />
+      <workItem from="1701087134880" duration="2725000" />
+      <workItem from="1701090562519" duration="2284000" />
+      <workItem from="1701093021014" duration="713000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />
@@ -202,7 +210,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/dev/develop" />
+                        <option value="dev/develop" />
                       </list>
                     </value>
                   </entry>
@@ -221,7 +229,9 @@
     <MESSAGE value="N05 - Chức năng order" />
     <MESSAGE value="N05 - Chức năng order, tài khoản" />
     <MESSAGE value="N08 - Thay đổi bố cục Navbard" />
-    <option name="LAST_COMMIT_MESSAGE" value="N08 - Thay đổi bố cục Navbard" />
+    <MESSAGE value="N010 - Update page contact" />
+    <MESSAGE value="N011 - page login, register and policy" />
+    <option name="LAST_COMMIT_MESSAGE" value="N011 - page login, register and policy" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
