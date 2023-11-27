@@ -1,22 +1,29 @@
+<?php
+include './assets/include/nav.php';
+
+$orders = new orders();
+$listConfirmed = $orders->getOrder();
+$listPending = $orders->getOrderConfirm();
+?>
+
 <title>Quản lí hóa đơn</title>
 
 <div id="app">
-    <?php include './assets/include/nav.php'; ?>
     <div id="main">
         <section class="section">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">
-                        Quản lí hóa đơn
+                        Hóa đơn chờ xác nhận
                     </h2>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table" id="table1">
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th>Người mua</th>
-                                <th>Tổng giá</th>
+                                <th>Tổng Tiền</th>
                                 <th>Ngày mua</th>
                                 <th>Địa chỉ</th>
                                 <th>Trạng thái</th>
@@ -25,12 +32,13 @@
                             </thead>
                             <tbody>
                             <?php
-                            $orders = new orders();
-                            $list = $orders->getOrderConfirm();
-                            foreach ($list as $item) { ?>
+                            foreach ($listPending as $item) {
+                                $orderTotal = $orders->getOrderTotal($item['orderId']); // Get total price for the order
+
+                                ?>
                                 <tr>
                                     <td><?= $item['username'] ?></td>
-                                    <td><?= $item['totalPrice'] ?></td>
+                                    <td><?= number_format($orderTotal) ?> VND</td>
                                     <td>01/01/2023</td>
                                     <td><?= $item['destination'] ?></td>
                                     <td>
@@ -57,21 +65,20 @@
             </div>
         </section>
 
-
         <section class="section">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">
-                        Quản lí hóa đơn
+                        Hóa đơn đã xác nhận
                     </h2>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table" id="table1">
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th>Người mua</th>
-                                <th>Tổng giá</th>
+                                <th>Tổng tiền</th>
                                 <th>Ngày mua</th>
                                 <th>Địa chỉ</th>
                                 <th>Trạng thái</th>
@@ -79,13 +86,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php
-                            $orders = new orders();
-                            $list = $orders->getOrder();
-                            foreach ($list as $item) { ?>
+                            <?php foreach ($listConfirmed as $item) {
+                                $orderTotal = $orders->getOrderTotal($item['orderId']); // Get total price for the order
+                                ?>
                                 <tr>
                                     <td><?= $item['username'] ?></td>
-                                    <td><?= $item['totalPrice'] ?></td>
+                                    <td><?= number_format($orderTotal) ?> VND</td>
                                     <td>01/01/2023</td>
                                     <td><?= $item['destination'] ?></td>
                                     <td>
