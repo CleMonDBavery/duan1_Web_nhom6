@@ -67,7 +67,7 @@ if (isset($_POST['editPD'])) {
         <?php
         include './assets/include/nav.php';
         ?>
-
+        <div class="container">
     <section id="multiple-column-form">
         <div class="row match-height">
             <div class="col-12">
@@ -93,6 +93,13 @@ if (isset($_POST['editPD'])) {
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
+                                            <label for="city-column">Hình ảnh</label>
+                                            <input type="file" class="form-control" placeholder="" name="image"
+                                                   value="<?php echo $Product->getInfoProduct($productId, 'image'); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
                                             <label for="last-name-column">Giá</label>
                                             <input type="number" class="form-control" placeholder="" name="price" value="<?php echo $Product->getInfoProduct($productId, 'price'); ?>">
                                         </div>
@@ -103,12 +110,7 @@ if (isset($_POST['editPD'])) {
                                             <input type="number" class="form-control" placeholder="" name="priceSale" value="<?php echo $Product->getInfoProduct($productId, 'priceSale'); ?>">
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="city-column">Hình ảnh</label>
-                                            <input type="file" class="form-control" placeholder="" name="image" value="<?php echo $Product->getInfoProduct($productId, 'image'); ?>">
-                                        </div>
-                                    </div>
+
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
@@ -120,15 +122,11 @@ if (isset($_POST['editPD'])) {
                                             echo $selectDropdown;
                                             ?>
                                         </div>
-                                        <div class="form-check form-switch">
-                                            <input name="status" class="form-check-input" type="checkbox"
-                                                   id="flexSwitchCheckChecked" checked>
-                                            <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
-                                        </div>
+
                                     </div>
 
                                     <div class="col-md-6 col-12">
-                                        <label for="validationCustom04" class="form-label">Giới tính</label>
+                                        <label for="validationCustom04" class="">Giới tính</label>
                                         <select name="gender" class="form-select" id="validationCustom04" required>
                                             <?= $select = $Product->getInfoProduct($productId, 'gender'); ?>
                                             <option value="<?= $Product->getInfoProduct($productId, 'gender'); ?>"><?= $Product->getInfoProduct($productId, 'gender'); ?></option>
@@ -141,6 +139,16 @@ if (isset($_POST['editPD'])) {
                                         <div class="form-group">
                                             <label for="email-id-column">Mô tả</label>
                                             <input class="form-control" name="mota" placeholder="" value="<?php echo $Product->getInfoProduct($productId, 'description'); ?>"></input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="form-check form-switch">
+                                                <input name="status" class="form-check-input" type="checkbox"
+                                                       id="flexSwitchCheckChecked" checked>
+                                                <label class="form-check-label"
+                                                       for="flexSwitchCheckChecked">Active</label>
+                                            </div>
                                         </div>
                                     </div>
 

@@ -75,7 +75,7 @@ if (isset($_POST['addPD'])) {
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Thêm sản phẩm</h4>
+                                <h2 class="card-title">Thêm sản phẩm</h2>
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
@@ -97,6 +97,12 @@ if (isset($_POST['addPD'])) {
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
+                                                    <label for="city-column">Hình ảnh</label>
+                                                    <input type="file" class="form-control" placeholder="" name="image">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
                                                     <label for="last-name-column">Giá</label>
                                                     <input type="number" class="form-control" placeholder=""
                                                            name="price">
@@ -111,7 +117,17 @@ if (isset($_POST['addPD'])) {
                                             </div>
 
                                             <div class="col-md-6 col-12">
-                                                <label for="validationCustom04" class="form-label">Giới tính</label>
+                                                <div class="form-group">
+                                                    <label for="city-column">Danh mục</label>
+                                                    <?php
+                                                    $selectDropdown = $products->renderCategorySelect();
+                                                    echo $selectDropdown;
+                                                    ?>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <label for="validationCustom04" class="">Giới tính</label>
                                                 <select name="gender" class="form-select" id="validationCustom04"
                                                         required>
                                                     <option value=""></option>
@@ -120,40 +136,30 @@ if (isset($_POST['addPD'])) {
                                                 </select>
                                             </div>
 
-                                            <div class="col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="city-column">Hình ảnh</label>
-                                                    <input type="file" class="form-control" placeholder="" name="image">
-                                                </div>
-                                            </div>
+
+
 
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <label for="city-column">Danh mục</label>
-                                                    <?php
-                                                    $selectDropdown = $products->renderCategorySelect();
-                                                    echo $selectDropdown;
-                                                    ?>
-                                                </div>
-                                                <div class="form-check form-switch">
-                                                    <input name="status" class="form-check-input" type="checkbox"
-                                                           id="flexSwitchCheckChecked" checked>
-                                                    <label class="form-check-label"
-                                                           for="flexSwitchCheckChecked">Active</label>
+                                                    <label for="email-id-column">Mô tả</label>
+                                                    <input class="form-control" name="mota"
+                                                           placeholder=""></input>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <label for="email-id-column">Mô tả</label>
-                                                    <textarea class="form-control" name="mota"
-                                                              placeholder=""></textarea>
+                                                    <div class="form-check form-switch">
+                                                        <input name="status" class="form-check-input" type="checkbox"
+                                                               id="flexSwitchCheckChecked" checked>
+                                                        <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
+                                                    </div>
                                                 </div>
                                             </div>
 
 
                                             <div class="col-12 d-flex justify-content-end">
                                                 <button type="submit" class="btn btn-primary me-1 mb-1" name="addPD">
-                                                    Submit
+                                                    Thêm
                                                 </button>
                                                 <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset
                                                 </button>

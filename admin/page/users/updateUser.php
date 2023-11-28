@@ -112,6 +112,7 @@ if (isset($_POST['edit'])) {
                                                    id="validationCustom03"
                                                    value="<?= $users->getInfoProfile($userId, 'address'); ?>">
                                         </div>
+
                                         <div class="col-md-6 col-12">
                                             <label for="validationCustom04" class="form-label">Quyền</label>
                                             <select name="role" class="form-select" id="validationCustom04" required>
@@ -121,6 +122,7 @@ if (isset($_POST['edit'])) {
                                                 <option <?= ($select === 'member'); ?>>member</option>
                                             </select>
                                         </div>
+
                                         <div class="form-check form-switch">
                                             <input name="status" class="form-check-input" type="checkbox"
                                                    id="flexSwitchCheckChecked" checked>
