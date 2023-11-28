@@ -31,9 +31,16 @@
                                 foreach ($list as $item) { ?>
                                     <tbody>
                                     <tr>
-                                        <td><img src="../../image/<?= $item['avatar'] ?>" class="rounded-circle"
-                                                 style="width: 50px;"
-                                                 alt="Avatar"></td>
+                                        <td>
+                                            <?php
+                                            if (!empty($item['avatar'])) {
+                                                echo '<img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" style="width: 50px;" alt="Default Avatar" />';
+                                            } else {
+                                                echo '<img src="../../image/' . $item['avatar'] . '" class="rounded-circle" style="width: 50px;" alt="Avatar" />';
+                                            }
+                                            ?>
+                                        </td>
+
 
                                         <td><?= $item['fullName'] ?></td>
                                         <td><?= $item['email'] ?></td>

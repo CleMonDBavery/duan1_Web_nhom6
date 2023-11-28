@@ -50,7 +50,7 @@
 <?php
 include("components/header.php");
 include("components/nav.php");
-include("contact-form-06/php/sendEmail.php");
+//include("contact-form-06/php/sendEmail.php");
 
 
 if (isset($_GET['page'])) {
@@ -68,9 +68,7 @@ if (isset($_GET['page'])) {
         case 'productPage':
             require_once 'product-page.php';
             break;
-        case 'sanpham':
-            require_once 'dm/sp-dm.php';
-            break;
+
         case 'contact':
             require_once 'contact.php';
             break;

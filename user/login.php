@@ -13,28 +13,30 @@
 
                                 <form>
 
-                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
-                                        account</h5>
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Đăng nhập vào tài
+                                        khoản</h5>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example17" class="form-control form-control-lg"/>
-                                        <label class="form-label" for="form2Example17">Email address</label>
+                                        <label class="form-label" for="form2Example17">Tài khoản</label>
+                                        <input type="email" id="form2Example17" class="form-control form-control-lg"
+                                               placeholder="Tên đăng nhập"/>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example27"
+                                        <label class="form-label" for="form2Example27">Mật khẩu</label>
+
+                                        <input type="password" id="form2Example27" placeholder="Mật khẩu"
                                                class="form-control form-control-lg"/>
-                                        <label class="form-label" for="form2Example27">Password</label>
                                     </div>
 
                                     <div class="pt-1 mb-4">
-                                        <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                                        <button class="btn btn-dark btn-lg btn-block" type="button">Đăng nhập</button>
                                     </div>
 
-                                    <a class="small text-muted" href="#!">Forgot password?</a>
-                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
-                                                                                                              style="color: #393f81;">Register
-                                            here</a></p>
+                                    <a class="small text-muted" href="#!">Quên mật khẩu</a>
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn chưa có tài khoản? <a
+                                                href="?page=register"
+                                                style="color: #393f81;">Đăng ký tại đây</a></p>
                                     <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998"
                                        href="#!"
                                        role="button">
