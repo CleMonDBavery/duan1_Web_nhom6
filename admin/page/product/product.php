@@ -25,15 +25,15 @@ class products
         return $result;
     }
 
-    public function add($name, $priceSale, $price, $description, $categoryId, $image, $status)
+    public function add($name, $priceSale, $price, $description, $categoryId, $image, $status, $gender)
     {
         $db = new connect();
-        $query = "INSERT INTO products (`name`, `priceSale`, `price`, `image`, `description`, `categoryId`, `status`) VALUES ('$name', '$priceSale', '$price', '$image', '$description', '$categoryId', '$status')";
+        $query = "INSERT INTO products (`name`, `priceSale`, `price`, `image`, `description`, `categoryId`, `status`, `gender`) VALUES ('$name', '$priceSale', '$price', '$image', '$description', '$categoryId', '$status', '$gender')";
         $result = $db->pdo_execute($query);
         return $result;
     }
 
-    public function update($productId, $name, $priceSale, $price, $description, $categoryId, $image, $status)
+    public function update($productId, $name, $priceSale, $price, $description, $categoryId, $image, $status, $gender)
     {
         $db = new connect();
         $query = "UPDATE products SET 
@@ -43,7 +43,8 @@ class products
         priceSale = '$priceSale',
         description = '$description', 
         categoryId = '$categoryId',
-        status = '$status'
+        status = '$status',
+        gender = '$gender'
         where productId = '" . $productId . "'";
         $result = $db->pdo_execute($query);
         return $result;
