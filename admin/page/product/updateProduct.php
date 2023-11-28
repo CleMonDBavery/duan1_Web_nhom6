@@ -16,6 +16,7 @@ if (isset($_POST['editPD'])) {
     $description = $_POST['mota'];
     $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Active' : 'Inactive';
     $categoryId = $_POST['category'];
+    $gender = $_POST['gender'];
 //    header("location: ?page=tableProduct");
 
 //    bắt lỗi form
@@ -42,7 +43,7 @@ if (isset($_POST['editPD'])) {
 //        exit;
 //    }
     if (move_uploaded_file($file, $path)) {
-        $result = $Product->update($productId, $name, $priceSale, $price, $description, $categoryId, $image, $status);
+        $result = $Product->update($productId, $name, $priceSale, $price, $description, $categoryId, $image, $status, $gender);
 
         if ($result) {
             $_SESSION['success'] = 'Thêm danh mục thành công!';
@@ -125,6 +126,17 @@ if (isset($_POST['editPD'])) {
                                             <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6 col-12">
+                                        <label for="validationCustom04" class="form-label">Giới tính</label>
+                                        <select name="gender" class="form-select" id="validationCustom04" required>
+                                            <?= $select = $Product->getInfoProduct($productId, 'gender'); ?>
+                                            <option value="<?= $Product->getInfoProduct($productId, 'gender'); ?>"><?= $Product->getInfoProduct($productId, 'gender'); ?></option>
+                                            <option <?= ($select === 'Nam'); ?>>Nam</option>
+                                            <option <?= ($select === 'Nữ'); ?>>Nữ</option>
+                                        </select>
+                                    </div>
+
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="email-id-column">Mô tả</label>

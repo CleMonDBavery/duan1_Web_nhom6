@@ -16,33 +16,34 @@ if (isset($_POST['addPD'])) {
     $description = $_POST['mota'];
     $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Active' : 'Inactive';
     $categoryId = $_POST['category'];
+    $gender = $_POST['gender'];
 
-    if (
-        $name == "" ||
-        $price == "" ||
-        $description == "" ||
-        $categoryId == ""
-    ) {
-        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
-        header("location: index.php?page=addProduct");
-        exit;
-    }
-    if ($price >= $priceSale) {
-        $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
-        header("location: index.php?page=addProduct");
-        exit;
-    }
-    // Kiểm tra xem tên sản phẩm đã tồn tại hay chưa
-    $existingProduct = $products->getProductByName($name);
-    if ($existingProduct) {
-        $_SESSION['error'] = '*Sản phẩm đã tồn tại!';
-        header("location: index.php?page=addProduct");
-        exit;
-    } else {
+//    if (
+//        $name == "" ||
+//        $price == "" ||
+//        $description == "" ||
+//        $categoryId == ""
+//    ) {
+//        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+//        header("location: index.php?page=addProduct");
+//        exit;
+//    }
+//    if ($price >= $priceSale) {
+//        $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
+//        header("location: index.php?page=addProduct");
+//        exit;
+//    }
+//    // Kiểm tra xem tên sản phẩm đã tồn tại hay chưa
+//    $existingProduct = $products->getProductByName($name);
+//    if ($existingProduct) {
+//        $_SESSION['error'] = '*Sản phẩm đã tồn tại!';
+//        header("location: index.php?page=addProduct");
+//        exit;
+//    } else {
         require_once "Product.php";
-
+    print_r($gender);
         if (move_uploaded_file($file, $path)) {
-            $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status);
+            $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status, $gender);
 //             var_dump($result);
 //             exit();
             if ($result) {
@@ -59,7 +60,7 @@ if (isset($_POST['addPD'])) {
             header("location: ?page=addProduct");
             exit;
         }
-    }
+
 }
 ?>
 
@@ -108,6 +109,17 @@ if (isset($_POST['addPD'])) {
                                                            name="priceSale">
                                                 </div>
                                             </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <label for="validationCustom04" class="form-label">Giới tính</label>
+                                                <select name="gender" class="form-select" id="validationCustom04"
+                                                        required>
+                                                    <option value=""></option>
+                                                    <option>Nam</option>
+                                                    <option>Nữ</option>
+                                                </select>
+                                            </div>
+
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="city-column">Hình ảnh</label>
