@@ -1,7 +1,8 @@
 <?php
-$id = $_GET['id'];
+$productId = $_GET['id'];
 $products = new products();
-$idproduct = $products->getById($id);
+$idProduct = $products->getById($productId);
+$pdCategory = $idProduct['categoryId'];
 
 
 ?>
@@ -18,7 +19,7 @@ $idproduct = $products->getById($id);
             <li><a href="#">Home</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">Category</a></li>
-            <li class="active"><? $name ?></li>
+            <li class="active"><?= $idProduct['name']; ?></li>
         </ul>
     </div>
 </div>
@@ -35,7 +36,7 @@ $idproduct = $products->getById($id);
                 <div class="col-md-6">
                     <div id="product-main-view">
                         <div class="product-view">
-                            <img src="contents/img/main-product01.jpg" alt="">
+                            <img src="../image/<?= $idProduct['image']; ?>" style="" alt="">
                         </div>
                         <!-- <div class="product-view">
                             <img src="contents/img/main-product02.jpg" alt="">
@@ -68,9 +69,9 @@ $idproduct = $products->getById($id);
                             <span>New</span>
                             <span class="sale">-20%</span>
                         </div>
-                        <h2 class="product-name">Product Name Goes Here</h2>
-                        <h3 class="product-price">$32.50
-                            <del class="product-old-price">$45.00</del>
+                        <h2 class="product-name"><?= $idProduct['name']; ?></h2>
+                        <h3 class="product-price"><?= number_format($idProduct['price']); ?> VND
+                            <del class="product-old-price"><?= number_format($idProduct['priceSale']); ?> VND</del>
                         </h3>
                         <div>
                             <div class="product-rating">
@@ -84,12 +85,7 @@ $idproduct = $products->getById($id);
                         </div>
                         <p><strong>Availability:</strong> In Stock</p>
                         <p><strong>Brand:</strong> E-SHOP</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                            anim id est laborum.</p>
+                        <p><?= $idProduct['description'] ?></p>
                         <div class="product-options">
                             <ul class="size-option">
                                 <li><span class="text-uppercase">Size:</span></li>
@@ -97,13 +93,13 @@ $idproduct = $products->getById($id);
                                 <li><a href="#">XL</a></li>
                                 <li><a href="#">SL</a></li>
                             </ul>
-                            <ul class="color-option">
-                                <li><span class="text-uppercase">Color:</span></li>
-                                <li class="active"><a href="#" style="background-color:#475984;"></a></li>
-                                <li><a href="#" style="background-color:#8A2454;"></a></li>
-                                <li><a href="#" style="background-color:#BF6989;"></a></li>
-                                <li><a href="#" style="background-color:#9A54D8;"></a></li>
-                            </ul>
+                            <!--                            <ul class="color-option">-->
+                            <!--                                <li><span class="text-uppercase">Color:</span></li>-->
+                            <!--                                <li class="active"><a href="#" style="background-color:#475984;"></a></li>-->
+                            <!--                                <li><a href="#" style="background-color:#8A2454;"></a></li>-->
+                            <!--                                <li><a href="#" style="background-color:#BF6989;"></a></li>-->
+                            <!--                                <li><a href="#" style="background-color:#9A54D8;"></a></li>-->
+                            <!--                            </ul>-->
                         </div>
 
                         <div class="product-btns">
@@ -125,17 +121,19 @@ $idproduct = $products->getById($id);
                     <div class="product-tab">
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-                            <li><a data-toggle="tab" href="#tab1">Details</a></li>
+                            <!--                            <li><a data-toggle="tab" href="#tab1">Details</a></li>-->
                             <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="tab1" class="tab-pane fade in active">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                    deserunt mollit anim id est laborum.</p>
+                                <p><strong>HƯỚNG DẪN BẢO QUẢN</strong><br>
+                                    – Giặt máy ở nhiệt độ tối đa 30độC, giặt bên trong túi giặt và vắt ở tốc độ thấp để
+                                    sản phẩm được bảo vệ tốt hơn.<br>
+                                    – Không sử dụng nước tẩy, thuốc tẩy, bột giặt có chất tẩy mạnh. Không giặt chung sản
+                                    phẩm màu trắng với các sản phẩm khác màu tránh tình trạng loang màu.<br>
+                                    – Phơi ngay sau khi giặt giúp sản phẩm đỡ nhăn, phơi mặt trái ở bóng râm giúp sản
+                                    phẩm lưu giữ màu tốt hơn.<br>
+                                    – Là sản phẩm ở nhiệt độ dưới 110độC, ưu tiên dùng bàn là hơi nước.</p>
                             </div>
                             <div id="tab2" class="tab-pane fade in">
 
@@ -283,130 +281,42 @@ $idproduct = $products->getById($id);
             </div>
             <!-- section title -->
 
+            <?
+            $list = $products->moreProduct($pdCategory);
+            echo $list;
+            ?>
             <!-- Product Single -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="product product-single">
-                    <div class="product-thumb">
-                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                        <img src="contents/img/product04.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-price">$32.50</h3>
-                        <div class="product-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o empty"></i>
-                        </div>
-                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                        <div class="product-btns">
-                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Product Single -->
-
-            <!-- Product Single -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="product product-single">
-                    <div class="product-thumb">
-                        <div class="product-label">
-                            <span>New</span>
-                        </div>
-                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                        <img src="contents/img/product03.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-price">$32.50</h3>
-                        <div class="product-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o empty"></i>
-                        </div>
-                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                        <div class="product-btns">
-                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Product Single -->
-
-            <!-- Product Single -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="product product-single">
-                    <div class="product-thumb">
-                        <div class="product-label">
-                            <span class="sale">-20%</span>
-                        </div>
-                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                        <img src="contents/img/product02.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-price">$32.50
-                            <del class="product-old-price">$45.00</del>
-                        </h3>
-                        <div class="product-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o empty"></i>
-                        </div>
-                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                        <div class="product-btns">
-                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Product Single -->
-
-            <!-- Product Single -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="product product-single">
-                    <div class="product-thumb">
-                        <div class="product-label">
-                            <span>New</span>
-                            <span class="sale">-20%</span>
-                        </div>
-                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                        <img src="contents/img/product01.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-price">$32.50
-                            <del class="product-old-price">$45.00</del>
-                        </h3>
-                        <div class="product-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o empty"></i>
-                        </div>
-                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                        <div class="product-btns">
-                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--            <div class="col-md-3 col-sm-6 col-xs-6">-->
+            <!--                <div class="product product-single">-->
+            <!--                    <div class="product-thumb">-->
+            <!--                        <div class="product-label">-->
+            <!--                            <span>New</span>-->
+            <!--                            <span class="sale">-20%</span>-->
+            <!--                        </div>-->
+            <!--                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>-->
+            <!--                        <img src="contents/img/product01.jpg" alt="">-->
+            <!--                    </div>-->
+            <!--                    <div class="product-body">-->
+            <!--                        <h3 class="product-price">$32.50-->
+            <!--                            <del class="product-old-price">$45.00</del>-->
+            <!--                        </h3>-->
+            <!--                        <div class="product-rating">-->
+            <!--                            <i class="fa fa-star"></i>-->
+            <!--                            <i class="fa fa-star"></i>-->
+            <!--                            <i class="fa fa-star"></i>-->
+            <!--                            <i class="fa fa-star"></i>-->
+            <!--                            <i class="fa fa-star-o empty"></i>-->
+            <!--                        </div>-->
+            <!--                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>-->
+            <!--                        <div class="product-btns">-->
+            <!--                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>-->
+            <!--                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
+            <!--                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart-->
+            <!--                            </button>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
             <!-- /Product Single -->
         </div>
         <!-- /row -->
