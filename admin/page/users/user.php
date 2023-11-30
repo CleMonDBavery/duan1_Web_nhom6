@@ -33,10 +33,21 @@ class User
             return false;
     }
 
+    function checkClient($username, $password)
+    {
+        $db = new connect();
+        $select = "SELECT * from users where userName='$username' AND Password='$password' AND `role` ='member' ";
+        $result = $db->pdo_query_one($select);
+        if ($result != null)
+            return true;
+        else
+            return false;
+    }
+
     function userId($username, $password)
     {
         $db = new connect();
-        $select = "SELECT userId from users where UserName='$username' and Password='$password'";
+        $select = "SELECT userId from users where username='$username' and password='$password'";
         $result = $db->pdo_query_one($select);
         return $result;
     }

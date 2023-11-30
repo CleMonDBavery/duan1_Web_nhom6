@@ -1,3 +1,10 @@
+<?php
+ob_start();
+session_start();
+//if (isset($_SESSION['member'])) {
+//    echo 'hello';
+//}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,11 +54,20 @@
 </head>
 
 <body>
+
 <?php
+
+include '../admin/assets/include/pdo.php';
+include '../admin/page/product/product.php';
+include '../admin/page/categories/category.php';
+include '../admin/page/order/orders.php';
+include '../admin/page/comment/comment.php';
+include '../admin/page/users/user.php';
+include '../admin/page/promotion/promotions.php';
+
 include("components/header.php");
 include("components/nav.php");
 //include("contact-form-06/php/sendEmail.php");
-
 
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
@@ -66,7 +82,7 @@ if (isset($_GET['page'])) {
             break;
 
         case 'productPage':
-            require_once 'product-page.php';
+            include 'productPage.php';
             break;
 
         case 'contact':
@@ -89,7 +105,7 @@ if (isset($_GET['page'])) {
     require_once 'index.php';
     include("components/home.php");
     include("components/categories.php");
-    include("components/dealday.php");
+//    include("components/dealday.php");
     include("components/end.php");
     include("components/products.php");
 
@@ -118,3 +134,6 @@ include("components/footer.php");
 </body>
 
 </html>
+<?
+ob_end_flush();
+?>

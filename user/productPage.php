@@ -1,3 +1,10 @@
+<?php
+$id = $_GET['id'];
+$products = new products();
+$idproduct = $products->getById($id);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +18,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">Category</a></li>
-            <li class="active">Product Name Goes Here</li>
+            <li class="active"><? $name ?></li>
         </ul>
     </div>
 </div>
