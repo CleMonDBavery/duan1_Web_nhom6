@@ -7,8 +7,7 @@ if (isset($_POST['addPD'])) {
     $image = $_FILES['image']['name'];
 //    print_r($image);
 
-    $path = "../admin/assets/content/img/" . $image;
-
+    $path = "../image/" . $image;
 
     $name = $_POST['namepd'];
     $price = $_POST['price'];
@@ -40,26 +39,26 @@ if (isset($_POST['addPD'])) {
 //        header("location: index.php?page=addProduct");
 //        exit;
 //    } else {
-        require_once "Product.php";
+    require_once "Product.php";
     print_r($gender);
-        if (move_uploaded_file($file, $path)) {
-            $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status, $gender);
+    if (move_uploaded_file($file, $path)) {
+        $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status, $gender);
 //             var_dump($result);
 //             exit();
-            if ($result) {
-                $_SESSION['success'] = 'Thêm danh mục thành công!';
-                header("location: ?page=tableProduct");
-                exit;
-            } else {
-                $_SESSION['error'] = 'Thêm danh mục thất bại!';
-                header("location: ?page=addProduct");
-                exit;
-            }
+        if ($result) {
+            $_SESSION['success'] = 'Thêm danh mục thành công!';
+            header("location: ?page=tableProduct");
+            exit;
         } else {
-            $_SESSION['error'] = 'Lỗi di chuyển file!';
+            $_SESSION['error'] = 'Thêm danh mục thất bại!';
             header("location: ?page=addProduct");
             exit;
         }
+    } else {
+        $_SESSION['error'] = 'Lỗi di chuyển file!';
+        header("location: ?page=addProduct");
+        exit;
+    }
 
 }
 ?>
@@ -135,8 +134,6 @@ if (isset($_POST['addPD'])) {
                                                     <option>Nữ</option>
                                                 </select>
                                             </div>
-
-
 
 
                                             <div class="col-md-6 col-12">

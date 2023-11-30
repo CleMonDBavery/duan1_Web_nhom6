@@ -37,7 +37,7 @@
                                         <td><?= $item['productId'] ?></td>
                                         <td><?= $item['name'] ?></td>
                                         <td class="w-25">
-                                            <img src="./assets/content/img/<?= $item['image'] ?>"
+                                            <img src="../../image/<?= $item['image'] ?>"
                                                  class="img-thumbnail w-75" alt="...">
                                         </td>
                                         <td><?= $item['price'] ?></td>
@@ -102,7 +102,7 @@
                                         <td><?= $item['productId'] ?></td>
                                         <td><?= $item['name'] ?></td>
                                         <td class="w-25">
-                                            <img src="./assets/content/img/<?= $item['image'] ?>"
+                                            <img src="../../image/<?= $item['image'] ?>"
                                                  class="img-thumbnail w-75" alt="...">
                                         </td>
                                         <td><?= $item['price'] ?></td>

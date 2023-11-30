@@ -7,7 +7,7 @@ if (isset($_POST['editPD'])) {
 
     $file = $_FILES['image']['tmp_name'];
     $image = $_FILES['image']['name'];
-    $path = realpath("../admin/assets/content/img") . "/" . $image;
+    $path = realpath("../image") . "/" . $image;
 //    $path = "../admin/assets/content/img/" . $image;
 
     $name = $_POST['namepd'];

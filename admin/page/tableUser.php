@@ -11,6 +11,7 @@
                         <h2 class="card-title">
                             Quản lí tài khoản được phép
                         </h2>
+                        <!--<a href="?page=a" class="btn btn-danger">Thêm</a>-->
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -33,7 +34,7 @@
                                     <tr>
                                         <td>
                                             <?php
-                                            if (!empty($item['avatar'])) {
+                                            if (empty($item['avatar'])) {
                                                 echo '<img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" style="width: 50px;" alt="Default Avatar" />';
                                             } else {
                                                 echo '<img src="../../image/' . $item['avatar'] . '" class="rounded-circle" style="width: 50px;" alt="Avatar" />';
@@ -84,7 +85,7 @@
                         <h2 class="card-title">
                             Quản lí tài khoản không được phép
                         </h2>
-                        <!--                        <a href="?page=a" class="btn btn-danger">Thêm</a>-->
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
