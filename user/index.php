@@ -97,6 +97,11 @@ if (isset($_GET['page'])) {
         case 'policy':
             require_once 'policy.php';
             break;
+        case 'profile':
+            require_once 'profile.php';
+            break;
+
+
         default:
             require_once 'index.php';
             break;

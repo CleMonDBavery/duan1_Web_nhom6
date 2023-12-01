@@ -14,8 +14,12 @@
                     </div>
                     <!-- /footer logo -->
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna</p>
+                    <p>SỐ ĐKKD 0316291796 CẤP NGÀY 26/05/2020 DO SỞ KẾ HOẠCH VÀ ĐẦU TƯ ​TP.​ HCM
+                    </p>
+                    <p>ĐỊA CHỈ: 17 30/4, HƯNG LỢI, NINH KIỀU, CẦN THƠ
+                    </p>
+                    <p>EMAIL: ABCD@GMAIL>COM
+                    <p>HOTLINE: 1900 633 494</p>
 
                     <!-- footer social -->
                     <ul class="footer-social">
@@ -33,13 +37,13 @@
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
-                    <h3 class="footer-header">My Account</h3>
+                    <h3 class="footer-header">Trang</h3>
                     <ul class="list-links">
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">My Wishlist</a></li>
-                        <li><a href="#">Compare</a></li>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="index.php">Trang chủ</a></li>
+                        <li><a href="?page=products">Sản phẩm</a></li>
+                        <li><a href="?page=contact">Liên hệ</a></li>
+                        <li><a href="?page=policy">Chính sách</a></li>
+                        <!--                        <li><a href="">Login</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -50,7 +54,7 @@
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
-                    <h3 class="footer-header">Customer Service</h3>
+                    <h3 class="footer-header">Danh mục sản phẩm</h3>
                     <ul class="list-links">
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Shiping & Return</a></li>
@@ -85,9 +89,7 @@
                 <div class="footer-copyright">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                    All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Kien and Vinh
                 </div>
                 <!-- /footer copyright -->
             </div>

@@ -39,7 +39,7 @@
                         <a href="#" class="text-uppercase">Lê Phước VInh</a></a>
                         <!-- / <a href="#" class="text-uppercase">Join</a> -->
                         <ul class="custom-menu">
-                            <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                            <li><a href="?page=profile"><i class="fa fa-user-o"></i> My Account</a></li>
                             <!-- <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li> -->
                             <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
                             <li><a href="?page=login"><i class="fa fa-unlock-alt"></i> Login</a></li>

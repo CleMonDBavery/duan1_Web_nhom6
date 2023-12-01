@@ -18,10 +18,31 @@ class User
     function getuserId($userId)
     {
         $db = new connect();
-        $select = "SELECT * from users  where userId = '" . $userId . "'";
-        return $db->pdo_query($select);
+        $userId = is_array($userId) ? implode(",", $userId) : $userId;
+
+        $query = "SELECT * FROM users WHERE `userId` = '$userId'";
+        $result = $db->pdo_query_one($query);
+        return $result;
     }
-    
+
+    public function getOrder($userId)
+    {
+        $db = new connect();
+        $sql = "SELECT `users`.username AS 'Người mua', `orders`.totalPrice AS 'Tổng tiền', 
+                   `orders`.date AS 'Ngày mua', `orders`.destination AS 'Địa chỉ', 
+                   `orders`.status AS 'Trạng thái'
+            FROM orders 
+            JOIN users ON `orders`.userId = `users`.userId 
+            WHERE  `orders`.userId = :userId";
+
+        $params = array(':userId' => $userId);
+        $result = $db->pdo_execute_params($sql, $params);
+
+        return $result;
+    }
+
+
+
     function checkUser($username, $password)
     {
         $db = new connect();

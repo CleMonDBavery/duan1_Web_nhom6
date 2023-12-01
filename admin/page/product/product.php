@@ -203,7 +203,7 @@ class products
                 $output .= '<div class="product-body">';
                 $output .= '<h3 class="product-price">' . number_format($price) . ' VND</h3>';
                 if (!empty($priceSale)) {
-                    $output .= '<h2><del class="product-old-price">' . number_format($priceSale) . '</del></h2>';
+                    $output .= '<h2><del class="product-old-price">' . number_format($priceSale) . ' VND</del></h2>';
                 }
 
                 $output .= '<div class="product-rating">';

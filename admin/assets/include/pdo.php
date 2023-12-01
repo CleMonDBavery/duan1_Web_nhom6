@@ -71,4 +71,23 @@ class connect
             unset($conn);
         }
     }
+
+    function pdo_execute_params($sql, $params)
+    {
+        try {
+            $conn = $this->pdo_get_connection();
+            $stmt = $conn->prepare($sql);
+
+            foreach ($params as $param => $value) {
+                $stmt->bindParam($param, $value);
+            }
+
+            $stmt->execute();
+            return $stmt;
+        } catch (PDOException $e) {
+            throw $e;
+        } finally {
+            unset($conn);
+        }
+    }
 }
