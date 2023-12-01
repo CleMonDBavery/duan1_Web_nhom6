@@ -1,4 +1,5 @@
 <?php
+
 class User
 {
     function getUser()
@@ -29,18 +30,17 @@ class User
     {
         $db = new connect();
         $sql = "SELECT `users`.username AS 'Người mua', `orders`.totalPrice AS 'Tổng tiền', 
-                   `orders`.date AS 'Ngày mua', `orders`.destination AS 'Địa chỉ', 
-                   `orders`.status AS 'Trạng thái'
-            FROM orders 
-            JOIN users ON `orders`.userId = `users`.userId 
-            WHERE  `orders`.userId = :userId";
+               `orders`.date AS 'Ngày mua', `orders`.destination AS 'Địa chỉ', 
+               `orders`.status AS 'Trạng thái'
+        FROM orders 
+        JOIN users ON `orders`.userId = `users`.userId 
+        WHERE  `orders`.userId = :userId";
 
         $params = array(':userId' => $userId);
         $result = $db->pdo_execute_params($sql, $params);
 
-        return $result;
+        return $result; // Ensure $result is an array of associative arrays
     }
-
 
 
     function checkUser($username, $password)
@@ -72,16 +72,18 @@ class User
         $result = $db->pdo_query_one($select);
         return $result;
     }
+
     function logout()
     {
         session_start();
-        $_SESSION = array(); 
-        session_destroy(); 
+        $_SESSION = array();
+        session_destroy();
         header('Location: ../view/login.php');
         exit();
     }
 
-    function getFullName(){
+    function getFullName()
+    {
         $db = new connect();
         $select = "SELECT FullName from users";
         $result = $db->pdo_query_one($select);
@@ -122,6 +124,22 @@ class User
         return $result;
     }
 
+    function updateProfile($userId, $fullName, $phone, $email, $address)
+    {
+        $db = new connect();
+        $userId = is_array($userId) ? implode(",", $userId) : $userId;
+
+        $sql = "UPDATE users 
+                SET 
+                fullName = '$fullName',
+                phone = '$phone',
+                address = '$address',
+                email = '$email'
+                WHERE userId ='" . $userId . "'";
+        $result = $db->pdo_query($sql);
+        return $result;
+    }
+
     function getInfoProfile($userId, $column)
     {
         $db = new connect();
@@ -131,12 +149,14 @@ class User
             return $row[$column];
         }
     }
-    public function countUsers(){
+
+    public function countUsers()
+    {
         try {
             $db = new connect();
             $query = "SELECT COUNT(*) as total FROM users";
             $result = $db->pdo_query_one($query);
-    
+
             if ($result) {
                 $count = $result['total'];
                 return $count;
