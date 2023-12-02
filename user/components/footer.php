@@ -18,7 +18,7 @@
                     </p>
                     <p>ĐỊA CHỈ: 17 30/4, HƯNG LỢI, NINH KIỀU, CẦN THƠ
                     </p>
-                    <p>EMAIL: ABCD@GMAIL>COM
+                    <p>EMAIL: ABCD@GMAIL.COM
                     <p>HOTLINE: 1900 633 494</p>
 
                     <!-- footer social -->
@@ -27,7 +27,6 @@
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                     </ul>
                     <!-- /footer social -->
                 </div>
@@ -54,12 +53,18 @@
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
+                    <?php
+                    $products = new products();
+                    $categoryId = isset($_GET['category']) ? $_GET['category'] : null;
+                    $select = $products->getProductCate($categoryId);
+                    ?>
                     <h3 class="footer-header">Danh mục sản phẩm</h3>
                     <ul class="list-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Shiping & Return</a></li>
-                        <li><a href="#">Shiping Guide</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="index.php?category=1">Áo</a></li>
+                        <li><a href="#">Quần</a></li>
+                        <li><a href="#">Váy</a></li>
+                        <li><a href="index.php?category=4">Giày</a></li>
+                        <li><a href="#">Ví</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,14 +73,14 @@
             <!-- footer subscribe -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
-                    <h3 class="footer-header">Stay Connected</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                    <form>
-                        <div class="form-group">
-                            <input class="input" placeholder="Enter Email Address">
-                        </div>
-                        <button class="primary-btn">Join Newslatter</button>
-                    </form>
+                    <h3 class="footer-header">Thông tin</h3>
+                    <p>E-Shop chuyên cung cấp các mặt hàng thời trang phù hợp với xu hướng, hiện đại</p>
+                    <!--                    <form>-->
+                    <!--                        <div class="form-group">-->
+                    <!--                            <input class="input" placeholder="Enter Email Address">-->
+                    <!--                        </div>-->
+                    <!--                        <button class="primary-btn">Join Newslatter</button>-->
+                    <!--                    </form>-->
                 </div>
             </div>
             <!-- /footer subscribe -->

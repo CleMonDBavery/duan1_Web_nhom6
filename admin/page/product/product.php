@@ -1,4 +1,5 @@
 <?php
+
 class products
 {
     public function getList()
@@ -299,6 +300,14 @@ class products
         return $output;
     }
 
-
+    public function getProductCate($categoryId)
+    {
+        $db = new connect();
+        $sql = "SELECT categories.name, products.categoryId FROM categories 
+                JOIN products ON categories.categoryId = products.categoryId WHERE categories.categoryId ='$categoryId' ";
+        $result = $db->pdo_execute($sql);
+//        var_dump($result);
+        return $result;
+    }
 
 }
