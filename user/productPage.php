@@ -41,33 +41,18 @@ $pdCategory = $idProduct['categoryId'];
                         <!-- <div class="product-view">
                             <img src="contents/img/main-product02.jpg" alt="">
                         </div>
-                        <div class="product-view">
-                            <img src="contents/img/main-product03.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="contents/img/main-product04.jpg" alt="">
-                        </div> -->
                     </div>
-                    <!-- <div id="product-view">
-                        <div class="product-view">
-                            <img src="contents/img/thumb-product01.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="contents/img/thumb-product02.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="contents/img/thumb-product03.jpg" alt="">
-                        </div>
                         <div class="product-view">
                             <img src="contents/img/thumb-product04.jpg" alt="">
                         </div>
                     </div> -->
                 </div>
+                </div>
                 <div class="col-md-6">
                     <div class="product-body">
                         <div class="product-label">
                             <span>New</span>
-                            <span class="sale">-20%</span>
+                            <!--                            <span class="sale">-20%</span>-->
                         </div>
                         <h2 class="product-name"><?= $idProduct['name']; ?></h2>
                         <h3 class="product-price"><?= number_format($idProduct['price']); ?> VND
@@ -83,38 +68,33 @@ $pdCategory = $idProduct['categoryId'];
                             </div>
                             <a href="#">3 Review(s) / Add Review</a>
                         </div>
-                        <p><strong>Availability:</strong> In Stock</p>
-                        <p><strong>Brand:</strong> E-SHOP</p>
+                        <p><strong>Tình trạng:</strong> Còn hàng</p>
+                        <p><strong>Thương hiệu:</strong> E-SHOP</p>
                         <p><?= $idProduct['description'] ?></p>
-                        <div class="product-options">
-                            <ul class="size-option">
-                                <li><span class="text-uppercase">Size:</span></li>
-                                <li class="active"><a href="#">S</a></li>
-                                <li><a href="#">XL</a></li>
-                                <li><a href="#">SL</a></li>
-                            </ul>
-                            <!--                            <ul class="color-option">-->
-                            <!--                                <li><span class="text-uppercase">Color:</span></li>-->
-                            <!--                                <li class="active"><a href="#" style="background-color:#475984;"></a></li>-->
-                            <!--                                <li><a href="#" style="background-color:#8A2454;"></a></li>-->
-                            <!--                                <li><a href="#" style="background-color:#BF6989;"></a></li>-->
-                            <!--                                <li><a href="#" style="background-color:#9A54D8;"></a></li>-->
-                            <!--                            </ul>-->
-                        </div>
 
                         <div class="product-btns">
-                            <div class="qty-input">
-                                <span class="text-uppercase">QTY: </span>
-                                <input class="input" type="number">
-                            </div>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+
+
+                            <form action="giohang-xuly.php" method="post">
+                                <input type="hidden" name="productId" value="<?= $idProduct['productId'] ?>">
+                                <!-- Add a select input for the size -->
+                                <div class="qty-input">
+                                    <span class="text-uppercase">Số lượng: </span>
+                                    <input class="input" type="number" name="soluong" value="1" min="1">
+                                </div>
+                                <button class="primary-btn add-to-cart" type="submit" name="them">
+                                    <i class="fa fa-shopping-cart"></i> Thêm giỏ hàng
+                                </button>
+                            </form>
+
                             <div class="pull-right">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-share-alt"></i></button>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
                 <div class="col-md-12">
