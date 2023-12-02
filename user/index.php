@@ -100,6 +100,13 @@ if (isset($_GET['page'])) {
         case 'profile':
             require_once 'profile.php';
             break;
+        case 'cart':
+            require_once 'giohang.php';
+            break;
+
+        case 'blank':
+            require_once 'blank.php';
+            break;
 
 
         default:
@@ -111,8 +118,9 @@ if (isset($_GET['page'])) {
     include("components/home.php");
     include("components/categories.php");
 //    include("components/dealday.php");
-    include("components/end.php");
     include("components/products.php");
+    include("components/end.php");
+
 
 }
 include("components/footer.php");
