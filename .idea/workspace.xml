@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N018 - Update promotions table + orders table">
+    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N019 - Update footer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/product/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/product/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/components/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/components/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/vinhlp&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Ampps/www/duan1_Web_nhom6&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -158,6 +156,8 @@
       <workItem from="1701495693183" duration="592000" />
       <workItem from="1701501262733" duration="384000" />
       <workItem from="1701519780777" duration="2620000" />
+      <workItem from="1701522587217" duration="371000" />
+      <workItem from="1701523203757" duration="290000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />
@@ -223,7 +223,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev/vinhlp" />
+                        <option value="dev/develop" />
                       </list>
                     </value>
                   </entry>
@@ -246,7 +246,8 @@
     <MESSAGE value="N011 - page login, register and policy" />
     <MESSAGE value="N012 - Update page addProduct and updateProduct" />
     <MESSAGE value="N017 - Update infomation client in page profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="N017 - Update infomation client in page profile" />
+    <MESSAGE value="N019 - Update footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="N019 - Update footer" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
