@@ -60,10 +60,10 @@
                     ?>
                     <h3 class="footer-header">Danh mục sản phẩm</h3>
                     <ul class="list-links">
-                        <li><a href="index.php?category=1">Áo</a></li>
+                        <li><a href="">Áo</a></li>
                         <li><a href="#">Quần</a></li>
                         <li><a href="#">Váy</a></li>
-                        <li><a href="index.php?category=4">Giày</a></li>
+                        <li><a href="">Giày</a></li>
                         <li><a href="#">Ví</a></li>
                     </ul>
                 </div>
