@@ -127,31 +127,37 @@ if (isset($_POST['saveInfo'])) {
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="text-right">Đơn hàng chờ xác nhận</h4>
         </div>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Người mua</th>
-                <th scope="col">Tổng tiền</th>
-                <th scope="col">Ngày mua</th>
-                <th scope="col">Địa chỉ</th>
-                <th scope="col">Trạng thái</th>
-                <th scope="col">Thao tác</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!--            --><?php //foreach ($orderConfirm as $order): ?>
-            <!--                <tr>-->
-            <!--                    <td>--><?php //= $order['Người mua']; ?><!--</td>-->
-            <!--                    <td>--><?php //= $order['Tổng tiền']; ?><!--</td>-->
-            <!--                    <td>--><?php //= date('d/m/Y', strtotime($order['Ngày mua'])); ?><!--</td>-->
-            <!--                    <td>--><?php //= $order['Địa chỉ']; ?><!--</td>-->
-            <!--                    <td>--><?php //= $order['Trạng thái']; ?><!--</td>-->
-            <!--                    <td>-->
-            <!--                        <a class="btn btn-warning" href="-->
-            <?php //= $order['cancelLink']; ?><!--">Hủy đơn</a>-->
-            <!--                    </td>-->
-            <!--                </tr>-->
-            <!--            --><?php //endforeach; ?>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Hình</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Tổng tiền</th>
+                    <th scope="col">Thao tác</th>
+                </tr>
+                </thead>
+                <tbody class="customtable">
+                <tr>
+                    <th>
+                        1
+                    </th>
+                    <td>SP 1</td>
+                    <td><img src="./contents/img/product08.jpg" alt="" class="img-thumbnail w-25"></td>
+                    <td>20000</td>
+                    <td class="w-25"><input type="number" class="form-control" value="2"></td>
+                    <td>40000</td>
+                    <td>
+                        <button class="btn btn-info">Xóa</button>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
     </div>
