@@ -1,5 +1,6 @@
 <?
 $db = '';
+
 class orders
 {
     public function getOrder()
@@ -33,32 +34,57 @@ class orders
         return $result;
     }
 
+//    public function getOrderTotal($orderId)
+//    {
+//        $db = new connect();
+//
+//        // Assuming you have a 'orderDetail' table with 'amount' and 'price' columns
+//        // Using a subquery to calculate the product of 'amount' and 'price' for each row
+//        $sql = "SELECT SUM(subtotal) AS total
+//            FROM (
+//                SELECT `orderDetail`.`amount` * `products`.`price` AS subtotal
+//                FROM `orderDetail`
+//                INNER JOIN `products` ON `orderDetail`.`productId` = `products`.`ProductId`
+//                WHERE `orderDetail`.`orderId` = '$orderId'
+//            ) AS subquery";
+//
+//        $result = $db->pdo_query($sql);
+//
+//        // Assuming your result is an associative array
+//        if ($result) {
+//            return $result[0]['total'];
+//        } else {
+//            return 0; // or handle the error as needed
+//        }
+//    }
+
     public function getOrderTotal($orderId)
     {
         $db = new connect();
 
-        // Assuming you have a 'orderDetail' table with 'amount' and 'price' columns
-        // Using a subquery to calculate the product of 'amount' and 'price' for each row
-        $sql = "SELECT SUM(subtotal) AS total
-            FROM (
-                SELECT `orderDetail`.`amount` * `products`.`price` AS subtotal
-                FROM `orderDetail`
-                INNER JOIN `products` ON `orderDetail`.`productId` = `products`.`ProductId`
-                WHERE `orderDetail`.`orderId` = '$orderId'
-            ) AS subquery";
+        $sql = "SELECT SUM(subtotal) AS total, `promotions`.`name` AS promotionName, `promotions`.`discount` AS discount
+        FROM (
+            SELECT `orderDetail`.`amount` * `products`.`price` AS subtotal
+            FROM `orderDetail`
+            INNER JOIN `products` ON `orderDetail`.`productId` = `products`.`ProductId`
+            WHERE `orderDetail`.`orderId` = '$orderId'
+        ) AS subquery
+        INNER JOIN `orders` ON `orders`.`orderId` = '$orderId'
+        INNER JOIN `promotions` ON `orders`.`promotionId` = `promotions`.`promotionId`";
 
         $result = $db->pdo_query($sql);
 
-        // Assuming your result is an associative array
         if ($result) {
-            return $result[0]['total'];
+            if ($result[0]['discount'] <= 100) {
+                $result[0]['total'] -= $result[0]['total'] * ($result[0]['discount'] / 100);
+            } else {
+                $result[0]['total'] -= $result[0]['discount'];
+            }
+            return $result[0];
         } else {
-            return 0; // or handle the error as needed
+            return 0;
         }
     }
-
-
-
 
 
     public function delete($orderDetailId)

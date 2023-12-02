@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/user/google-api-client-php/src" isTestSource="false" packagePrefix="Google" />
       <sourceFolder url="file://$MODULE_DIR$/user/google-api-php-client/src" isTestSource="false" packagePrefix="Google" />
     </content>
     <orderEntry type="inheritedJdk" />

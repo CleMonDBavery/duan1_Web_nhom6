@@ -24,6 +24,7 @@ $listPending = $orders->getOrderConfirm();
                             <tr>
                                 <th>Người mua</th>
                                 <th>Tổng Tiền</th>
+                                <th>Mã khuyến mãi</th>
                                 <th>Ngày mua</th>
                                 <th>Địa chỉ</th>
                                 <th>Trạng thái</th>
@@ -38,7 +39,8 @@ $listPending = $orders->getOrderConfirm();
                                 ?>
                                 <tr>
                                     <td><?= $item['username'] ?></td>
-                                    <td><?= number_format($orderTotal) ?> VND</td>
+                                    <td><?= number_format($orderTotal['total']) ?> VND</td>
+                                    <td><?= $orderTotal['promotionName'] ?></td>
                                     <td>01/01/2023</td>
                                     <td><?= $item['destination'] ?></td>
                                     <td>
@@ -79,6 +81,7 @@ $listPending = $orders->getOrderConfirm();
                             <tr>
                                 <th>Người mua</th>
                                 <th>Tổng tiền</th>
+                                <th>Mã khuyến mãi</th>
                                 <th>Ngày mua</th>
                                 <th>Địa chỉ</th>
                                 <th>Trạng thái</th>
@@ -91,7 +94,8 @@ $listPending = $orders->getOrderConfirm();
                                 ?>
                                 <tr>
                                     <td><?= $item['username'] ?></td>
-                                    <td><?= number_format($orderTotal) ?> VND</td>
+                                    <td><?= number_format($orderTotal['total']) ?> VND</td>
+                                    <td><?= $orderTotal['promotionName'] ?></td>
                                     <td>01/01/2023</td>
                                     <td><?= $item['destination'] ?></td>
                                     <td>
