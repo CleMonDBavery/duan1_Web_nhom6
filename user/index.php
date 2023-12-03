@@ -145,6 +145,14 @@ session_start();
     <script src="contact-form-06/js/jquery.validate.min.js"></script>
     <script src="contact-form-06/js/main.js"></script>
 
+    <!--ChatBox-->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+            intent="WELCOME"
+            chat-title="ChatBox-DuAn1"
+            agent-id="057c2518-fee9-4580-abc8-f5e4ffe28aaa"
+            language-code="vi"
+    ></df-messenger>
     </body>
 
     </html>
