@@ -49,7 +49,7 @@ if (isset($_POST['them'])) {
     // lưu cookie
     setcookie('cart', $product_data, time() + 3600 * 24 * 30 * 12);
 
-    header('location: giohang.php');
+    header('location: index.php?page=cart');
 }
 
 
@@ -90,7 +90,7 @@ if (isset($_POST['sua'])) {
     $product_data = json_encode($cart_data);
     setcookie('cart', $product_data, time() + 3600 * 24 * 30 * 12);
 
-    header('location: giohang.php');
+    header('location: index.php?page=cart');
 }
 
 // xóa sản phẩm trong giỏ hàng
@@ -107,7 +107,7 @@ if (isset($_POST['xoa'])) {
             }
         }
     }
-    header('location: giohang.php');
+    header('location: index.php?page=cart');
 }
 
 

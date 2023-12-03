@@ -110,7 +110,6 @@ session_start();
             case 'pay':
                 require_once 'pay.php';
                 break;
-
             default:
                 require_once 'index.php';
                 break;

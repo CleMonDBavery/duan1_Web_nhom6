@@ -46,7 +46,7 @@ $pdCategory = $idProduct['categoryId'];
                             <img src="contents/img/thumb-product04.jpg" alt="">
                         </div>
                     </div> -->
-                </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="product-body">
@@ -198,35 +198,37 @@ $pdCategory = $idProduct['categoryId'];
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <h4 class="text-uppercase">Write Your Review</h4>
+                                        <h4 class="text-uppercase">Đánh giá</h4>
                                         <p>Your email address will not be published.</p>
                                         <form class="review-form">
                                             <div class="form-group">
-                                                <input class="input" type="text" placeholder="Your Name"/>
+                                                <input name="name" class="input" type="text" placeholder="Your Name"/>
                                             </div>
                                             <div class="form-group">
-                                                <input class="input" type="email" placeholder="Email Address"/>
+                                                <input name="email" class="input" type="email"
+                                                       placeholder="Email Address"/>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="input" placeholder="Your review"></textarea>
+                                                <textarea name="conntent" class="input"
+                                                          placeholder="Your review"></textarea>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="input-rating">
-                                                    <strong class="text-uppercase">Your Rating: </strong>
-                                                    <div class="stars">
-                                                        <input type="radio" id="star5" name="rating" value="5"/><label
-                                                                for="star5"></label>
-                                                        <input type="radio" id="star4" name="rating" value="4"/><label
-                                                                for="star4"></label>
-                                                        <input type="radio" id="star3" name="rating" value="3"/><label
-                                                                for="star3"></label>
-                                                        <input type="radio" id="star2" name="rating" value="2"/><label
-                                                                for="star2"></label>
-                                                        <input type="radio" id="star1" name="rating" value="1"/><label
-                                                                for="star1"></label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <!--                                            <div class="form-group">-->
+                                            <!--                                                <div class="input-rating">-->
+                                            <!--                                                    <strong class="text-uppercase">Your Rating: </strong>-->
+                                            <!--                                                    <div class="stars">-->
+                                            <!--                                                        <input type="radio" id="star5" name="rating" value="5"/><label-->
+                                            <!--                                                                for="star5"></label>-->
+                                            <!--                                                        <input type="radio" id="star4" name="rating" value="4"/><label-->
+                                            <!--                                                                for="star4"></label>-->
+                                            <!--                                                        <input type="radio" id="star3" name="rating" value="3"/><label-->
+                                            <!--                                                                for="star3"></label>-->
+                                            <!--                                                        <input type="radio" id="star2" name="rating" value="2"/><label-->
+                                            <!--                                                                for="star2"></label>-->
+                                            <!--                                                        <input type="radio" id="star1" name="rating" value="1"/><label-->
+                                            <!--                                                                for="star1"></label>-->
+                                            <!--                                                    </div>-->
+                                            <!--                                                </div>-->
+                                            <!--                                            </div>-->
                                             <button class="primary-btn">Submit</button>
                                         </form>
                                     </div>

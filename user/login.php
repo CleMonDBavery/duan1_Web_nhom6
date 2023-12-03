@@ -13,7 +13,8 @@ if (isset($_POST['login'])) {
             $_SESSION['member'] = $userId;
 
 //            print_r($userId);
-            header('Location: index.php');
+//            exit();
+            header('Location: index.php?userId=' . $userId);
             exit;
         } else {
             $_SESSION['error'] = 'Sai tài khoản hoặc mật khẩu';

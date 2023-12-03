@@ -167,6 +167,14 @@ class User
             throw $e;
         }
     }
+
+    public function getLogin($userId)
+    {
+        $db = new connect();
+        $sql = "SELECT username FROM users WHERE userId = '$userId'";
+        $result = $db->pdo_execute($sql);
+        return $result['username'];
+    }
 }
 
 

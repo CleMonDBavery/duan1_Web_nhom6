@@ -36,7 +36,7 @@
                             <strong class="text-uppercase">Tài khoản </strong>
                             <!-- <i class="fa fa-caret-down"></i> -->
                         </div>
-                        <a href="#" class="text-uppercase">Lê Phước VInh</a></a>
+                        <a href="#" class="text-uppercase">User</a>
                         <!-- / <a href="#" class="text-uppercase">Join</a> -->
                         <ul class="custom-menu">
                             <li><a href="?page=profile"><i class="fa fa-user-o"></i> My Account</a></li>

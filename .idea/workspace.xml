@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N022 - Update table in page profile">
+    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N023 - Create pay page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/users/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/users/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/components/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/giohang-xuly.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/giohang-xuly.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/productPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/productPage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +79,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/vinhlp&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Ampps/www/duan1_Web_nhom6&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -162,6 +168,7 @@
       <workItem from="1701530025027" duration="1638000" />
       <workItem from="1701533239352" duration="95000" />
       <workItem from="1701535215400" duration="772000" />
+      <workItem from="1701577105801" duration="2892000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />
@@ -252,7 +259,8 @@
     <MESSAGE value="N017 - Update infomation client in page profile" />
     <MESSAGE value="N019 - Update footer" />
     <MESSAGE value="N021 - Update login amdin" />
-    <option name="LAST_COMMIT_MESSAGE" value="N021 - Update login amdin" />
+    <MESSAGE value="N023 - Create pay page" />
+    <option name="LAST_COMMIT_MESSAGE" value="N023 - Create pay page" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
