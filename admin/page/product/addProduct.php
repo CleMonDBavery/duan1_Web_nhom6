@@ -17,49 +17,49 @@ if (isset($_POST['addPD'])) {
     $categoryId = $_POST['category'];
     $gender = $_POST['gender'];
 
-//    if (
-//        $name == "" ||
-//        $price == "" ||
-//        $description == "" ||
-//        $categoryId == ""
-//    ) {
-//        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
-//        header("location: index.php?page=addProduct");
-//        exit;
-//    }
-//    if ($price >= $priceSale) {
-//        $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
-//        header("location: index.php?page=addProduct");
-//        exit;
-//    }
-//    // Kiểm tra xem tên sản phẩm đã tồn tại hay chưa
-//    $existingProduct = $products->getProductByName($name);
-//    if ($existingProduct) {
-//        $_SESSION['error'] = '*Sản phẩm đã tồn tại!';
-//        header("location: index.php?page=addProduct");
-//        exit;
-//    } else {
-    require_once "Product.php";
-    print_r($gender);
-    if (move_uploaded_file($file, $path)) {
-        $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status, $gender);
+    if (
+        $name == "" ||
+        $price == "" ||
+        $description == "" ||
+        $categoryId == ""
+    ) {
+        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+        header("location: index.php?page=addProduct");
+        exit;
+    }
+    if ($price >= $priceSale) {
+        $_SESSION['error'] = '*Giá tiền phải nhỏ hơn giá giảm!';
+        header("location: index.php?page=addProduct");
+        exit;
+    }
+    // Kiểm tra xem tên sản phẩm đã tồn tại hay chưa
+    $existingProduct = $products->getProductByName($name);
+    if ($existingProduct) {
+        $_SESSION['error'] = '*Sản phẩm đã tồn tại!';
+        header("location: index.php?page=addProduct");
+        exit;
+    } else {
+//    require_once "Product.php";
+//    print_r($gender);
+        if (move_uploaded_file($file, $path)) {
+            $result = $products->add($name, $priceSale, $price, $description, $categoryId, $image, $status, $gender);
 //             var_dump($result);
 //             exit();
-        if ($result) {
-            $_SESSION['success'] = 'Thêm danh mục thành công!';
-            header("location: ?page=tableProduct");
-            exit;
+            if ($result) {
+                $_SESSION['success'] = 'Thêm danh mục thành công!';
+                header("location: ?page=tableProduct");
+                exit;
+            } else {
+                $_SESSION['error'] = 'Thêm danh mục thất bại!';
+                header("location: ?page=addProduct");
+                exit;
+            }
         } else {
-            $_SESSION['error'] = 'Thêm danh mục thất bại!';
+            $_SESSION['error'] = 'Lỗi di chuyển file!';
             header("location: ?page=addProduct");
             exit;
         }
-    } else {
-        $_SESSION['error'] = 'Lỗi di chuyển file!';
-        header("location: ?page=addProduct");
-        exit;
     }
-
 }
 ?>
 
