@@ -1,4 +1,5 @@
 <?php
+
 class connect
 {
     function pdo_get_connection()
@@ -10,6 +11,7 @@ class connect
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     }
+
     function pdo_execute($sql)
     {
         $sql_args = array_slice(func_get_args(), 1);
@@ -24,6 +26,7 @@ class connect
             unset($conn);
         }
     }
+
     function pdo_query($sql)
     {
         $sql_args = array_slice(func_get_args(), 1);
@@ -90,4 +93,5 @@ class connect
             unset($conn);
         }
     }
+
 }
