@@ -1,6 +1,74 @@
+<?php
+session_start();
+include '../admin/assets/include/pdo.php';
+include '../admin/page/users/user.php';
+?>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>E-SHOP HTML Template</title>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="contents/css/bootstrap.min.css"/>
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="contents/css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="contents/css/slick-theme.css"/>
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="contents/css/nouislider.min.css"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="contents/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="contents/css/style.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- [if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif] -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+
+    <link rel="stylesheet" href="contact-form-06/css/style.css"/>
+</head>
+<?php
+
+
+//if (!isset($_SESSION['member'])) {
+//    echo "<script>
+//            if(confirm('Bạn chưa đăng nhập. Bạn có muốn đăng nhập không?')) {
+//                window.location.href = '?page=login';
+//            }
+//         </script>";
+//}
+
+
+$users = new User();
+$userId = $_SESSION['member'];
+
+$list = $users->getuserId($userId);
+
+?>
 <div class="container rounded bg-white mt-5 mb-5">
-    <form class="needs-validation" name="frmthanhtoan" method="post" action="#">
-        <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
+    <form class="needs-validation" name="frmthanhtoan" method="post">
+        <input type="hidden" name="" value="">
 
         <div class="py-5 text-center">
             <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
@@ -11,39 +79,54 @@
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Giỏ hàng</span>
-                    <span class="badge badge-secondary badge-pill">2</span>
+                    <!--                    <span class="text-muted">Giỏ hàng</span>-->
+                    <!--                    <span class="badge badge-secondary badge-pill">2</span>-->
                 </h4>
-                <ul class="list-group mb-3">
-                    <input type="hidden" name="sanphamgiohang[1][sp_ma]" value="2">
-                    <input type="hidden" name="sanphamgiohang[1][gia]" value="11800000.00">
-                    <input type="hidden" name="sanphamgiohang[1][soluong]" value="2">
+                <?
+                if (isset($_GET['cart']) && $_GET['cart'] === 'true') {
+                    // Lấy và xử lý thông tin giỏ hàng từ cookie hoặc nguồn khác
+                    if (isset($_COOKIE['cart'])) {
+                        $cookie_data = $_COOKIE['cart'];
+                        $cart_data = json_decode($cookie_data, true);
 
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Apple Ipad 4 Wifi 16GB</h6>
-                            <small class="text-muted">11800000.00 x 2</small>
-                        </div>
-                        <span class="text-muted">23600000</span>
+                        // Hiển thị thông tin sản phẩm
+                        echo "<div class='container'>";
+                        echo "<h2>Thông tin sản phẩm trong giỏ hàng</h2>";
+
+                        $tongTien = 0; // Khởi tạo biến tổng giá
+
+                        foreach ($cart_data as $sp) {
+                            echo "<div class='product-info'>";
+                            echo "<p>Mã sản phẩm: " . $sp['productId'] . "</p>";
+                            echo "<p>Tên: " . $sp['name'] . "</p>";
+                            echo "<p>Giá: " . number_format($sp['price']) . " đ</p>";
+                            echo "<p>Số lượng: " . $sp['soluong'] . "</p>";
+
+                            // Tính tổng giá từng sản phẩm
+                            $thanhTien = $sp['price'] * $sp['soluong'];
+                            $tongTien += $thanhTien;
+
+                            // Thêm chi tiết khác nếu cần
+                            echo "</div>";
+                            echo "<hr>";
+                        }
+
+                        // Hiển thị tổng giá
+
+
+                        echo "</div>";
+                    } else {
+                        echo "<p>Giỏ hàng trống.</p>";
+                    }
+                } else {
+                    echo "<p>Không có thông tin giỏ hàng.</p>";
+                }
+                ?>
+
+                <li class='list-group-item d-flex justify-content-between'>
+                    <span>Tổng thành tiền</span>
+                    <strong> <?= number_format($tongTien) ?> VNĐ</strong>
                     </li>
-                    <input type="hidden" name="sanphamgiohang[2][sp_ma]" value="4">
-                    <input type="hidden" name="sanphamgiohang[2][gia]" value="14990000.00">
-                    <input type="hidden" name="sanphamgiohang[2][soluong]" value="8">
-
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Apple iPhone 5 16GB White</h6>
-                            <small class="text-muted">14990000.00 x 8</small>
-                        </div>
-                        <span class="text-muted">119920000</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Tổng thành tiền</span>
-                        <strong>143520000</strong>
-                    </li>
-                </ul>
-
-
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Mã khuyến mãi">
                     <div class="input-group-append">
@@ -58,25 +141,28 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label for="kh_ten">Họ tên</label>
-                        <input type="text" class="form-control" name="name" id="kh_ten" value="">
+                        <input type="text" class="form-control" name="name" id="kh_ten"
+                               value=" <?= $list['fullName'] ?> ">
                     </div>
-                    <div class="col-md-12">
-                        <label for="kh_gioitinh">Giới tính</label>
-                        <input type="text" class="form-control" name="gender" id="kh_gioitinh" value="Nam"
-                               readonly="">
-                    </div>
+                    <!--                    <div class="col-md-12">-->
+                    <!--                        <label for="kh_gioitinh">Giới tính</label>-->
+                    <!--                        <input type="text" class="form-control" name="gender" id="kh_gioitinh" value="Nam"-->
+                    <!--                               readonly="">-->
+                    <!--                    </div>-->
                     <div class="col-md-12">
                         <label for="kh_diachi">Địa chỉ</label>
                         <input type="text" class="form-control" name="address" id="kh_diachi"
-                               value="130 Xô Viết Nghệ Tỉnh">
+                               value="<?= $list['address'] ?> ">
                     </div>
                     <div class="col-md-12">
                         <label for="kh_dienthoai">Điện thoại</label>
-                        <input type="text" class="form-control" name="phone" id="kh_dienthoai" value="091">
+                        <input type="text" class="form-control" name="phone" id="kh_dienthoai"
+                               value="<?= $list['phone'] ?> ">
                     </div>
                     <div class="col-md-12">
                         <label for="kh_email">Email</label>
-                        <input type="text" class="form-control" name="email" id="kh_email" value="">
+                        <input type="text" class="form-control" name="email" id="kh_email"
+                               value="<?= $list['email'] ?> ">
                     </div>
 
                 </div>
