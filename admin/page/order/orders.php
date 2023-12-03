@@ -3,6 +3,8 @@ $db = '';
 
 class orders
 {
+
+
     public function getOrder()
     {
         $db = new connect();
@@ -120,4 +122,33 @@ class orders
         $result = $db->pdo_query($sql);
         return $result;
     }
+
+    public function insertOrder($totalPrice, $destination, $promotionId, $userId, $status, $date)
+    {
+        $db = new connect();
+        $sql = "INSERT INTO orders (totalPrice, destination, promotionId, userId, status, date)
+                VALUES ('$totalPrice', '$destination', '$promotionId', '$userId', '$status', '$date')";
+        $result = $db->pdo_query($sql);
+
+        return $result;
+    }
+
+    public function getOrderID()
+    {
+        $db = new connect();
+        $sql = "SELECT orderId FROM orders ORDER BY orderId DESC LIMIT 1";
+        $result = $db->pdo_query($sql);
+        return $result;
+    }
+
+    public function insertOrderDetail($productId, $amount, $orderId, $price)
+    {
+        $db = new connect();
+        $orderId = (int)$orderId;
+        $sql = "INSERT INTO orderdetail (productId, amount, orderId, price)
+             VALUES ('$productId', '$amount', '$orderId', '$price')";
+        $result = $db->pdo_query($sql);
+        return $result;
+    }
+
 }

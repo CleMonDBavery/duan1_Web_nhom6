@@ -53,11 +53,7 @@
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
-                    <?php
-                    $products = new products();
-                    $categoryId = isset($_GET['category']) ? $_GET['category'] : null;
-                    $select = $products->getProductCate($categoryId);
-                    ?>
+
                     <h3 class="footer-header">Danh mục sản phẩm</h3>
                     <ul class="list-links">
                         <li><a href="">Áo</a></li>

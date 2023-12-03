@@ -10,7 +10,6 @@ class connect
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     }
-
     function pdo_execute($sql)
     {
         $sql_args = array_slice(func_get_args(), 1);
@@ -25,7 +24,6 @@ class connect
             unset($conn);
         }
     }
-
     function pdo_query($sql)
     {
         $sql_args = array_slice(func_get_args(), 1);
@@ -57,6 +55,7 @@ class connect
             unset($conn);
         }
     }
+
     function pdo_query_value($sql)
     {
         $sql_args = array_slice(func_get_args(), 1);
@@ -72,6 +71,23 @@ class connect
             unset($conn);
         }
     }
-}
 
-?>
+    function pdo_execute_params($sql, $params)
+    {
+        try {
+            $conn = $this->pdo_get_connection();
+            $stmt = $conn->prepare($sql);
+
+            foreach ($params as $param => $value) {
+                $stmt->bindParam($param, $value);
+            }
+
+            $stmt->execute();
+            return $stmt;
+        } catch (PDOException $e) {
+            throw $e;
+        } finally {
+            unset($conn);
+        }
+    }
+}

@@ -3,6 +3,22 @@ $db = '';
 
 class promotions
 {
+    public function getPromotions($positionId)
+    {
+        $db = new connect();
+        $sql = "SELECT  FROM promotions WHERE positionId = '$positionId'";
+        $result = $db->pdo_execute($sql);
+        return $result;
+    }
+
+    public function getPromotionsName($name)
+    {
+        $db = new connect();
+        $sql = "SELECT  FROM promotions WHERE name = '$name'";
+        $result = $db->pdo_execute($sql);
+        return $result;
+    }
+
     public function getStatus()
     {
         $db = new connect();
