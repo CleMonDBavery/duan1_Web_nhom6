@@ -344,7 +344,7 @@
                         </div>
                     </li> -->
                     <li><a href="?page=contact">Liên hệ</a></li>
-                    <li><a href="?page=policy">Thông Tin</a></li>
+                    <li><a href="?page=policy">Chính sách</a></li>
                     <!-- <li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Pages <i class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="index.php">Home</a></li>

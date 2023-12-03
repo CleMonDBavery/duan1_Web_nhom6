@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="padding: 20px">
     <div class="large-12 col">
         <div class="col-inner">
             <h2 class="title">CHÍNH SÁCH VẬN CHUYỂN</h2>
@@ -7,7 +7,7 @@
                     <div class="mb-1">
                         <h3>1 . Chính sách giao hàng :</h3>
                         <p>
-                            – D’ELIAS phục vụ giao hàng tận nơi trên toàn quốc, áp dụng cho khách mua hàng trên website.
+                            – E-SHOP phục vụ giao hàng tận nơi trên toàn quốc, áp dụng cho khách mua hàng trên website.
                         </p>
                         <p>
                             – Đơn hàng sẽ được chuyển phát đến tận địa chỉ khách hàng cung cấp thông qua công ty vận
@@ -23,7 +23,7 @@
                             Sản phẩm không bị dính bẩn, loang màu, chưa qua giặt ủi.
                             Giá sản phẩm đổi mới được tính theo giá tại thời điểm khách mua hàng. Giá trị sản phẩm đổi
                             mới phải bằng hoặc cao hơn
-                            sản phẩm đã mua. Trường hợp khách hàng đổi sang sản phẩm có giá trị thấp hơn, Rechic không
+                            sản phẩm đã mua. Trường hợp khách hàng đổi sang sản phẩm có giá trị thấp hơn, E-SHOP không
                             hoàn trả lại phí chênh lệch.
                         </p>
                         <h4>2. Thời gian và chi phí đổi hàng:</h4>
@@ -35,21 +35,21 @@
                         <p>Ngoài ra nếu trường hợp phát sinh đổi hàng từ phía khách hàng, quý khách vui lòng hỗ trợ phí
                             ship giao – nhận giúp Rechic.</p>
                         <b>Hỗ trợ phí ship:</b>
-                        <p>+Nội thành: 20K (TP.HCM).</p>
+                        <p>+Nội thành: 20K (CẦN THO).</p>
                         <p>+Ngoại thành: 30K.</p>
                         <h4>3. Phương thức đổi sản phẩm (Áp dụng cho tất cả đơn hàng mua tại cửa hàng và trên các kênh
                             Online):</h4>
                         <b>* Đổi tại cửa hàng:</b>
-                        <p>Gọi vào Hotline của Rechic theo số 1900 633 494 hoặc inbox Fanpage/Zalo (Cung cấp mã đơn
+                        <p>Gọi vào Hotline của E-SHOP theo số 1900 633 494 hoặc inbox Fanpage/Zalo (Cung cấp mã đơn
                             hàng, mã sản phẩm cần đổi, lý do đổi) để được hỗ trợ.</p>
                         <p>Đóng gói sản phẩm cẩn thận có kèm hóa đơn mua hàng, mã vận đơn (Nếu mua hàng online).</p>
                         <p>Đến trực tiếp cửa hàng Rechic gần nhất để nhân viên trực tiếp hỗ trợ đổi sản phẩm (Quý khách
                             đến đổi sản phẩm vui lòng đến sau 14h mỗi ngày).</p>
                         <b> * Đổi qua chuyển phát nhanh:</b>
-                        <p>Gọi vào Hotline của Rechic theo số 1900 633 494 hoặc inbox Fanpage/Zalo (Cung cấp mã đơn
+                        <p>Gọi vào Hotline của E-SHOP theo số 1900 633 494 hoặc inbox Fanpage/Zalo (Cung cấp mã đơn
                             hàng, mã sản phẩm cần đổi, lý do đổi) để được hỗ trợ.</p>
                         <p>Đóng gói sản phẩm cẩn thận có kèm hóa đơn mua hàng, mã vận đơn (Nếu mua hàng online).</p>
-                        <p>Gửi về địa chỉ 480F Cao Thắng nối dài, Phường 12, Quận 10 và chờ bộ phận CSKH xác nhận khi đã
+                        <p>Gửi về địa chỉ 17 30/4, HƯNG LỢI, NINH KIỀU, CẦN THƠ và chờ bộ phận CSKH xác nhận khi đã
                             nhận được hàng.</p>
                         <p>Nhận lại sản phẩm đổi trong 3-4 ngày làm việc sau khi CSKH xác nhận đã nhận hàng. Trong
                             trường hợp hết hàng, Rechic sẽ liên hệ xác nhận.</p>

@@ -102,10 +102,10 @@ $pdCategory = $idProduct['categoryId'];
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
                             <!--                            <li><a data-toggle="tab" href="#tab1">Details</a></li>-->
-                            <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Reviews</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="tab1" class="tab-pane fade in active">
+                            <div id="tab1" class="tab-pane fade in ">
                                 <p><strong>HƯỚNG DẪN BẢO QUẢN</strong><br>
                                     – Giặt máy ở nhiệt độ tối đa 30độC, giặt bên trong túi giặt và vắt ở tốc độ thấp để
                                     sản phẩm được bảo vệ tốt hơn.<br>
@@ -115,121 +115,70 @@ $pdCategory = $idProduct['categoryId'];
                                     phẩm lưu giữ màu tốt hơn.<br>
                                     – Là sản phẩm ở nhiệt độ dưới 110độC, ưu tiên dùng bàn là hơi nước.</p>
                             </div>
-                            <div id="tab2" class="tab-pane fade in">
-
+                            <div id="tab2" class="tab-pane fade in active">
+                                <?php
+                                $productId = $_GET['id'];
+                                $lCmt = $products->listComment($productId);
+                                ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="product-reviews">
-                                            <div class="single-review">
-                                                <div class="review-heading">
-                                                    <div><a href="#"><i class="fa fa-user-o"></i> John</a></div>
-                                                    <div><a href="#"><i class="fa fa-clock-o"></i> 27 DEC 2017 / 8:0 PM</a>
-                                                    </div>
-                                                    <div class="review-rating pull-right">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o empty"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="review-body">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                        nisi ut aliquip ex ea commodo consequat.Duis aute
-                                                        irure dolor in reprehenderit in voluptate velit esse cillum
-                                                        dolore eu fugiat nulla pariatur.</p>
-                                                </div>
-                                            </div>
+                                            <h4 class="text-uppercase">Các bình luận</h4>
+                                            <? foreach ($lCmt as $list) {
+                                                ?>
 
                                             <div class="single-review">
                                                 <div class="review-heading">
-                                                    <div><a href="#"><i class="fa fa-user-o"></i> John</a></div>
-                                                    <div><a href="#"><i class="fa fa-clock-o"></i> 27 DEC 2017 / 8:0 PM</a>
-                                                    </div>
-                                                    <div class="review-rating pull-right">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o empty"></i>
-                                                    </div>
+                                                    <div><a href="#"><i
+                                                                    class="fa fa-user-o"></i> <?= $list['fullName'] ?>
+                                                        </a></div>
+                                                    <div><a href="#"><i class="fa fa-clock-o"></i> <?= $list['date'] ?>
+                                                        </a></div>
                                                 </div>
                                                 <div class="review-body">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                        nisi ut aliquip ex ea commodo consequat.Duis aute
-                                                        irure dolor in reprehenderit in voluptate velit esse cillum
-                                                        dolore eu fugiat nulla pariatur.</p>
+                                                    <p><?= $list['content'] ?></p>
                                                 </div>
                                             </div>
-
-                                            <div class="single-review">
-                                                <div class="review-heading">
-                                                    <div><a href="#"><i class="fa fa-user-o"></i> John</a></div>
-                                                    <div><a href="#"><i class="fa fa-clock-o"></i> 27 DEC 2017 / 8:0 PM</a>
-                                                    </div>
-                                                    <div class="review-rating pull-right">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o empty"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="review-body">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                        nisi ut aliquip ex ea commodo consequat.Duis aute
-                                                        irure dolor in reprehenderit in voluptate velit esse cillum
-                                                        dolore eu fugiat nulla pariatur.</p>
-                                                </div>
-                                            </div>
-
-                                            <ul class="reviews-pages">
-                                                <li class="active">1</li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                                <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-                                            </ul>
+                                            <? } ?>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <h4 class="text-uppercase">Đánh giá</h4>
-                                        <p>Your email address will not be published.</p>
-                                        <form class="review-form">
+                                        <p>Bình luận của bạn sẽ được công khai</p>
+                                        <?php
+                                        $userId = $_SESSION['member'];
+                                        $user = new User();
+                                        $listUser = $user->getuserId($userId);
+
+
+                                        if (isset($_SESSION['member']) && isset($_POST['submit'])) {
+                                            $content = $_POST['noidung'];
+                                            $productId = $idProduct['productId'];
+                                            $userId = $_SESSION['member'];
+
+
+                                            if ($content == "") {
+                                                $_SESSION['error'] = 'Vui Lòng Điền nội dung';
+                                                // die();
+                                            } else {
+                                                $result = $products->addcomment($userId, $content, $productId);
+                                                $_SESSION['success'] = 'Bình luận đã được thêm thành công.';
+                                                header("Location: ?page=productPage&id=$productId");
+                                                exit();
+                                            }
+                                        }
+                                        ?>
+
+                                        <form method="post" class="review-form" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <input name="name" class="input" type="text" placeholder="Your Name"/>
+                                                <input name="name" class="input" value="<?= $listUser['fullName'] ?>"
+                                                       type="text" placeholder="Your Name" readonly/>
                                             </div>
                                             <div class="form-group">
-                                                <input name="email" class="input" type="email"
-                                                       placeholder="Email Address"/>
+                                                <textarea class="input" placeholder="Your review"
+                                                          name="noidung"></textarea>
                                             </div>
-                                            <div class="form-group">
-                                                <textarea name="conntent" class="input"
-                                                          placeholder="Your review"></textarea>
-                                            </div>
-                                            <!--                                            <div class="form-group">-->
-                                            <!--                                                <div class="input-rating">-->
-                                            <!--                                                    <strong class="text-uppercase">Your Rating: </strong>-->
-                                            <!--                                                    <div class="stars">-->
-                                            <!--                                                        <input type="radio" id="star5" name="rating" value="5"/><label-->
-                                            <!--                                                                for="star5"></label>-->
-                                            <!--                                                        <input type="radio" id="star4" name="rating" value="4"/><label-->
-                                            <!--                                                                for="star4"></label>-->
-                                            <!--                                                        <input type="radio" id="star3" name="rating" value="3"/><label-->
-                                            <!--                                                                for="star3"></label>-->
-                                            <!--                                                        <input type="radio" id="star2" name="rating" value="2"/><label-->
-                                            <!--                                                                for="star2"></label>-->
-                                            <!--                                                        <input type="radio" id="star1" name="rating" value="1"/><label-->
-                                            <!--                                                                for="star1"></label>-->
-                                            <!--                                                    </div>-->
-                                            <!--                                                </div>-->
-                                            <!--                                            </div>-->
-                                            <button class="primary-btn">Submit</button>
+                                            <button name="submit" class="primary-btn">Submit</button>
                                         </form>
                                     </div>
                                 </div>
@@ -258,7 +207,7 @@ $pdCategory = $idProduct['categoryId'];
             <!-- section title -->
             <div class="col-md-12">
                 <div class="section-title">
-                    <h2 class="title">Picked For You</h2>
+                    <h2 class="title">Sản phẩm liên quan</h2>
                 </div>
             </div>
             <!-- section title -->
@@ -267,39 +216,6 @@ $pdCategory = $idProduct['categoryId'];
             $list = $products->moreProduct($pdCategory);
             echo $list;
             ?>
-            <!-- Product Single -->
-            <!--            <div class="col-md-3 col-sm-6 col-xs-6">-->
-            <!--                <div class="product product-single">-->
-            <!--                    <div class="product-thumb">-->
-            <!--                        <div class="product-label">-->
-            <!--                            <span>New</span>-->
-            <!--                            <span class="sale">-20%</span>-->
-            <!--                        </div>-->
-            <!--                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>-->
-            <!--                        <img src="contents/img/product01.jpg" alt="">-->
-            <!--                    </div>-->
-            <!--                    <div class="product-body">-->
-            <!--                        <h3 class="product-price">$32.50-->
-            <!--                            <del class="product-old-price">$45.00</del>-->
-            <!--                        </h3>-->
-            <!--                        <div class="product-rating">-->
-            <!--                            <i class="fa fa-star"></i>-->
-            <!--                            <i class="fa fa-star"></i>-->
-            <!--                            <i class="fa fa-star"></i>-->
-            <!--                            <i class="fa fa-star"></i>-->
-            <!--                            <i class="fa fa-star-o empty"></i>-->
-            <!--                        </div>-->
-            <!--                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>-->
-            <!--                        <div class="product-btns">-->
-            <!--                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>-->
-            <!--                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
-            <!--                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart-->
-            <!--                            </button>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!-- /Product Single -->
         </div>
         <!-- /row -->
     </div>
