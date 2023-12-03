@@ -1,7 +1,13 @@
 <?php
+session_start();
 include '../admin/assets/include/pdo.php';
 include '../admin/page/product/product.php';
 $products = new products();
+if (!isset($_SESSION['member'])) {
+    $_SESSION['error'] = 'Bạn chưa đăng nhập tài khoản';
+    header("Location: index.php?page=login");
+    exit;
+}
 
 // thêm vào giỏ hàng
 if (isset($_POST['them'])) {

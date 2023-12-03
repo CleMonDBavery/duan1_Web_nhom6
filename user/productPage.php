@@ -3,6 +3,9 @@ $productId = $_GET['id'];
 $products = new products();
 $idProduct = $products->getById($productId);
 $pdCategory = $idProduct['categoryId'];
+$user = new User();
+$userId = $_SESSION['member'];
+$listUser = $user->getuserId($userId);
 
 
 ?>
@@ -100,12 +103,12 @@ $pdCategory = $idProduct['categoryId'];
                 <div class="col-md-12">
                     <div class="product-tab">
                         <ul class="tab-nav">
-                            <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-                            <!--                            <li><a data-toggle="tab" href="#tab1">Details</a></li>-->
+                            <li class="active"><a data-toggle="tab" href="#tab1">Thông tin chi tiết</a></li>
+                            <!--                                                        <li><a data-toggle="tab" href="#tab1">Details</a></li>-->
                             <li><a data-toggle="tab" href="#tab2">Reviews</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="tab1" class="tab-pane fade in ">
+                            <div id="tab1" class="tab-pane fade in active ">
                                 <p><strong>HƯỚNG DẪN BẢO QUẢN</strong><br>
                                     – Giặt máy ở nhiệt độ tối đa 30độC, giặt bên trong túi giặt và vắt ở tốc độ thấp để
                                     sản phẩm được bảo vệ tốt hơn.<br>
@@ -115,15 +118,16 @@ $pdCategory = $idProduct['categoryId'];
                                     phẩm lưu giữ màu tốt hơn.<br>
                                     – Là sản phẩm ở nhiệt độ dưới 110độC, ưu tiên dùng bàn là hơi nước.</p>
                             </div>
-                            <div id="tab2" class="tab-pane fade in active">
-                                <?php
-                                $productId = $_GET['id'];
-                                $lCmt = $products->listComment($productId);
-                                ?>
+                            <div id="tab2" class="tab-pane fade in ">
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="product-reviews">
                                             <h4 class="text-uppercase">Các bình luận</h4>
+                                            <?php
+                                            $productId = $_GET['id'];
+                                            $lCmt = $products->listComment($productId);
+                                            ?>
                                             <? foreach ($lCmt as $list) {
                                                 ?>
 
@@ -146,12 +150,18 @@ $pdCategory = $idProduct['categoryId'];
                                         <h4 class="text-uppercase">Đánh giá</h4>
                                         <p>Bình luận của bạn sẽ được công khai</p>
                                         <?php
-                                        $userId = $_SESSION['member'];
-                                        $user = new User();
-                                        $listUser = $user->getuserId($userId);
+                                        if (isset($_SESSION['error'])) {
+                                            echo '<p style="color:red">' . $_SESSION['error'] . '</p>';
+                                            unset($_SESSION['error']);
+                                        }
+                                        ?>
+                                        <?php
+
 
 
                                         if (isset($_SESSION['member']) && isset($_POST['submit'])) {
+                                            $listUser = $user->getuserId($userId);
+
                                             $content = $_POST['noidung'];
                                             $productId = $idProduct['productId'];
                                             $userId = $_SESSION['member'];
@@ -167,12 +177,18 @@ $pdCategory = $idProduct['categoryId'];
                                                 exit();
                                             }
                                         }
+                                        if (!isset($_SESSION['member'])) {
+                                            $_SESSION['error'] = 'Bạn chưa đăng nhập tài khoản';
+//                                            header("Location: ?page=productPage&id=$productId");
+                                            exit;
+                                        }
                                         ?>
 
                                         <form method="post" class="review-form" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <input name="name" class="input" value="<?= $listUser['fullName'] ?>"
                                                        type="text" placeholder="Your Name" readonly/>
+
                                             </div>
                                             <div class="form-group">
                                                 <textarea class="input" placeholder="Your review"

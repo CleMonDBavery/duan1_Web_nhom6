@@ -110,6 +110,13 @@ session_start();
             case 'pay':
                 require_once 'pay.php';
                 break;
+            case 'logout':
+
+                session_start();
+                $_SESSION = array();
+                session_destroy();
+                header('Location: ?page=login');
+                break;
             default:
                 require_once 'index.php';
                 break;

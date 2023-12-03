@@ -14,7 +14,7 @@ class products
     {
         $db = new connect();
         $query = 'select * from products limit 3';
-        $result = $db->pdo_query($query);
+        $result = $db->pdo_qu + ery($query);
         return $result;
     }
 

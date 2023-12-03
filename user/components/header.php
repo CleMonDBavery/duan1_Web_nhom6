@@ -36,14 +36,26 @@
                             <strong class="text-uppercase">Tài khoản </strong>
                             <!-- <i class="fa fa-caret-down"></i> -->
                         </div>
-                        <a href="#" class="text-uppercase">User</a>
+                        <a href="#" class="text-uppercase">
+                            <?
+                            if (isset($_SESSION['member'])) {
+                                $user = new User();
+                                $userId = $_SESSION['member'];
+                                $userInfo = $user->getuserId($userId);
+                                echo $userInfo['fullName'];
+                            } else {
+                                echo 'Khách hàng';
+                            }
+
+                            ?>
+                        </a>
                         <!-- / <a href="#" class="text-uppercase">Join</a> -->
                         <ul class="custom-menu">
-                            <li><a href="?page=profile"><i class="fa fa-user-o"></i> My Account</a></li>
-                            <!-- <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li> -->
-                            <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-                            <li><a href="?page=login"><i class="fa fa-unlock-alt"></i> Login</a></li>
-                            <li><a href="?page=register"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+                            <li><a href="?page=profile"><i class="fa fa-user-o"></i>Tài khoản của tôi</a></li>
+                            <li><a href="?page=login"><i class="fa fa-unlock-alt"></i> Đăng nhập</a></li>
+                            <li><a href="?page=register"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
+                            <li><a href="?page=logout"><i class="fa fa-check"></i> Đăng xuất</a></li>
+
                         </ul>
                     </li>
                     <!-- /Account -->

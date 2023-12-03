@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION['member'])) {
+    header("location: ?page=login");
+    exit();
+}
 $user = new User();
 $userId = $_SESSION['member'];
 $userInfo = $user->getuserId($userId);
