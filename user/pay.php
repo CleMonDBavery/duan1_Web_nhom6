@@ -128,26 +128,35 @@ include './components/nav.php';
                     <?php
                     $order = new orders();
                     $promotion = new promotions();
-                    $db = new connect();
+
+                    if (isset($_POST['greatVoucher'])) {
+                        $promotion = new promotions();
+
+                        $name = isset($_POST['voucher']) ? $_POST['voucher'] : NULL;
+                        $select = $promotion->getPromotionsName($name);
+
+                        if ($select && isset($select[0]['conditionPro'], $select[0]['name'], $select[0]['discount']) && $tongTien >= $select[0]['conditionPro']) {
+                            echo "Áp dụng mã khuyến mãi: " . $select[0]['name'];
+                            echo "<br>Áp dụng mã: - " . number_format($select[0]['discount']);
+                            $tongTien -= $select[0]['discount'];
+
+                            $_SESSION['promotion'] = $select[0];
+                            $_SESSION['totalPrice'] = $tongTien;
+                        } else {
+                            echo "Không đủ điều kiện để sử dụng mã khuyến mãi.";
+                            return;
+                        }
+                    }
+
                     if (isset($_POST['btnDatHang'])) {
 
-                        $totalPrice = $tongTien;
+                        $totalPrice = isset($_SESSION['totalPrice']) ? $_SESSION['totalPrice'] : $tongTien;
                         $destination = $_POST['address'];
-                        $promotionId = isset($_POST['voucher']) ? $_POST['voucher'] : NULL;
+                        $promotionId = isset($_SESSION['promotion']['promotionId']) ? $_SESSION['promotion']['promotionId'] : NULL;
                         $userId = $list['userId'];
                         $status = 'Chờ xác nhận';
                         $date = date('Y-m-d H:i:s');
 
-                        if (isset($_POST['greatVoucher'])) {
-                            $promotion = $promotion->getPromotions($promotionId);
-                            if ($promotion && $totalPrice >= $promotion['conditionPro']) {
-                                echo "Áp dụng mã khuyến mãi: " . $promotion['name'];
-                                $totalPrice -= $promotion['discount'];
-                            } else {
-                                echo "Không đủ điều kiện để sử dụng mã khuyến mãi.";
-                                return;
-                            }
-                        }
 
                         $order->insertOrder($totalPrice, $destination, $promotionId, $userId, $status, $date);
                         $query = $order->getOrderID();
@@ -160,16 +169,17 @@ include './components/nav.php';
 
                             $result = $order->insertOrderDetail($productId, $amount, $orderId, $price);
 
-                            if (!$result) {
+                            if ($result) {
                                 echo "Có lỗi xảy ra khi thêm chi tiết đơn hàng.";
                             } else {
-                                echo "Thêm chi tiết đơn hàng thành công!";
+                                echo "Thêm đơn hàng thành công!";
                             }
 
                         } else {
                             echo "Có lỗi xảy ra khi tạo đơn hàng.";
                         }
                     }
+
                     ?>
 
                     <li class='list-group-item d-flex justify-content-between'>

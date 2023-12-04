@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N024 - Update url page cart">
+      <change afterPath="$PROJECT_DIR$/user/components/cancellation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/include/pdo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/include/pdo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/comment/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/comment/comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/page/order/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/order/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/product/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/product/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/page/promotion/promotions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/promotion/promotions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/components/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/components/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/users/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/users/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/components/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/giohang.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/giohang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/pay.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/pay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,22 +79,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev/vinhlp",
-    "last_opened_file_path": "D:/Ampps/www/duan1_Web_nhom6",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Ampps/www/duan1_Web_nhom6&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Ampps\www\duan1_Web_nhom6\user" />
@@ -169,6 +175,8 @@
       <workItem from="1701535215400" duration="772000" />
       <workItem from="1701577105801" duration="2892000" />
       <workItem from="1701581864103" duration="711000" />
+      <workItem from="1701693136439" duration="459000" />
+      <workItem from="1701695564220" duration="3717000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />

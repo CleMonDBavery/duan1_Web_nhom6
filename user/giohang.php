@@ -21,10 +21,10 @@ if (empty($_COOKIE['cart'])) {
         <thead>
         <tr>
             <th>ID</th>
-            <th>Tên</th>
             <th>Hình ảnh</th>
-            <th>Giá</th>
+            <th>Tên</th>
             <th>Số lượng</th>
+            <th>Giá</th>
             <th>Tổng tiền</th>
             <th></th>
         </tr>
@@ -43,8 +43,8 @@ if (empty($_COOKIE['cart'])) {
             ?>
             <tr>
                 <td scope="row"><?= $sp['productId'] ?></td>
-                <td><?= $sp['name'] ?></td>
                 <td><img style="width: 100px" src="../image/<?= $sp['image'] ?>"></td>
+                <td><?= $sp['name'] ?></td>
                 <td width="150px">
                     <!-- cập nhật số lượng sản phẩm  -->
 

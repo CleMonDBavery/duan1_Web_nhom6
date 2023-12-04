@@ -43,7 +43,7 @@ class comment
     {
         $db = new connect();
         $sql = "SELECT products.productId, products.name, (SELECT COUNT(*) FROM comments 
-                WHERE comments.productId = products.productId AND comments.status = 'Active') 
+                WHERE comments.productId = products.productId ) 
                 AS count FROM products";
         $result = $db->pdo_query($sql);
         return $result;
@@ -60,7 +60,7 @@ class comment
     public function getList($productId)
     {
         $db = new connect();
-        $sql = "SELECT * FROM comments INNER JOIN users ON `comments`.userId = `users`.userId WHERE productId = '$productId' AND comments.status = 'Active'";
+        $sql = "SELECT * FROM comments INNER JOIN users ON `comments`.userId = `users`.userId WHERE productId = '$productId'";
         $result = $db->pdo_query($sql);
         return $result;
     }

@@ -105,6 +105,14 @@ class orders
         return $result;
     }
 
+    public function cancellation($orderId)
+    {
+        $db = new connect();
+        $sql = "UPDATE orders SET status = 'Đơn đã hủy' WHERE orderId = '$orderId'";
+        $result = $db->pdo_query($sql);
+        return $result;
+    }
+
     public function cancelOrder($orderId)
     {
         $db = new connect();

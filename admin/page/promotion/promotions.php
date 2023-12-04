@@ -3,19 +3,19 @@ $db = '';
 
 class promotions
 {
-    public function getPromotions($positionId)
+    public function getPromotions($promotionId)
     {
         $db = new connect();
-        $sql = "SELECT  FROM promotions WHERE positionId = '$positionId'";
-        $result = $db->pdo_execute($sql);
+        $sql = "SELECT * FROM promotions WHERE promotionId = '$promotionId'";
+        $result = $db->pdo_query($sql);
         return $result;
     }
 
     public function getPromotionsName($name)
     {
         $db = new connect();
-        $sql = "SELECT  FROM promotions WHERE name = '$name'";
-        $result = $db->pdo_execute($sql);
+        $sql = "SELECT * FROM promotions WHERE name = '$name'";
+        $result = $db->pdo_query($sql);
         return $result;
     }
 
