@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N024 - Update url page cart">
-      <change afterPath="$PROJECT_DIR$/user/components/cancellation.php" afterDir="false" />
+    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N028 - Update order page profile and page pay">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/comment/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/comment/comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/order/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/order/orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/product/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/product/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/promotion/promotions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/promotion/promotions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/users/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/users/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/components/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/giohang.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/giohang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/pay.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/pay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/productPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/productPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/products.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/kientt" />
+        <entry key="$PROJECT_DIR$" value="dev/develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +78,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/vinhlp&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Ampps/www/duan1_Web_nhom6&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -177,6 +171,7 @@
       <workItem from="1701581864103" duration="711000" />
       <workItem from="1701693136439" duration="459000" />
       <workItem from="1701695564220" duration="3717000" />
+      <workItem from="1701735881852" duration="4034000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />
@@ -268,7 +263,8 @@
     <MESSAGE value="N019 - Update footer" />
     <MESSAGE value="N021 - Update login amdin" />
     <MESSAGE value="N023 - Create pay page" />
-    <option name="LAST_COMMIT_MESSAGE" value="N023 - Create pay page" />
+    <MESSAGE value="N028 - Update order page profile and page pay" />
+    <option name="LAST_COMMIT_MESSAGE" value="N028 - Update order page profile and page pay" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -4,7 +4,7 @@ $products = new products();
 $idProduct = $products->getById($productId);
 $pdCategory = $idProduct['categoryId'];
 $user = new User();
-$userId = $_SESSION['member'];
+$userId = isset($_SESSION['member']) ? $_SESSION['member'] : '';
 $listUser = $user->getuserId($userId);
 
 
@@ -19,9 +19,9 @@ $listUser = $user->getuserId($userId);
 <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Category</a></li>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Loại</a></li>
             <li class="active"><?= $idProduct['name']; ?></li>
         </ul>
     </div>
@@ -131,18 +131,19 @@ $listUser = $user->getuserId($userId);
                                             <? foreach ($lCmt as $list) {
                                                 ?>
 
-                                            <div class="single-review">
-                                                <div class="review-heading">
-                                                    <div><a href="#"><i
-                                                                    class="fa fa-user-o"></i> <?= $list['fullName'] ?>
-                                                        </a></div>
-                                                    <div><a href="#"><i class="fa fa-clock-o"></i> <?= $list['date'] ?>
-                                                        </a></div>
+                                                <div class="single-review">
+                                                    <div class="review-heading">
+                                                        <div><a href="#"><i
+                                                                        class="fa fa-user-o"></i> <?= $list['fullName'] ?>
+                                                            </a></div>
+                                                        <div><a href="#"><i
+                                                                        class="fa fa-clock-o"></i> <?= $list['date'] ?>
+                                                            </a></div>
+                                                    </div>
+                                                    <div class="review-body">
+                                                        <p><?= $list['content'] ?></p>
+                                                    </div>
                                                 </div>
-                                                <div class="review-body">
-                                                    <p><?= $list['content'] ?></p>
-                                                </div>
-                                            </div>
                                             <? } ?>
                                         </div>
                                     </div>
@@ -156,7 +157,6 @@ $listUser = $user->getuserId($userId);
                                         }
                                         ?>
                                         <?php
-
 
 
                                         if (isset($_SESSION['member']) && isset($_POST['submit'])) {

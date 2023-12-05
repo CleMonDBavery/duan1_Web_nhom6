@@ -172,7 +172,8 @@ include './components/nav.php';
                             if ($result) {
                                 echo "Có lỗi xảy ra khi thêm chi tiết đơn hàng.";
                             } else {
-                                echo "Thêm đơn hàng thành công!";
+
+                                echo "<script>alert('Thêm đơn hàng thành công')</script>";
                             }
 
                         } else {
@@ -215,7 +216,6 @@ include './components/nav.php';
                         </div>
 
                     </div>
-
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block w-25" type="submit" name="btnDatHang">
                         Đặt hàng
