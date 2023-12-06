@@ -57,9 +57,10 @@
                             </div>
                         </div>
                         <div class="col-md-5 d-flex align-items-stretch">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31434.31585011052!2d105.75360622999114!3d9.992929565875835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a08906415c355f%3A0x416815a99ebd841e!2sFPT%20Polytechnic%20College!5e0!3m2!1sen!2s!4v1701012594866!5m2!1sen!2s"
-                                    width="600" height="570" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15717.731494909474!2d105.74664560845945!3d9.981055891581562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a08906415c355f%3A0x416815a99ebd841e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1701772249485!5m2!1svi!2s"
+                                    width="600" height="569" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </div>
                     <div class="row">

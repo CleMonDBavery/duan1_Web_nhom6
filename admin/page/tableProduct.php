@@ -40,7 +40,7 @@
                                             <img src="../../image/<?= $item['image'] ?>"
                                                  class="img-thumbnail w-75" alt="...">
                                         </td>
-                                        <td><?= $item['price'] ?></td>
+                                        <td><?= number_format($item['price']) ?></td>
                                         <td
                                             <?php
                                             if ($item['status'] === 'Active') {
@@ -105,7 +105,7 @@
                                             <img src="../../image/<?= $item['image'] ?>"
                                                  class="img-thumbnail w-75" alt="...">
                                         </td>
-                                        <td><?= $item['price'] ?></td>
+                                        <td><?= number_format($item['price']) ?></td>
                                         <td class="text-secondary">
                                             <?= $item['status']; ?>
                                         </td>

@@ -154,7 +154,7 @@ class orders
         $db = new connect();
         $orderId = (int)$orderId;
         $sql = "INSERT INTO orderdetail (productId, amount, orderId, price)
-             VALUES ('$productId', '$amount', '$orderId', '$price')";
+                VALUES ('$productId', '$amount', '$orderId', '$price')";
         $result = $db->pdo_query($sql);
         return $result;
     }

@@ -72,7 +72,7 @@ if (isset($_POST['login'])) {
             <!--                <a href="auth-register.html" class="font-bold">Sign up</a>.-->
             <!--            </p>-->
             <p>
-                <a class="font-bold" href="auth-forgot-password.html">Quên mật khẩu?</a>.
+                <!--                <a class="font-bold" href="auth-forgot-password.html">Quên mật khẩu?</a>.-->
             </p>
         </div>
     </div>
