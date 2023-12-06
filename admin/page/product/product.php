@@ -118,10 +118,10 @@ class products
         return $result;
     }
 
-    public function searchProduct($product_name)
+    public function searchProduct($name)
     {
         $db = new connect();
-        $select = "SELECT * FROM products WHERE product_name LIKE '%$product_name%'";
+        $select = "SELECT * FROM products WHERE name LIKE '%$name%'";
         $result = $db->pdo_query($select);
         return $result;
     }

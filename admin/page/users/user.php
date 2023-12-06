@@ -29,17 +29,21 @@ class User
     public function getOrder($userId)
     {
         $db = new connect();
+        $userId = is_array($userId) ? implode(",", $userId) : $userId;
         $sql = "SELECT `users`.username AS 'Người mua', `orders`.totalPrice AS 'Tổng tiền', 
-               `orders`.date AS 'Ngày mua', `orders`.destination AS 'Địa chỉ', 
-               `orders`.status AS 'Trạng thái'
-        FROM orders 
-        JOIN users ON `orders`.userId = `users`.userId 
-        WHERE  `orders`.userId = :userId";
+           `orders`.date AS 'Ngày mua', `orders`.destination AS 'Địa chỉ', 
+           `orders`.status AS 'Trạng thái', `products`.name AS 'Tên', `products`.image AS 'Hình', 
+           `products`.price AS 'Giá', `orderdetail`.amount AS 'Số lượng', `orders`.status AS 'Trạng thái'
+            FROM orders 
+            JOIN users ON `orders`.userId = `users`.userId 
+            JOIN orderdetail ON `orders`.orderId = `orderdetail`.orderId
+            JOIN products ON `orderdetail`.productId = `products`.productId
+            WHERE  `orders`.userId = $userId";
 
-        $params = array(':userId' => $userId);
-        $result = $db->pdo_execute_params($sql, $params);
+//        $params = array(':userId' => $userId);
+        $result = $db->pdo_execute($sql);
 
-        return $result; // Ensure $result is an array of associative arrays
+        return $result;
     }
 
 

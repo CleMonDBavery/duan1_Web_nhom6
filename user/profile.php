@@ -121,17 +121,14 @@ if (isset($_POST['saveInfo'])) {
             </div>
         </div>
     </div>
-    <?php
-    //    $user = new User();
-    //    $userId = $_SESSION['member'];
-    //    $orderConfirm = $user->getOrder($userId);
-    ?>
+
 
     <div class="col-md-12">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="text-right">Đơn hàng chờ xác nhận</h4>
         </div>
         <div class="table-responsive">
+
             <table class="table">
                 <thead class="thead-light">
                 <tr>
@@ -143,25 +140,49 @@ if (isset($_POST['saveInfo'])) {
                     <th scope="col">Giá</th>
                     <th scope="col">Số lượng</th>
                     <th scope="col">Tổng tiền</th>
+                    <th scope="col">Trạng thái</th>
                     <th scope="col">Thao tác</th>
                 </tr>
                 </thead>
-                <tbody class="customtable">
+                <?php
+                $user = new User();
+                $userId = $_SESSION['member'];
+                $orderProfile = $user->getOrder($userId);
+                //                var_dump($orderProfile);
+
+                foreach ($orderProfile as $item) {
+                    ?>
+                    <tbody class="customtable">
                 <tr>
                     <th>
                         1
                     </th>
-                    <td>SP 1</td>
-                    <td><img src="./contents/img/product08.jpg" alt="" class="img-thumbnail w-25"></td>
-                    <td>20000</td>
-                    <td class="w-25"><input type="number" class="form-control" value="2"></td>
-                    <td>40000</td>
+                    <td><?= $item['Người mua'] ?></td>
+                    <td class="w-25"><img src="../image/<?= $item['Hình'] ?>" alt="" class="img-thumbnail w-50">
+                    </td>
+                    <td><?= number_format($item['Giá']) ?></td>
+                    <td class="w-25"><?= $item['Số lượng'] ?></td>
+                    <td><?= number_format($item['Tổng tiền']) ?></td>
+                    <td <?php if ($item['Trạng thái'] == 'Chờ xác nhận') {
+                        echo 'class="text-danger"';
+                    } elseif ($item['Trạng thái'] == 'Đang vận chuyển') {
+                        echo 'class="text-success"';
+                    } else {
+                        echo 'class="text-warning"';
+                    } ?>>
+                        <?= $item['Trạng thái'] ?>
+                    </td>
                     <td>
-                        <button class="btn btn-info">Xóa</button>
+                        <a href="?page=cancellation" class="btn btn-info">Hủy đơn</a>
                     </td>
                 </tr>
+                    </tbody><?
 
-                </tbody>
+                }
+
+                ?>
+
             </table>
         </div>
     </div>
+</div>

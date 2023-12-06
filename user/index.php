@@ -110,6 +110,9 @@ session_start();
             case 'pay':
                 require_once 'pay.php';
                 break;
+            case 'cancellation':
+                require_once 'components/cancellation.php';
+                break;
             case 'logout':
 
                 session_start();
