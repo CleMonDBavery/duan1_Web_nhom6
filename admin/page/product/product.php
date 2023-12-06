@@ -402,4 +402,71 @@ class products
         return $result;
     }
 
+    public function searchProducts($searchTerm)
+    {
+        $db = new connect();
+        $query = "SELECT * FROM Products WHERE `name` LIKE '%$searchTerm%'";
+        $result = $db->pdo_query($query);
+
+        $count = 0;
+        $output = '';
+
+        foreach ($result as $row) {
+            if ($count >= 0) {
+                // Process data
+                $id = $row['productId'];
+                $name = $row['name'];
+                $img = $row['image'];
+                $price = $row['price'];
+                $priceSale = $row['priceSale'];
+                $discountPercentage = '';
+
+                if (!empty($priceSale) && $priceSale > $price) {
+                    $discountPercentage = round(100 - (($price) * 100 / $priceSale));
+                }
+
+                $output .= '<div class="col-md-4 col-sm-6 col-xs-6">';
+                $output .= '<div class="product product-single">';
+                $output .= '<div class="product-thumb">';
+                $output .= '<div class="product-label">';
+                $output .= '<span>New</span>';
+
+                if (!empty($discountPercentage)) {
+                    $output .= '<span class="sale">- ' . $discountPercentage . ' % </span>';
+                }
+
+                $output .= '</div>';
+                $output .= '<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>';
+                $output .= "<img src='../image/" . $img . "' alt=''>";
+                $output .= '</div>';
+                $output .= '<div class="product-body">';
+                $output .= '<h3 class="product-price">' . number_format($price) . ' VND</h3>';
+                if (!empty($priceSale)) {
+                    $output .= '<h2><del class="product-old-price">' . number_format($priceSale) . ' VND</del></h2>';
+                }
+
+                $output .= '<div class="product-rating">';
+                $output .= '<i class="fa fa-star"></i>';
+                $output .= '<i class="fa fa-star"></i>';
+                $output .= '<i class="fa fa-star"></i>';
+                $output .= '<i class="fa fa-star"></i>';
+                $output .= '<i class="fa fa-star-o empty"></i>';
+                $output .= '</div>';
+                $output .= '<h2 class="product-name"><a href="?page=productPage&id=' . $id . '">' . $name . '</a></h2>';
+                $output .= '<div class="product-btns">';
+                $output .= '<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>';
+                $output .= '<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>';
+                $output .= '<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>';
+                $output .= '</div>';
+                $output .= '</div>';
+                $output .= '</div>';
+                $output .= '</div>';
+            }
+
+            $count++;
+        }
+
+        return $output;
+    }
+
 }

@@ -13,16 +13,27 @@
 
                 <!-- Search -->
                 <div class="header-search">
-                    <form>
-                        <input class="input search-input" type="text" placeholder="Enter your keyword">
-                        <select class="input search-categories">
-                            <option value="0">All Categories</option>
-                            <option value="1">Category 01</option>
-                            <option value="1">Category 02</option>
-                        </select>
-                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                    <form method="post" enctype="multipart/form-data">
+                        <input sty name="timkiem" class="input" style="padding-right: 150px" type="text"
+                               placeholder="Tìm kiếm sản phẩm">
+                        <button name="search" class="search-btn"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
+                <?php
+                $product = new products();
+
+                if (isset($_POST['search'])) {
+                    $searchTerm = $_POST['timkiem']; // Lấy giá trị từ ô tìm kiếm
+                    $result = $product->searchProducts($searchTerm);
+
+                    if (!empty($result)) {
+                        // Redirect to products.php with the search term
+                        header("Location: ?page=products&search=$searchTerm");
+                        exit();
+                    }
+                }
+                ?>
+
                 <!-- /Search -->
             </div>
             <div class="pull-right">

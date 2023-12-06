@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -199,11 +200,25 @@
                 <div id="store">
                     <!-- row -->
                     <div class="row">
-                        <?php
-                        $product = new products();
-                        $list = $product->pageProducts();
+                        <?
+                        $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
 
-                        echo $list;
+                        // Display products based on the search term
+                        if (!empty($searchTerm)) {
+                            $product = new products();
+                            $result = $product->searchProducts($searchTerm);
+
+                            if (!empty($result)) {
+                                echo $result;
+                            } else {
+                                echo '<p>No products found for the search term: ' . $searchTerm . '</p>';
+                            }
+                        } else {
+                            // Display all products if no search term is provided
+                            $product = new products();
+                            $list = $product->pageProducts();
+                            echo $list;
+                        }
                         ?>
                     </div>
                     <!-- /row -->
