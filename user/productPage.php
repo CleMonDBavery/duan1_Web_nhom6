@@ -90,11 +90,11 @@ $listUser = $user->getuserId($userId);
                                 </button>
                             </form>
 
-                            <div class="pull-right">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                <button class="main-btn icon-btn"><i class="fa fa-share-alt"></i></button>
-                            </div>
+                            <!--                            <div class="pull-right">-->
+                            <!--                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>-->
+                            <!--                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
+                            <!--                                <button class="main-btn icon-btn"><i class="fa fa-share-alt"></i></button>-->
+                            <!--                            </div>-->
                         </div>
 
 
@@ -105,7 +105,7 @@ $listUser = $user->getuserId($userId);
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Thông tin chi tiết</a></li>
                             <!--                                                        <li><a data-toggle="tab" href="#tab1">Details</a></li>-->
-                            <li><a data-toggle="tab" href="#tab2">Reviews</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Đánh giá</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="tab1" class="tab-pane fade in active ">
@@ -187,14 +187,14 @@ $listUser = $user->getuserId($userId);
                                         <form method="post" class="review-form" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <input name="name" class="input" value="<?= $listUser['fullName'] ?>"
-                                                       type="text" placeholder="Your Name" readonly/>
+                                                       type="text" placeholder="Họ và tện" readonly/>
 
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="input" placeholder="Your review"
+                                                <textarea class="input" placeholder="Nội dung"
                                                           name="noidung"></textarea>
                                             </div>
-                                            <button name="submit" class="primary-btn">Submit</button>
+                                            <button name="submit" class="primary-btn">Ghi</button>
                                         </form>
                                     </div>
                                 </div>
