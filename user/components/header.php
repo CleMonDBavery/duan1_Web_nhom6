@@ -80,8 +80,9 @@
                         <a href="?page=cart">
                             <div class="header-btns-icon">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span class="qty">3</span>
                             </div>
+                            <strong class="text-uppercase">Giỏ hàng</strong>
+
                         </a>
                     </li>
 

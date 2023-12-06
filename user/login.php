@@ -1,5 +1,7 @@
 <?php
-//include '../admin/page/users/user.php';
+if (isset($_SESSION['member'])) {
+    header('location: index.php');
+}
 $user = new User();
 
 if (isset($_POST['login'])) {

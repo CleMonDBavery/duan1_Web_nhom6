@@ -10,6 +10,24 @@ class products
         return $result;
     }
 
+    public function getWomanProductCategory($categoryID)
+    {
+        $db = new connect();
+        $query = "SELECT productId, name FROM products WHERE categoryId = $categoryID AND gender = 'Nữ' AND status='Active' ";
+        $result = $db->pdo_query($query);
+        return $result;
+    }
+
+    public function getMenProductCategory($categoryID)
+    {
+        $db = new connect();
+        $query = "SELECT productId, name FROM products WHERE categoryId = $categoryID AND gender = 'Nam' AND status='Active' ";
+        $result = $db->pdo_query($query);
+        return $result;
+    }
+
+
+
     public function getListLimitPR()
     {
         $db = new connect();
@@ -302,7 +320,7 @@ class products
     public function moreProduct($pdCategory)
     {
         $db = new connect();
-        $query = "SELECT * FROM products where `categoryId` = '$pdCategory' ";
+        $query = "SELECT * FROM products WHERE `categoryId` = '$pdCategory' ORDER BY RAND()";
         $result = $db->pdo_query($query);
 
         $count = 0;
