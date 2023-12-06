@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N029 - Translate the page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/order/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/order/orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/tableProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/tableProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/productPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/productPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/giohang.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/giohang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/pay.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/pay.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
