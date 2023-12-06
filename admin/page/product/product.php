@@ -255,7 +255,7 @@ class products
                 $discountPercentage = round(100 - (($price) * 100 / $priceSale));
             }
 
-            $output .= '<div class="col-md-4 col-sm-6 col-xs-6">';
+            $output .= '<div class="col-md-3 col-sm-6 col-xs-6">';
             $output .= '<div class="product product-single">';
             $output .= '<div class="product-thumb">';
             $output .= '<div class="product-label">';
@@ -413,7 +413,6 @@ class products
 
         foreach ($result as $row) {
             if ($count >= 0) {
-                // Process data
                 $id = $row['productId'];
                 $name = $row['name'];
                 $img = $row['image'];
@@ -425,7 +424,7 @@ class products
                     $discountPercentage = round(100 - (($price) * 100 / $priceSale));
                 }
 
-                $output .= '<div class="col-md-4 col-sm-6 col-xs-6">';
+                $output .= '<div class="col-md-3 col-sm-6 col-xs-6">';
                 $output .= '<div class="product product-single">';
                 $output .= '<div class="product-thumb">';
                 $output .= '<div class="product-label">';

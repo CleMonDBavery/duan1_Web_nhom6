@@ -62,11 +62,16 @@
                         </a>
                         <!-- / <a href="#" class="text-uppercase">Join</a> -->
                         <ul class="custom-menu">
-                            <li><a href="?page=profile"><i class="fa fa-user-o"></i>Tài khoản của tôi</a></li>
+                            <?
+                            if (isset($_SESSION['member'])) { ?>
+                                <li><a href="?page=profile"><i class="fa fa-user-o"></i>Tài khoản của tôi</a></li>
+                                <li><a href="?page=logout"><i class="fa fa-check"></i> Đăng xuất</a></li>
+
+                            <? } else {
+                                ?>
                             <li><a href="?page=login"><i class="fa fa-unlock-alt"></i> Đăng nhập</a></li>
                             <li><a href="?page=register"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
-                            <li><a href="?page=logout"><i class="fa fa-check"></i> Đăng xuất</a></li>
-
+                            <? } ?>
                         </ul>
                     </li>
                     <!-- /Account -->
