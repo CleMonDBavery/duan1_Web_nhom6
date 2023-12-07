@@ -5,7 +5,7 @@
             <div class="pull-left">
                 <!-- Logo -->
                 <div class="header-logo">
-                    <a class="logo" href="#">
+                    <a class="logo" href="index.php">
                         <img src="contents/img/logo.png" alt="">
                     </a>
                 </div>
@@ -69,8 +69,8 @@
 
                             <? } else {
                                 ?>
-                            <li><a href="?page=login"><i class="fa fa-unlock-alt"></i> Đăng nhập</a></li>
-                            <li><a href="?page=register"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
+                                <li><a href="?page=login"><i class="fa fa-unlock-alt"></i> Đăng nhập</a></li>
+                                <li><a href="?page=register"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
                             <? } ?>
                         </ul>
                     </li>
