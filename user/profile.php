@@ -173,7 +173,16 @@ if (isset($_POST['saveInfo'])) {
                         <?= $item['Trạng thái'] ?>
                     </td>
                     <td>
-                        <a href="?page=cancellation" class="btn btn-info">Hủy đơn</a>
+                        <?
+                        if ($item['Trạng thái'] == 'Đang vận chuyển' || $item['Trạng thái'] == 'Đơn đã hủy') {
+                            $disabled = 'disabled';
+                        } else {
+                            $disabled = '';
+                        }
+                        ?>
+                        <a href="?page=cancellation&id=<?= $item['orderId'] ?>"
+                           class="btn btn-info <?= $disabled ?>">Hủy
+                            đơn</a>
                     </td>
                 </tr>
                     </tbody><?

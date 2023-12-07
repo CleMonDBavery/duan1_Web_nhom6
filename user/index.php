@@ -65,6 +65,7 @@ session_start();
     include '../admin/page/comment/comment.php';
     include '../admin/page/users/user.php';
     include '../admin/page/promotion/promotions.php';
+    include 'PHPMailer/forgot.php';
 
     include("components/header.php");
     include("components/nav.php");
@@ -85,7 +86,6 @@ session_start();
             case 'productPage':
                 include 'productPage.php';
                 break;
-
             case 'contact':
                 require_once 'contact.php';
                 break;
@@ -112,6 +112,15 @@ session_start();
                 break;
             case 'cancellation':
                 require_once 'components/cancellation.php';
+                break;
+            case 'forgotPass':
+                require_once 'forgotPass.php';
+                break;
+            case 'codePass':
+                require_once 'codePass.php';
+                break;
+            case 'resetPass':
+                require_once 'resetPass.php';
                 break;
             case 'logout':
 

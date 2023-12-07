@@ -64,7 +64,7 @@ if (isset($_POST['login'])) {
                                             in
                                         </button>
                                     </div>
-                                    <a class="small text-muted" href="#!">Quên mật khẩu</a>
+                                    <a class="small text-muted" href="?page=forgotPass">Quên mật khẩu</a>
                                     <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn chưa có tài khoản? <a
                                                 href="?page=register"
                                                 style="color: #393f81;">Đăng ký tại đây</a></p>
@@ -78,9 +78,11 @@ if (isset($_POST['login'])) {
                                         </svg>
                                     </a>
                                 </form>
+
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

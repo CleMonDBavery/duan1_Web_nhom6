@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <a href="forgot.php" class="btn btn-info">Gửi</a>
+                                                <a href="PHPMailer/forgot.php" class="btn btn-info">Gửi</a>
                                             </div>
                                         </div>
                                     </div>
@@ -111,3 +111,4 @@
         </div>
     </div>
 </section>
+

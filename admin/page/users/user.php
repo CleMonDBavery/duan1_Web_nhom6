@@ -209,8 +209,25 @@ class User
         return $result;
     }
 
+    public function getUserEmail($email)
+    {
+        $db = new connect();
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $result = $db->pdo_query($sql);
+        if ($result) {
+            return $result;
+        } else {
+            echo "<h4 class='text-danger'>Email không tồn tại</h4>";
+        }
+    }
 
-
+    public function forgetPass($password, $email)
+    {
+        $db = new connect();
+        $sql = "UPDATE users set password = '$password' WHERE email = '$email'";
+        $result = $db->pdo_query_one($sql);
+        return $result;
+    }
 
 
 }
