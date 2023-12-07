@@ -16,9 +16,9 @@
                             if ($pass2 != $password) {
                                 $error['fail'] = "Mật khẩu không khớp, mời nhập lại.";
                             } else {
-                                $error['succes'] = "Đổi mật khẩu thành công. Sẽ chuyển hướng sau 3s.";
+                                $error['succes'] = "Đổi mật khẩu thành công.";
                                 $user->forgetPass($password, $_SESSION['email']);
-                                header("refresh: 3s; login.php");
+//                                header("refresh: 3s; login.php");
                             }
                         }
                     }
