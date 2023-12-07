@@ -26,6 +26,35 @@ class User
         return $result;
     }
 
+    public function checkPassword($userId, $password)
+    {
+        $db = new connect();
+        $userId = is_array($userId) ? implode(",", $userId) : $userId;
+
+        $sql = "SELECT userId FROM users WHERE userId = '$userId' AND password = '$password'";
+        $result = $db->pdo_query($sql);
+
+        // Trả về true nếu mật khẩu đúng, ngược lại trả về false
+        return !empty($result);
+    }
+
+
+    public function updatePassword($userId, $newPassword)
+    {
+        $db = new connect();
+        $userId = is_array($userId) ? implode(",", $userId) : $userId;
+
+        // Mã hóa mật khẩu mới bằng MD5 trước khi lưu vào cơ sở dữ liệu
+        $hashedPassword = md5($newPassword);
+
+        $sql = "UPDATE users SET password = '$hashedPassword' WHERE userId = '$userId'";
+        $result = $db->pdo_query($sql);
+
+        // Trả về true nếu cập nhật thành công, ngược lại trả về false
+        return $result;
+    }
+
+
     public function getOrder($userId)
     {
         $db = new connect();
