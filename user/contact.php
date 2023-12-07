@@ -48,8 +48,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="submit" value="Send Message" class="btn btn-primary">
-                                                <div class="submitting"></div>
+                                                <a href="forgot.php" class="btn btn-info">Gửi</a>
                                             </div>
                                         </div>
                                     </div>

@@ -27,7 +27,6 @@ class products
     }
 
 
-
     public function getListLimitPR()
     {
         $db = new connect();
@@ -275,7 +274,7 @@ class products
             }
 
             $output .= '</div>';
-            $output .= '<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>';
+            $output .= '<a href="?page=productPage&id=' . $id . '" class="main-btn quick-view fs-5"><i class="fa fa-search-plus"></i> Quick view</a>';
             $output .= "<img src='../image/" . $img . "' alt=''>";
             $output .= '</div>';
             $output .= '<div class="product-body">';
@@ -284,18 +283,9 @@ class products
                 $output .= '<h2><del class="product-old-price">' . number_format($priceSale) . ' VND</del></h2>';
             }
 
-            $output .= '<div class="product-rating">';
-            $output .= '<i class="fa fa-star"></i>';
-            $output .= '<i class="fa fa-star"></i>';
-            $output .= '<i class="fa fa-star"></i>';
-            $output .= '<i class="fa fa-star"></i>';
-            $output .= '<i class="fa fa-star-o empty"></i>';
-            $output .= '</div>';
+
             $output .= '<h2 class="product-name"><a href="?page=productPage&id=' . $id . '">' . $name . '</a></h2>';
             $output .= '<div class="product-btns">';
-            $output .= '<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>';
-            $output .= '<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>';
-            $output .= '<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>';
             $output .= '</div>';
             $output .= '</div>';
             $output .= '</div>';
@@ -344,7 +334,7 @@ class products
                 }
 
                 $output .= '</div>';
-                $output .= '<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>';
+                $output .= '<a href="?page=productPage&id=' . $id . '" class="main-btn quick-view fs-5"><i class="fa fa-search-plus"></i> Quick view</a>';
                 $output .= "<img src='../image/" . $img . "' alt=''>";
                 $output .= '</div>';
                 $output .= '<div class="product-body">';
@@ -353,18 +343,9 @@ class products
                     $output .= '<h2><del class="product-old-price">' . number_format($priceSale) . '</del></h2>';
                 }
 
-                $output .= '<div class="product-rating">';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star-o empty"></i>';
-                $output .= '</div>';
+
                 $output .= '<h2 class="product-name"><a href="?page=productPage&id=' . $id . '">' . $name . '</a></h2>';
                 $output .= '<div class="product-btns">';
-                $output .= '<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>';
-                $output .= '<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>';
-                $output .= '<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</div>';
@@ -444,7 +425,7 @@ class products
                 }
 
                 $output .= '</div>';
-                $output .= '<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>';
+                $output .= '<a href="?page=productPage&id=' . $id . '" class="main-btn quick-view fs-5"><i class="fa fa-search-plus"></i> Quick view</a>';
                 $output .= "<img src='../image/" . $img . "' alt=''>";
                 $output .= '</div>';
                 $output .= '<div class="product-body">';
@@ -453,18 +434,9 @@ class products
                     $output .= '<h2><del class="product-old-price">' . number_format($priceSale) . ' VND</del></h2>';
                 }
 
-                $output .= '<div class="product-rating">';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star"></i>';
-                $output .= '<i class="fa fa-star-o empty"></i>';
-                $output .= '</div>';
                 $output .= '<h2 class="product-name"><a href="?page=productPage&id=' . $id . '">' . $name . '</a></h2>';
                 $output .= '<div class="product-btns">';
-                $output .= '<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>';
-                $output .= '<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>';
-                $output .= '<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>';
+
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</div>';
