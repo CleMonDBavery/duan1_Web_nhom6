@@ -32,7 +32,7 @@ if (isset($_SESSION['member'])) {
 
 if (isset($_POST['saveInfo'])) {
 
-    $fullName = $_POST['fullname'];
+    $fullname = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $email = $_POST['email'];
@@ -72,13 +72,13 @@ if (isset($_POST['saveInfo'])) {
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="labels">Tên</label>
-                            <input name="fullname" type="text" class="form-control" placeholder="Họ và tên"
+                            <input name="name" type="text" class="form-control" placeholder="Họ và tên"
                                    value="<?= $fullName ?>">
                         </div>
                         <div class="col-md-12">
                             <label class="labels">Số điện thoại</label>
                             <input name="phone" type="text" class="form-control" placeholder="Số điện thoại"
-                                   value="<?= $phone ?>">
+                                   value="0<?= $phone ?>">
                         </div>
                         <div class="col-md-12">
                             <label class="labels">Địa chỉ</label>
@@ -173,14 +173,7 @@ if (isset($_POST['saveInfo'])) {
                         <?= $item['Trạng thái'] ?>
                     </td>
                     <td>
-                        <?php
-                        $disabled = '';
-                        if ($item['Trạng thái'] == 'Đơn đã hủy' || $item['Trạng thái'] == 'Đang vận chuyển') {
-                            $disabled = 'disabled';
-                        }
-                        ?>
-                        <a href="?page=cancellation&id=<?= $item['orderId'] ?>" class="btn btn-info <?= $disabled ?>">Hủy
-                            đơn</a>
+                        <a href="?page=cancellation" class="btn btn-info">Hủy đơn</a>
                     </td>
                 </tr>
                     </tbody><?

@@ -181,6 +181,37 @@ class User
         return $result['username'];
     }
 
+    public function getRegister($user_tk, $user_mk, $user_fn, $user_email)
+    {
+        $db = new connect();
+
+        // Check if the username already exists
+        $checkExistingQuery = "SELECT COUNT(*) AS count FROM users WHERE username = '$user_tk'";
+        $existingUser = $db->pdo_execute($checkExistingQuery);
+
+        // Fetch the result set
+        $existingUserData = $existingUser->fetch(PDO::FETCH_ASSOC);
+
+        if ($existingUserData['count'] > 0) {
+            // Username already taken, set error message and redirect
+            $_SESSION['error'] = 'Tài khoản đã tồn tại. Vui lòng chọn một tài khoản khác.';
+            header('location: ?page=register');
+            die;
+        }
+
+        // Hash the password for security
+        $hashedPassword = md5($user_mk);
+
+        // Insert user information into the database
+        $insertQuery = "INSERT INTO users (username, password, fullName, Email) VALUES ('$user_tk', '$hashedPassword', '$user_fn', '$user_email')";
+        $result = $db->pdo_execute($insertQuery);
+
+        return $result;
+    }
+
+
+
+
 
 }
 

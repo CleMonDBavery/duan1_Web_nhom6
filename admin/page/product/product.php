@@ -10,6 +10,24 @@ class products
         return $result;
     }
 
+    public function getWomanProductCategory($categoryID)
+    {
+        $db = new connect();
+        $query = "SELECT productId, name FROM products WHERE categoryId = $categoryID AND gender = 'Nữ' AND status='Active' ";
+        $result = $db->pdo_query($query);
+        return $result;
+    }
+
+    public function getMenProductCategory($categoryID)
+    {
+        $db = new connect();
+        $query = "SELECT productId, name FROM products WHERE categoryId = $categoryID AND gender = 'Nam' AND status='Active' ";
+        $result = $db->pdo_query($query);
+        return $result;
+    }
+
+
+
     public function getListLimitPR()
     {
         $db = new connect();
@@ -246,7 +264,7 @@ class products
                 $discountPercentage = round(100 - (($price) * 100 / $priceSale));
             }
 
-            $output .= '<div class="col-md-4 col-sm-6 col-xs-6">';
+            $output .= '<div class="col-md-3 col-sm-6 col-xs-6">';
             $output .= '<div class="product product-single">';
             $output .= '<div class="product-thumb">';
             $output .= '<div class="product-label">';
@@ -293,7 +311,7 @@ class products
     public function moreProduct($pdCategory)
     {
         $db = new connect();
-        $query = "SELECT * FROM products where `categoryId` = '$pdCategory' ";
+        $query = "SELECT * FROM products WHERE `categoryId` = '$pdCategory' ORDER BY RAND()";
         $result = $db->pdo_query($query);
 
         $count = 0;
@@ -404,7 +422,6 @@ class products
 
         foreach ($result as $row) {
             if ($count >= 0) {
-                // Process data
                 $id = $row['productId'];
                 $name = $row['name'];
                 $img = $row['image'];
@@ -416,7 +433,7 @@ class products
                     $discountPercentage = round(100 - (($price) * 100 / $priceSale));
                 }
 
-                $output .= '<div class="col-md-4 col-sm-6 col-xs-6">';
+                $output .= '<div class="col-md-3 col-sm-6 col-xs-6">';
                 $output .= '<div class="product product-single">';
                 $output .= '<div class="product-thumb">';
                 $output .= '<div class="product-label">';

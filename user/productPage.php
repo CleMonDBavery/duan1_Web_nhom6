@@ -19,9 +19,8 @@ $listUser = $user->getuserId($userId);
 <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Sản phẩm</a></li>
-            <li><a href="#">Loại</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="?page=products">Sản phẩm</a></li>
             <li class="active"><?= $idProduct['name']; ?></li>
         </ul>
     </div>

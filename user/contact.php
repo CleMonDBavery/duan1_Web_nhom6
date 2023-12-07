@@ -63,14 +63,16 @@
                             </iframe>
                         </div>
                     </div>
-                    <div class="row">
+
+                    <div class="row" style="padding: 20px; border: 1px solid #F8694A;
+">
                         <div class="col-md-3">
                             <div class="dbox w-100 text-center">
                                 <div class="icon d-flex align-items-center justify-content-center">
                                     <span class="fa fa-map-marker"></span>
                                 </div>
                                 <div class="text">
-                                    <p><span>Địa chỉ:</span> Số 22, Thường Thạnh, Cái Răng, Cần Thơ</p>
+                                    <p><span>Địa chỉ:</span>Hưng Lợi, Ninh Kiều, Cần Thơ</p>
                                 </div>
                             </div>
                         </div>
