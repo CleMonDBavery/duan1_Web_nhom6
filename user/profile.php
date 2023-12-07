@@ -32,24 +32,69 @@ if (isset($_SESSION['member'])) {
 
 if (isset($_POST['saveInfo'])) {
 
-    $fullname = $_POST['name'];
+    $fullName = $_POST['name'];
     $phone = $_POST['phone'];
+    print_r($phone);
     $address = $_POST['address'];
     $email = $_POST['email'];
 
+    if (
+        $fullName == "" ||
+        $phone == "" ||
+        $address == "" ||
+        $email == ""
+    ) {
+        $_SESSION['error'] = '*Vui lòng điền đầy đủ thông tin';
+        header("location: index.php?page=profile");
+        exit;
+    }
+
     $result = $user->updateProfile($userId, $fullName, $phone, $email, $address);
     if ($result) {
-        $_SESSION['success'] = 'Sửa mục thành công!';
+        $_SESSION['error'] = 'Sửa mục thất bại!';
         header("location: ?page=profile");
         exit;
     } else {
-        $_SESSION['error'] = 'Sửa thất thất bại!';
+        $_SESSION['error'] = 'Sửa thành công';
         header("location: ?page=profile");
         exit;
     }
 
 }
 
+if (isset($_POST['chanpass'])) {
+    $oldpassword = $_POST['password'];
+    $newpassword = $_POST['newpassword'];
+
+    if (empty($oldpassword) || empty($newpassword)) {
+        $_SESSION['loi'] = '*Vui lòng điền đầy đủ thông tin';
+        header("location: index.php?page=profile");
+        exit;
+    }
+
+    // Kiểm tra mật khẩu hiện tại có đúng không, nếu không đúng, thông báo lỗi
+    $userId = $_SESSION['member'];
+    $isPasswordCorrect = $user->checkPassword($userId, $oldpassword);
+
+    if (!$isPasswordCorrect) {
+        $_SESSION['loi'] = '*Mật khẩu hiện tại không đúng';
+        header("location: index.php?page=profile");
+        exit;
+    }
+
+    // Tiếp tục với việc cập nhật mật khẩu mới
+    $result = $user->updatePassword($userId, $newpassword);
+
+    if ($result) {
+        $_SESSION['success'] = 'Thay đổi mật khẩu thành công!';
+        header("location: index.php?page=profile");
+        exit;
+    } else {
+        $_SESSION['error'] = 'Thay đổi mật khẩu thất bại!';
+        header("location: index.php?page=profile");
+        exit;
+    }
+}
 ?>
 
 <div class="container rounded bg-white mt-5 mb-5">
@@ -68,6 +113,12 @@ if (isset($_POST['saveInfo'])) {
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Thông tin</h4>
                     </div>
+                    <?php
+                    if (isset($_SESSION['error'])) {
+                        echo '<p style="color:red">' . $_SESSION['error'] . '</p>';
+                        unset($_SESSION['error']);
+                    }
+                    ?>
 
                     <div class="row mt-3">
                         <div class="col-md-12">
@@ -78,7 +129,7 @@ if (isset($_POST['saveInfo'])) {
                         <div class="col-md-12">
                             <label class="labels">Số điện thoại</label>
                             <input name="phone" type="text" class="form-control" placeholder="Số điện thoại"
-                                   value="0<?= $phone ?>">
+                                   value="<?= $phone ?>">
                         </div>
                         <div class="col-md-12">
                             <label class="labels">Địa chỉ</label>
@@ -102,23 +153,35 @@ if (isset($_POST['saveInfo'])) {
         </div>
         <div class="col-md-4">
             <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience">
-                    <span>Edit Experience</span>
-                    <span class="border px-3 p-1 add-experience">
-                        <i class="fa fa-plus"></i>&nbsp;Experience</span>
-                </div>
-                <br>
-                <div class="col-md-12">
-                    <label class="labels">Mật khẩu</label>
-                    <input name="password" type="password" class="form-control" value="">
-                </div>
+                <form method="post">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Thay đổi mật khẩu</h4>
+                    </div>
+                    <?php
+                    if (isset($_SESSION['loi'])) {
+                        echo '<p style="color:red">' . $_SESSION['loi'] . '</p>';
+                        unset($_SESSION['loi']);
+                    }
+                    ?>
 
-                <br>
-                <div class="col-md-12">
-                    <label class="labels">Additional Details</label>
-                    <input type="text" class="form-control" placeholder="additional details" value="">
-                </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <label class="labels">Mật khẩu</label>
+                            <input name="password" type="text" class="form-control" placeholder="Mật khẩu">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Mật khẩu mới</label>
+                            <input name="newpassword" type="text" class="form-control" placeholder="Mật khẩu mới">
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-primary profile-button" name="chanpass" type="submit">Cập nhật mật khẩu
+                        </button>
+                    </div>
             </div>
+            </form>
         </div>
     </div>
 
