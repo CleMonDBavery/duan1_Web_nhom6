@@ -18,7 +18,7 @@
                             } else {
                                 $error['succes'] = "Đổi mật khẩu thành công.";
                                 $user->forgetPass($password, $_SESSION['email']);
-//                                header("refresh: 3s; login.php");
+                                header("Location: ?page=login");
                             }
                         }
                     }
