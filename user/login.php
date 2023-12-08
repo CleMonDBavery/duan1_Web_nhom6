@@ -6,19 +6,21 @@ $user = new User();
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     if (empty($username) || empty($password)) {
         $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin';
     } else {
         if ($user->CheckClient($username, $password)) {
-            $userId = $user->userid($username, $password);
-            $_SESSION['member'] = $userId;
+            if ($user->checkStatusClient($username)) {
+                $userId = $user->userid($username, $password);
+                $_SESSION['member'] = $userId;
 
-//            print_r($userId);
-//            exit();
-            header('Location: index.php?userId=' . $userId);
-            exit;
+                header('Location: index.php?userId=' . $userId);
+                exit;
+            } else {
+                $_SESSION['fail'] = "Tài khoản đã bị khóa";
+            }
         } else {
             $_SESSION['error'] = 'Sai tài khoản hoặc mật khẩu';
         }
@@ -45,6 +47,10 @@ if (isset($_POST['login'])) {
                                     if (isset($_SESSION['error'])) {
                                         echo '<p style="color:red">' . $_SESSION['error'] . '</p>';
                                         unset($_SESSION['error']);
+                                    }
+                                    if (isset($_SESSION['fail'])) {
+                                        echo '<p style="color:red">' . $_SESSION['fail'] . '</p>';
+                                        unset($_SESSION['fail']);
                                     }
                                     ?>
                                     <div class="form-outline mb-4">

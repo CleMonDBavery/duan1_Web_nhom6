@@ -91,12 +91,20 @@ class User
     function checkClient($username, $password)
     {
         $db = new connect();
-        $select = "SELECT * from users where userName='$username' AND Password='$password' AND `role` ='member' ";
+        $select = "SELECT * from users where userName='$username' AND Password='$password' AND `role` ='member'";
         $result = $db->pdo_query_one($select);
         if ($result != null)
             return true;
         else
             return false;
+    }
+
+    public function checkStatusClient($username)
+    {
+        $db = new connect();
+        $sql = "select * from users where status = 'Active' and username = '$username'";
+        $ressult = $db->pdo_query($sql);
+        return $ressult;
     }
 
     function userId($username, $password)

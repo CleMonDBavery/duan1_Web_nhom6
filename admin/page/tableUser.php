@@ -62,10 +62,18 @@
                                             <?= $item['status']; ?>
                                         </td>
                                         <td>
+                                            <?
+                                            if ($item['role'] == 'admin') {
+                                                $disabled = 'disabled';
+                                            } else {
+                                                $disabled = '';
+                                            }
+
+                                            ?>
                                             <a href=" ?page=updateUser&idU=<?= $item['userId']; ?>"
                                                class="btn btn-primary">Sửa</a>
                                             <a href=" ?page=hiddenActiveUser&id=<?= $item['userId']; ?>"
-                                               class="btn btn-warning">Ẩn</a>
+                                               class="btn btn-warning <?= $disabled ?>">Ẩn</a>
                                         </td>
                                     </tr>
                                     </tbody>
