@@ -17,15 +17,16 @@
                         }
                         if (empty($error)) {
                             $result = $user->getUserEmail($email);
-                            $code = substr(rand(0, 999999), 0, 6);
-                            $title = "Quên mật khẩu";
-                            $content = "Mã xác nhận của bạn là: <span class='text-success'>" . $code . "</span>";
+                            if ($result) {
+                                $code = substr(rand(0, 999999), 0, 6);
+                                $title = "Quên mật khẩu";
+                                $content = "Mã xác nhận của bạn là: <span class='text-success'>" . $code . "</span>";
 
-                            $mail->sendEmail($title, $content, $email);
-//                            var_dump($mail);
-                            $_SESSION['email'] = $email;
-                            $_SESSION['code'] = $code;
-                            header("Location: ?page=codePass");
+                                $mail->sendEmail($title, $content, $email);
+                                $_SESSION['email'] = $email;
+                                $_SESSION['code'] = $code;
+                                header("Location: ?page=codePass");
+                            }
                         }
                     }
                     ?>
