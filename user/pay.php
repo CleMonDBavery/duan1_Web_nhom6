@@ -117,8 +117,10 @@ $list = $users->getuserId($userId);
 
                 <!--Xử lí thanh toán-->
                 <?php
+                $Gmail = new Mailer();
                 $order = new orders();
                 $promotion = new promotions();
+
 
                 if (isset($_POST['greatVoucher'])) {
                     $promotion = new promotions();
@@ -127,15 +129,22 @@ $list = $users->getuserId($userId);
                     $select = $promotion->getPromotionsName($name);
 
                     if ($select && isset($select[0]['conditionPro'], $select[0]['name'], $select[0]['discount']) && $tongTien >= $select[0]['conditionPro']) {
+                        if ($select[0]['promotionType'] === 'Giảm theo phầm trăm') {
+                            $discountAmount = $tongTien * ($select[0]['discount'] / 100);
+                        } else {
+                            $discountAmount = $select[0]['discount'];
+                        }
+                        $tongTien -= $discountAmount;
                         echo "Áp dụng mã khuyến mãi: " . $select[0]['name'];
-                        echo "<br>Áp dụng mã: - " . number_format($select[0]['discount']);
-                        $tongTien -= $select[0]['discount'];
+
+                        echo "<br>Áp dụng mã: - " . number_format($discountAmount);
 
                         $_SESSION['promotion'] = $select[0];
                         $_SESSION['totalPrice'] = $tongTien;
                     } else {
-                        echo "Không đủ điều kiện để sử dụng mã khuyến mãi.";
-                        return;
+                        echo 'Không đủ điều kiện áp dụng loại mã này.';
+//                        echo "<script>alert('Không đủ điều kiện áp dụng loại mã này.')</script>";
+                        exit();
                     }
                 }
 
@@ -163,9 +172,12 @@ $list = $users->getuserId($userId);
                             $result = $order->insertOrderDetail($productId, $amount, $orderId, $price);
 
                             if ($result) {
-                                echo "Có lỗi xảy ra khi thêm chi tiết đơn hàng.";
+                                echo "<script>alert('Không thể thanh toán.')</script>";
                             } else {
-
+                                $userInfo = $users->get($userId);
+                                $username = $userInfo['username'];
+                                $email = $userInfo['email'];
+                                $Gmail->thanksMail($username, $email);
                                 echo "<script>alert('Thêm đơn hàng thành công')</script>";
                             }
 

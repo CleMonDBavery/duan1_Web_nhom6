@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N038 - update login client">
+    <list default="true" id="6fe86e5d-c051-458e-8fe6-20392bf4c9f0" name="Changes" comment="N039 - update layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/page/order/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/order/orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/forgotPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/forgotPass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page/users/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page/users/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/pay.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/pay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +182,8 @@
       <workItem from="1702119801049" duration="1430000" />
       <workItem from="1702176213837" duration="3553000" />
       <workItem from="1702196774616" duration="1528000" />
+      <workItem from="1702289325279" duration="1670000" />
+      <workItem from="1702300330662" duration="4542000" />
     </task>
     <task id="LOCAL-00001" summary="N02 - Thống kê">
       <option name="closed" value="true" />
@@ -285,8 +286,20 @@
     <MESSAGE value="N028 - Update order page profile and page pay" />
     <MESSAGE value="N036 - forgotpassword" />
     <MESSAGE value="N037 - update tableAccount" />
-    <option name="LAST_COMMIT_MESSAGE" value="N037 - update tableAccount" />
+    <MESSAGE value="N039 - update layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="N039 - update layout" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/user/pay.php</url>
+          <line>108</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
