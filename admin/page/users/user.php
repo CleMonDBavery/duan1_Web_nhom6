@@ -103,6 +103,14 @@ class User
         return $result;
     }
 
+    function get($userId)
+    {
+        $db = new connect();
+        $select = "SELECT * from users where userId = '$userId'";
+        $result = $db->pdo_query_one($select);
+        return $result;
+    }
+
     public function updatehiddenActive($userId)
     {
         $db = new connect();
