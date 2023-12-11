@@ -1,44 +1,69 @@
-<div class="section section-grey">
-    <!-- container -->
+<div class="section">
     <div class="container">
         <!-- row -->
-        <div class="row">
-            <!-- banner -->
-            <div class="col-md-8">
-                <div class="banner banner-1">
-                    <img src="contents/img/banner13.jpg" alt="">
-                    <div class="banner-caption text-center">
-                        <h1 class="primary-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF</span>
-                        </h1>
-                        <button class="primary-btn">Shop Now</button>
+        <div class="row" style="padding: 20px;;
+">
+            <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-truck"></span>
+                    </div>
+                    <div class="text">
+                        <p>Vận chuyển dễ dàng, nhanh chóng</p>
                     </div>
                 </div>
             </div>
-            <!-- /banner -->
-
-            <!-- banner -->
-            <div class="col-md-4 col-sm-3">
-                <a class="banner banner-1" href="#">
-                    <img src="contents/img/banner11.jpg" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
+            <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-trophy"></span>
                     </div>
-                </a>
-
-
-                <!-- /banner -->
-
-                <!-- banner -->
-                <a class="banner banner-1" href="#">
-                    <img src="contents/img/banner12.jpg" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
+                    <div class="text">
+                        <p>Cửa hàng uy tín chất lượng</p>
             </div>
-            <!-- /banner -->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-paper-plane"></span>
+            </div>
+                    <div class="text">
+                        <p><span>Email:</span> <a href="">ESHOP@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa  fa-check"></span>
+                    </div>
+                    <div class="text">
+                        <p>Thanh toán khi nhận hàng</p>
+                    </div>
+                </div>
+            </div>
+            <?php
+            $promotion = new promotions();
+            $getVouchers = $promotion->getStatus();
+            ?>
+            <h1 STYLE="text-align: center; padding: 40px">CÁC MÃ KHUYẾN MÃI</h1>
+
+            <?php foreach ($getVouchers as $voucher): ?>
+                <div class="col-md-3 col-12">
+                    <div class="card" style="text-align: center">
+                        <img src="../image/voucher.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title"><?= $voucher['name'] ?></h3>
+                            <h5 class="card-title">Giảm <?= number_format($voucher['discount']) ?> VND</h5>
+                            <h5 class="card-title">Điều kiện hóa đơn từ <?= number_format($voucher['conditionPro']) ?>
+                                VND</h5>
+
+                            <p class="card-text"><?= $voucher['detail'] ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-        <!-- /row -->
     </div>
-    <!-- /container -->
 </div>

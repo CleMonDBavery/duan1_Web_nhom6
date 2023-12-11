@@ -1,4 +1,9 @@
 <?php
+if (!isset($_SESSION['member'])) {
+    $_SESSION['error'] = 'Bạn chưa đăng nhập tài khoản';
+    header("Location: index.php?page=login");
+    exit;
+}
 if (empty($_COOKIE['cart'])) {
     header('location: index.php');
 }

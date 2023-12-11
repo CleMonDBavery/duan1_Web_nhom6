@@ -55,7 +55,7 @@
                                 $userInfo = $user->getuserId($userId);
                                 echo $userInfo['fullName'];
                             } else {
-                                echo 'Khách hàng';
+                                echo 'Bạn chưa đăng nhập';
                             }
 
                             ?>

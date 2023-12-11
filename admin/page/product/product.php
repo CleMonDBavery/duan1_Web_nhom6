@@ -182,7 +182,7 @@ class products
     public function displayProducts()
     {
         $db = new connect();
-        $query = "SELECT * FROM products";
+        $query = "SELECT * FROM products LIMIT 20";
         $result = $db->pdo_query($query);
 
         $count = 0;

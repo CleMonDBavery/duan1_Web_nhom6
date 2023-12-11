@@ -336,8 +336,60 @@
                             </div>
                         </div>
                     </li>
+                    <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown"
+                                                                     aria-expanded="true">BLOGS THỜI TRANG</a>
+                        <div class="custom-menu ">
+                            <div class="row col-md-6">
+                                <div class="col-md-12">
+                                    <ul class="list-links" style="">
+                                        <li>
+                                            <hr>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://toson.vn/bi-kip-chon-ao-blazer-de-khong-bi-trong-gia">Bí
+                                                    kíp chọn áo blazer để không bị trông già !!! </a></h4>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://kienttpc07671.blogspot.com/2023/07/1-ien-thoai-iphone-14-pro-max-256gb.html">Thời
+                                                    trang: Khám phá cái đẹp và sự tự tin qua trang phục </a></h4>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://www.acfc.com.vn/blog/5-xu-huong-thoi-trang-thu-dong-2021-noi-bat-nhat-de-ung-dung-hang-ngay.html">5
+                                                    xu hướng thời trang Thu – Đông 2021 nổi bật nhất</a></h4>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://www.acfc.com.vn/blog/5-xu-huong-thoi-trang-thu-dong-2021-noi-bat-nhat-de-ung-dung-hang-ngay.html">Mặc
+                                                    đẹp “chuẩn công sở” với 5 item thời trang cơ bản nhất</a></h4>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://www.kkfashion.vn/blog/mac-dep-chuan-cong-s-vi-5-item-thi-trang-co-ban-nhat">Xu
+                                                    hướng thời trang Thu – Đông</a></h4>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://www.kkfashion.vn/blog/vay-xoe-dep-danh-cho-chi-em-hoi-co-huong">Váy
+                                                    xòe đẹp dành cho chị em hội “cò hương”</a></h4>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://www.kkfashion.vn/blog/dieu-gi-tao-nen-su-cuon-hut-cua-ao-so-mi-trang">Điều
+                                                    gì tạo nên sự cuốn hút của áo sơ mi trắng</a></h4>
+                                            <h4 class="list-links-title"><a
+                                                        href="https://www.kkfashion.vn/blog/thoi-trang-tuoi-40-cung-thiet-ke-ao-kieu-vuot-thoi-gian">Thời
+                                                    trang tuổi 40 cùng thiết kế áo kiểu vượt thời gian</a></h4>
+
+
+                                        </li>
+                                    </ul>
+                                    <hr class="hidden-md hidden-lg">
+                                </div>
+
+                            </div>
+
+                            <div class="row hidden-sm hidden-xs">
+                                <div class="col-md-12 banner banner-1">
+                                    <img src="contents/img/banner07.jpg" alt="">
+                                    <div class="banner-caption text-center">
+                                        <h1 class="white-color">BLOGS THỜI TRANG</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="?page=contact">Liên hệ</a></li>
                     <li><a href="?page=policy">Chính sách</a></li>
+
                     <!-- <li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Pages <i class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="index.php">Home</a></li>

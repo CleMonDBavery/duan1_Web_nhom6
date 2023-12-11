@@ -56,11 +56,24 @@ if (isset($_POST['add'])) {
                                             <label for="validationCustom01" class="form-label">Mã khuyến mãi</label>
                                             <input name="name" type="text" class="form-control" id="validationCustom01">
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="validationCustom02" class="form-label">Loại khuyến mãi</label>
-                                            <input name="promotionType" type="text" class="form-control"
-                                                   id="validationCustom02">
+                                        <!--                                        <div class="col-md-6">-->
+                                        <!--                                            <label for="validationCustom02" class="form-label">Loại khuyến mãi</label>-->
+                                        <!--                                            <input name="promotionType" type="text" class="form-control"-->
+                                        <!--                                                   id="validationCustom02">-->
+                                        <!--                                        </div>-->
+                                        <div class="col-md-6 col-12">
+                                            <label for="validationCustom04" class="form-label">Loại khuyến mãi</label>
+                                            <select name="promotionType" class="form-select" id="validationCustom04"
+                                                    required>
+                                                <option <?= (isset($promotionType) && $promotionType === 'phantram') ? 'selected' : ''; ?>>
+                                                    Giảm theo phần trăm
+                                                </option>
+                                                <option <?= (isset($promotionType) && $promotionType === 'donvi') ? 'selected' : ''; ?>>
+                                                    Giảm theo giá tiền
+                                                </option>
+                                            </select>
                                         </div>
+
 
                                         <div class="col-md-6">
                                             <label for="validationCustom03" class="form-label">Giá giảm</label>

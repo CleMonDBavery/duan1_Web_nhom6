@@ -41,7 +41,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 
-    <link rel="stylesheet" href="contact-form-06/css/style.css"/>
 </head>
 <?php
 
@@ -129,7 +128,7 @@ $list = $users->getuserId($userId);
                     $select = $promotion->getPromotionsName($name);
 
                     if ($select && isset($select[0]['conditionPro'], $select[0]['name'], $select[0]['discount']) && $tongTien >= $select[0]['conditionPro']) {
-                        if ($select[0]['promotionType'] === 'Giảm theo phầm trăm') {
+                        if ($select[0]['promotionType'] === 'Giảm theo phần trăm') {
                             $discountAmount = $tongTien * ($select[0]['discount'] / 100);
                         } else {
                             $discountAmount = $select[0]['discount'];
@@ -234,5 +233,29 @@ $list = $users->getuserId($userId);
             </div>
         </div>
     </form>
+    <?php
+    $promotion = new promotions();
+    $getVouchers = $promotion->getStatus();
+    ?>
+    <h1 STYLE="text-align: center; margin-top: 20px">CÁC MÃ KHUYẾN MÃI</h1>
+
+    <?php foreach ($getVouchers as $voucher): ?>
+        <div class="col-md-3 col-12">
+            <div class="card" style="text-align: center">
+                <img src="../image/voucher.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title"><?= $voucher['name'] ?></h3>
+                    <h5 class="card-title">Giảm <?= number_format($voucher['discount']) ?> VND</h5>
+                    <h5 class="card-title">Điều kiện hóa đơn từ <?= number_format($voucher['conditionPro']) ?> VND</h5>
+
+                    <p class="card-text"><?= $voucher['detail'] ?></p>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+
+
+
 
 </div>
