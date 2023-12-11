@@ -140,36 +140,40 @@ $list = $users->getuserId($userId);
                 }
 
                 if (isset($_POST['btnDatHang'])) {
-
-                    $totalPrice = isset($_SESSION['totalPrice']) ? $_SESSION['totalPrice'] : $tongTien;
-                    $destination = $_POST['address'];
-                    $promotionId = isset($_SESSION['promotion']['promotionId']) ? $_SESSION['promotion']['promotionId'] : NULL;
-                    $userId = $list['userId'];
-                    $status = 'Chờ xác nhận';
-                    $date = date('Y-m-d H:i:s');
-
-
-                    $order->insertOrder($totalPrice, $destination, $promotionId, $userId, $status, $date);
-                    $query = $order->getOrderID();
-                    $orderId = $query[0]['orderId'];
-                    if (isset($query)) {
-
-                        $productId = $sp['productId'];
-                        $amount = $sp['soluong'];
-                        $price = $sp['price'];
-
-                        $result = $order->insertOrderDetail($productId, $amount, $orderId, $price);
-
-                        if ($result) {
-                            echo "Có lỗi xảy ra khi thêm chi tiết đơn hàng.";
-                        } else {
-
-                            echo "<script>alert('Thêm đơn hàng thành công')</script>";
-                        }
-
+                    if (!isset($_POST['address']) && !isset($_POST['phone'])) {
+                        $_SESSION['errorPay'] = "Vui lòng nhập đầy đủ thông tin";
+                        exit();
                     } else {
-                        echo "Có lỗi xảy ra khi tạo đơn hàng.";
+                        $totalPrice = isset($_SESSION['totalPrice']) ? $_SESSION['totalPrice'] : $tongTien;
+                        $destination = $_POST['address'];
+                        $promotionId = isset($_SESSION['promotion']['promotionId']) ? $_SESSION['promotion']['promotionId'] : NULL;
+                        $userId = $list['userId'];
+                        $status = 'Chờ xác nhận';
+                        $date = date('Y-m-d H:i:s');
+
+                        $order->insertOrder($totalPrice, $destination, $promotionId, $userId, $status, $date);
+                        $query = $order->getOrderID();
+                        $orderId = $query[0]['orderId'];
+                        if (isset($orderId)) {
+
+                            $productId = $sp['productId'];
+                            $amount = $sp['soluong'];
+                            $price = $sp['price'];
+
+                            $result = $order->insertOrderDetail($productId, $amount, $orderId, $price);
+
+                            if ($result) {
+                                echo "Có lỗi xảy ra khi thêm chi tiết đơn hàng.";
+                            } else {
+
+                                echo "<script>alert('Thêm đơn hàng thành công')</script>";
+                            }
+
+                        } else {
+                            echo "Có lỗi xảy ra khi tạo đơn hàng.";
+                        }
                     }
+
                 }
 
                 ?>
@@ -188,7 +192,11 @@ $list = $users->getuserId($userId);
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Thông tin khách hàng</h4>
-
+                <?
+                if (isset($_SESSION['errorPay'])) {
+                    echo "<div class='text-danger'>'" . $_SESSION['errorPay'] . "'</div>";
+                }
+                ?>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="kh_ten">Họ tên</label>

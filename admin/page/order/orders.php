@@ -124,9 +124,9 @@ class orders
     public function thongKe()
     {
         $db = new connect();
-        $sql = "SELECT DAY(date) as Tháng, COUNT(orderId) as 'Số đơn hàng'
+        $sql = "SELECT MONTH(date) as Tháng, COUNT(orderId) as 'Số đơn hàng'
                 FROM orders
-                GROUP BY DAY(date)";
+                GROUP BY MONTH(date)";
         $result = $db->pdo_query($sql);
         return $result;
     }
@@ -134,8 +134,10 @@ class orders
     public function insertOrder($totalPrice, $destination, $promotionId, $userId, $status, $date)
     {
         $db = new connect();
+//        $promotionId = isset($promotionId) ? $promotionId : NULL;
         $sql = "INSERT INTO orders (totalPrice, destination, promotionId, userId, status, date)
-                VALUES ('$totalPrice', '$destination', '$promotionId', '$userId', '$status', '$date')";
+                VALUES ('$totalPrice', '$destination', " . ($promotionId !== NULL ? "'$promotionId'" : "NULL") . ", '$userId', '$status', '$date')";
+
         $result = $db->pdo_query($sql);
 
         return $result;

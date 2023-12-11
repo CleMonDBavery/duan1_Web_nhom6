@@ -78,7 +78,7 @@ if (isset($_POST['saveInfo'])) {
                         <div class="col-md-12">
                             <label class="labels">Số điện thoại</label>
                             <input name="phone" type="text" class="form-control" placeholder="Số điện thoại"
-                                   value="0<?= $phone ?>">
+                                   value="<?= $phone ?>">
                         </div>
                         <div class="col-md-12">
                             <label class="labels">Địa chỉ</label>
