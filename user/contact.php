@@ -20,7 +20,40 @@
                                 <div id="form-message-success" class="mb-4">
                                     Tin của bạn đã được gửi. Cảm ơn!
                                 </div>
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                <?
+
+                                use PHPMailer\PHPMailer\PHPMailer;
+
+                                require_once 'PHPMailer/src/Exception.php';
+                                require_once 'PHPMailer/src/PHPMailer.php';
+                                require_once 'PHPMailer/src/SMTP.php';
+
+                                if (isset($_POST['send'])) {
+                                    $mail = new PHPMailer(true);
+
+                                    $mail->SMTPDebug = 0;
+                                    $mail->isSMTP();
+                                    $mail->Host = 'smtp.gmail.com';
+                                    $mail->SMTPAuth = true;
+                                    $mail->Username = 'lephuocminh12321@gmail.com';
+                                    $mail->Password = 'pvlqozspjhltmjpn';
+                                    $mail->SMTPSecure = 'ssl';
+                                    $mail->Port = 465;
+
+                                    $mail->setFrom('lephuocminh12321@gmail.com');
+                                    $mail->addAddress($_POST['email'], $_POST['name']);
+                                    $mail->isHTML(true);
+                                    $mail->Subject = $_POST['subject'];
+                                    $mail->Body = $_POST['message'];
+
+                                    $mail->send();
+
+                                    echo "<script> alert('Gửi thành công. Cảm ơn bạn đã phản hồi')
+                                            document.locatiion.href = 'contact.php'
+                                            </script>";
+                                }
+                                ?>
+                                <form method="POST" id="" name="contactForm" class="contactForm">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -52,7 +85,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <a href="PHPMailer/forgot.php" class="btn btn-info">Gửi</a>
+                                                <button class="btn btn-info" name="send">Gửi</button>
                                             </div>
                                         </div>
                                     </div>
