@@ -1,9 +1,6 @@
 <?php
 ob_start();
 session_start();
-//if (isset($_SESSION['member'])) {
-//    echo 'hello';
-//}
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -13,7 +10,7 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+        <link rel="stylesheet" href="contact-form-06/css/style.css"/>
         <title>E-SHOP HTML Template</title>
         <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -51,7 +48,6 @@ session_start();
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 
-        <link rel="stylesheet" href="contact-form-06/css/style.css"/>
     </head>
 
     <body>

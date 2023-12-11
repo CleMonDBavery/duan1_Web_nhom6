@@ -63,7 +63,7 @@ if (isset($_POST['saveInfo'])) {
 }
 
 if (isset($_POST['chanpass'])) {
-    $oldpassword = $_POST['password'];
+    $oldpassword = md5($_POST['password']);
     $newpassword = $_POST['newpassword'];
 
     if (empty($oldpassword) || empty($newpassword)) {
@@ -85,12 +85,12 @@ if (isset($_POST['chanpass'])) {
     // Tiếp tục với việc cập nhật mật khẩu mới
     $result = $user->updatePassword($userId, $newpassword);
 
-    if ($result) {
-        $_SESSION['success'] = 'Thay đổi mật khẩu thành công!';
+    if (isset($result)) {
+        $_SESSION['loi'] = 'Thay đổi mật khẩu thành công!';
         header("location: index.php?page=profile");
         exit;
     } else {
-        $_SESSION['error'] = 'Thay đổi mật khẩu thất bại!';
+        $_SESSION['loi'] = 'Thay đổi mật khẩu thất bại!';
         header("location: index.php?page=profile");
         exit;
     }

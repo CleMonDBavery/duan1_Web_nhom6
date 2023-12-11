@@ -60,16 +60,7 @@ $listUser = $user->getuserId($userId);
                         <h3 class="product-price"><?= number_format($idProduct['price']); ?> VND
                             <del class="product-old-price"><?= number_format($idProduct['priceSale']); ?> VND</del>
                         </h3>
-                        <div>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                            </div>
-                            <a href="#">3 Review(s) / Add Review</a>
-                        </div>
+
                         <p><strong>Tình trạng:</strong> Còn hàng</p>
                         <p><strong>Thương hiệu:</strong> E-SHOP</p>
                         <p><?= $idProduct['description'] ?></p>

@@ -98,7 +98,7 @@ class products
     public function getStatusActive()
     {
         $db = new connect();
-        $sql = "SELECT * FROM products WHERE status = 'Active'";
+        $sql = "SELECT * FROM products WHERE status='Active'";
         $result = $db->pdo_query($sql);
         return $result;
     }
@@ -155,7 +155,7 @@ class products
     public function renderCategorySelect()
     {
         $db = new connect();
-        $query = "SELECT * FROM categories";
+        $query = "SELECT * FROM categories where status='Active'";
         $result = $db->pdo_query($query);
 
         $output = '<select style="margin: 0 auto" name="category" class="form-control" id="">';
@@ -182,7 +182,7 @@ class products
     public function displayProducts()
     {
         $db = new connect();
-        $query = "SELECT * FROM Products";
+        $query = "SELECT * FROM products";
         $result = $db->pdo_query($query);
 
         $count = 0;
@@ -239,12 +239,11 @@ class products
         return $output;
     }
 
-    public function pageProducts($page = 1, $perPage = 9)
+    public function pageProducts()
     {
         $db = new connect();
-        $start = ($page - 1) * $perPage;
 
-        $query = "SELECT * FROM Products LIMIT $start, $perPage";
+        $query = "SELECT * FROM Products where status = 'Active'";
         $result = $db->pdo_query($query);
 
         $count = 0;
@@ -395,7 +394,7 @@ class products
     public function searchProducts($searchTerm)
     {
         $db = new connect();
-        $query = "SELECT * FROM Products WHERE `name` LIKE '%$searchTerm%'";
+        $query = "SELECT * FROM Products WHERE `name` LIKE '%$searchTerm%' AND status='Active'";
         $result = $db->pdo_query($query);
 
         $count = 0;

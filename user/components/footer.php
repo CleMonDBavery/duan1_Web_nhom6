@@ -14,12 +14,9 @@
                     </div>
                     <!-- /footer logo -->
 
-                    <p>SỐ ĐKKD 0316291796 CẤP NGÀY 26/05/2020 DO SỞ KẾ HOẠCH VÀ ĐẦU TƯ ​TP.​ HCM
+                    <p>SỐ ĐKKD 0316291796 CẤP NGÀY 26/05/2020 DO SỞ KẾ HOẠCH VÀ ĐẦU TƯ TP.CẦN THƠ
                     </p>
-                    <p>ĐỊA CHỈ: 17 30/4, HƯNG LỢI, NINH KIỀU, CẦN THƠ
-                    </p>
-                    <p>EMAIL: ABCD@GMAIL.COM
-                    <p>HOTLINE: 1900 633 494</p>
+
 
                     <!-- footer social -->
                     <ul class="footer-social">
@@ -54,13 +51,13 @@
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
 
-                    <h3 class="footer-header">Danh mục sản phẩm</h3>
+                    <h3 class="footer-header">Thông tin về cửa hàng</h3>
                     <ul class="list-links">
-                        <li><a href="">Áo</a></li>
-                        <li><a href="#">Quần</a></li>
-                        <li><a href="#">Váy</a></li>
-                        <li><a href="">Giày</a></li>
-                        <li><a href="#">Ví</a></li>
+                        <li>THỜI GIAN LÀM VIỆC 8H-22H</li>
+                        <li>EMAIL: ABCD@GMAIL.COM
+                        <li>HOTLINE: 1900 633 494</li>
+                        <li>ĐỊA CHỈ: 17 30/4, HƯNG LỢI, NINH KIỀU, CẦN THƠ
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="contact-form-06/css/style.css"/>
+</head>
+
 <section class="ftco-section p-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -71,7 +75,7 @@
                                     <span class="fa fa-map-marker"></span>
                                 </div>
                                 <div class="text">
-                                    <p><span>Địa chỉ:</span>Hưng Lợi, Ninh Kiều, Cần Thơ</p>
+                                    <p><span>Địa chỉ:</span> Ninh Kiều, Cần Thơ</p>
                                 </div>
                             </div>
                         </div>
